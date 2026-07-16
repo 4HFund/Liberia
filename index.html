@@ -1,199 +1,977 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Acres of Hope | The Foundery Church</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for Color Palette */
+        :root {
+            --navy: #1a2639;
+            --steel-blue: #2c4251;
+            --forest-green: #2d4a3e;
+            --burnt-orange: #c85a17;
+            --warm-gold: #d4af37;
+            --soft-cream: #f9f6f0;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            
+            --donation-link: "https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary";
+        }
 
-  <title>100 Acres of Hope | The Foundery Church</title>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <meta
-    name="description"
-    content="Support Pastor Bobby and Sidney as they travel to Liberia to document the Free Methodist Church and its 100-acre cacao and animal development."
-  />
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--soft-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-  <style>
-    :root {
-      --navy: #102732;
-      --navy-light: #1c414d;
-      --green: #496d4b;
-      --green-dark: #294530;
-      --orange: #cf682f;
-      --orange-light: #e98748;
-      --gold: #e0b652;
-      --cream: #f8f3e8;
-      --cream-dark: #e9dfca;
-      --white: #ffffff;
-      --text: #17272e;
-      --muted: #63737a;
-      --shadow: 0 24px 60px rgba(16, 39, 50, 0.15);
-      --radius: 26px;
-      --container: 1180px;
-    }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
 
-    * {
-      box-sizing: border-box;
-    }
+        p {
+            margin-bottom: 1.5rem;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-    body {
-      margin: 0;
-      overflow-x: hidden;
-      color: var(--text);
-      background: var(--cream);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            text-align: center;
+        }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+        .btn-primary {
+            background-color: var(--burnt-orange);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(200, 90, 23, 0.3);
+        }
 
-    img,
-    svg {
-      display: block;
-      max-width: 100%;
-    }
+        .btn-primary:hover {
+            background-color: #a84810;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(200, 90, 23, 0.4);
+        }
 
-    .container {
-      width: min(calc(100% - 32px), var(--container));
-      margin: 0 auto;
-    }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
 
-    .header {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1000;
-      transition: 0.25s ease;
-    }
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--burnt-orange);
+            border-color: var(--burnt-orange);
+        }
 
-    .header.scrolled {
-      background: rgba(16, 39, 50, 0.94);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-      backdrop-filter: blur(16px);
-    }
+        .btn-outline:hover {
+            background-color: var(--burnt-orange);
+            color: var(--white);
+        }
 
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 0;
+            background-color: rgba(26, 38, 57, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      font-weight: 900;
-    }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-    }
+        .logo {
+            font-family: var(--font-serif);
+            color: var(--warm-gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
 
-    .brand-icon svg {
-      width: 24px;
-      height: 24px;
-    }
+        .nav-btn {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.8rem;
+        }
 
-    .brand small {
-      display: block;
-      margin-top: -3px;
-      color: rgba(255, 255, 255, 0.65);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(26, 38, 57, 0.7), rgba(45, 74, 62, 0.8)), 
+                        url('https://images.unsplash.com/photo-1501250987900-2118ddeed8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            color: var(--white);
+            padding-top: 80px;
+        }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 14px;
-      font-weight: 800;
-    }
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            z-index: 2;
+        }
 
-    .nav-links a:hover {
-      color: var(--white);
-    }
+        .hero h1 {
+            color: var(--white);
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
 
-    .button {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 22px;
-      border: 0;
-      border-radius: 999px;
-      font: inherit;
-      font-weight: 900;
-      cursor: pointer;
-      transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease;
-    }
+        .hero p.tagline {
+            font-size: 1.5rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--warm-gold);
+            margin-bottom: 1.5rem;
+        }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
+        .hero p.subheadline {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
 
-    .button-primary {
-      color: var(--white);
-      background: linear-gradient(135deg, var(--orange-light), var(--orange));
-      box-shadow: 0 13px 28px rgba(207, 104, 47, 0.32);
-    }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-    .button-secondary {
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-    }
+        /* Progress Section */
+        .progress-section {
+            background-color: var(--white);
+            padding: 4rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+            margin-top: -50px;
+            border-radius: 20px 20px 0 0;
+        }
 
-    .button-dark {
-      color: var(--white);
-      background: var(--navy);
-    }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-    .hero {
-      position: relative;
-      min-height: 900px;
-      display: grid;
-      align-items: center;
-      overflow: hidden;
-      color: var(--white);
-      background:
-        radial-gradient(circle at 80% 20%, rgba(224, 182, 82, 0.25), transparent 25%),
-        radial-gradient(circle at 12% 76%, rgba(207, 104, 47, 0.24), transparent 30%),
-        linear-gradient(130deg, #102732 0%, #173b48 48%, #294530 100%);
-    }
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 0.2rem;
+        }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.22;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 70
+        .stat-item p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .progress-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .progress-bar-bg {
+            background-color: var(--soft-cream);
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--burnt-orange), var(--warm-gold));
+            height: 100%;
+            width: 0%; /* Set by JS */
+            border-radius: 10px;
+            transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .progress-text span {
+            font-size: 1.1rem;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 6rem 0;
+            background-color: var(--soft-cream);
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        blockquote {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--forest-green);
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--warm-gold);
+            background-color: var(--white);
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-card {
+            background-color: var(--soft-cream);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .impact-card h3 {
+            color: var(--steel-blue);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .impact-number {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.3); /* Warm gold, transparent */
+            margin-bottom: -20px;
+            font-weight: 700;
+        }
+
+        /* Donation Levels */
+        .donate-section {
+            padding: 6rem 0;
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .donate-section .section-header h2 {
+            color: var(--white);
+        }
+
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .donate-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .donate-card h3 {
+            color: var(--warm-gold);
+            font-size: 1.5rem;
+        }
+
+        .donate-amount {
+            font-family: var(--font-sans);
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .donate-card p {
+            color: #cccccc;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+        
+        .donate-disclaimer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .custom-donate {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Journey Timeline Section */
+        .journey-section {
+            padding: 6rem 0;
+            background-color: var(--soft-cream);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background-color: var(--forest-green);
+            opacity: 0.2;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            background-color: var(--forest-green);
+            border-radius: 50%;
+            border: 4px solid var(--soft-cream);
+            box-shadow: 0 0 0 4px rgba(45, 74, 62, 0.2);
+        }
+
+        .timeline-content h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* Financial & FAQ Section */
+        .info-section {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .transparency-box {
+            background-color: var(--soft-cream);
+            padding: 3rem;
+            border-radius: 16px;
+            border-left: 6px solid var(--forest-green);
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            font-size: 1.1rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--burnt-orange);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Final CTA */
+        .cta-section {
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(rgba(26, 38, 57, 0.9), rgba(45, 74, 62, 0.9)), 
+                        url('https://images.unsplash.com/photo-1523363065603-9bbab37fb31b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer p {
+            margin: 0;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero p.tagline {
+                font-size: 1.2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .story-content h2, .section-header h2, .cta-content h2 {
+                font-size: 2.2rem;
+            }
+            .timeline::before {
+                left: 15px;
+            }
+            .timeline-dot {
+                left: 5px;
+            }
+            .timeline-item {
+                padding-left: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">100 Acres of Hope</div>
+            <a href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" class="btn btn-primary nav-btn">Give Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content fade-up">
+            <p class="tagline">Help Us Tell the Story of What God Is Growing in Liberia</p>
+            <h1>100 Acres of Hope</h1>
+            <p class="subheadline">Help send Pastor Bobby and Sidney to Liberia to document the work of the Free Methodist Church and share the story of a remarkable 100-acre cacao and animal development.</p>
+            <div class="hero-buttons">
+                <a href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" class="btn btn-primary">Give to the Mission</a>
+                <a href="#story" class="btn btn-secondary">Discover the Story</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fundraising Progress -->
+    <!-- EDITABLE PROGRESS VALUES: Modify data-goal and data-raised attributes below -->
+    <section class="progress-section" id="progress">
+        <div class="container">
+            <div class="stats-grid fade-up">
+                <div class="stat-item">
+                    <h3>100</h3>
+                    <p>Acres</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2</h3>
+                    <p>Storytellers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1</h3>
+                    <p>Shared Mission</p>
+                </div>
+            </div>
+
+            <div class="progress-container fade-up" id="fundraising-tracker" data-goal="6000" data-raised="2400">
+                <div class="progress-text mb-2">
+                    <span id="raised-text">Raised: $0</span>
+                    <span id="goal-text">Goal: $6,000</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text mt-2" style="font-size: 0.9rem; color: var(--text-light);">
+                    <span id="percentage-text">0% Funded</span>
+                    <span id="remaining-text">$0 Remaining</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-content fade-up">
+                <h2>We are going to listen, learn, and help tell their story.</h2>
+                <p>The Free Methodist Church in Liberia is building more than congregations. Liberian leaders are developing churches, training pastors, strengthening communities, and cultivating a 100-acre property centered on cacao, animals, opportunity, and a vision for the future.</p>
+                <p>Pastor Bobby and Sidney will travel as ministry partners and storytellers. Through interviews, worship, teaching, photography, and documentary filmmaking, they will help preserve and share what Liberian Christians are already building.</p>
+                
+                <blockquote>
+                    “Faith is being planted in people, and hope is being planted in the ground.”
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Impact -->
+    <section class="impact-section" id="impact">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>What Your Support Makes Possible</h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card fade-up">
+                    <div class="impact-number">01</div>
+                    <h3>A Modern Documentary</h3>
+                    <p>A cinematic film centered on Liberian voices, leadership, worship, agriculture, and their vision for the future.</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-number">02</div>
+                    <h3>The 100-Acre Vision</h3>
+                    <p>Show how cacao and animals can support employment, training, food production, and long-term sustainability.</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-number">03</div>
+                    <h3>Future Fundraising Tools</h3>
+                    <p>Create short videos, interviews, photographs, and presentations that can support future awareness and partnership.</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-number">04</div>
+                    <h3>Church Partnership</h3>
+                    <p>Help people better understand the pastors, churches, families, and communities serving throughout Liberia.</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-number">05</div>
+                    <h3>A Permanent Record</h3>
+                    <p>Preserve this important chapter in the growth of the Liberian Free Methodist Church.</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-number">06</div>
+                    <h3>Meaningful Connection</h3>
+                    <p>Build relationships shaped by listening, dignity, shared faith, and partnership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Levels -->
+    <section class="donate-section" id="donate">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Join the Mission</h2>
+                <p style="color: #cccccc;">Choose how you want to support this documentary journey.</p>
+            </div>
+            
+            <div class="donate-grid">
+                <div class="donate-card fade-up">
+                    <h3>Plant a Seed</h3>
+                    <div class="donate-amount">$25</div>
+                    <p>Help begin the journey and support travel, filming, and interviews.</p>
+                    <a href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" class="btn btn-primary">Give $25</a>
+                </div>
+                
+                <div class="donate-card fade-up" style="transform: scale(1.05); background-color: rgba(255, 255, 255, 0.08); border-color: var(--burnt-orange);">
+                    <h3 style="color: var(--burnt-orange);">Symbolically Sponsor One Acre</h3>
+                    <div class="donate-amount">$60</div>
+                    <p>Represent one of the 100 acres and help carry this story to audiences around the world.</p>
+                    <a href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" class="btn btn-primary">Give $60</a>
+                </div>
+                
+                <div class="donate-card fade-up">
+                    <h3>Symbolically Sponsor Five Acres</h3>
+                    <div class="donate-amount">$300</div>
+                    <p>Make a larger contribution toward the $6,000 campaign goal.</p>
+                    <a href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" class="btn btn-primary">Give $300</a>
+                </div>
+            </div>
+            
+            <p class="donate-disclaimer fade-up">*Please note: Symbolic acre sponsorship does not provide ownership of any land.</p>
+            
+            <div class="custom-donate fade-up">
+                <a href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" class="btn btn-outline">Choose Any Donation Amount</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentary Journey (Timeline) -->
+    <section class="journey-section" id="journey">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>The Documentary Journey</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>1. Worship and Community</h3>
+                        <p>Capture prayer, preaching, worship, families, and relationships.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2. Leadership and Teaching</h3>
+                        <p>Interview pastors and leaders about their calling, challenges, and hopes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>3. The 100-Acre Development</h3>
+                        <p>Document the cacao, animals, workers, plans, land, and future development.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>4. The Harvest Ahead</h3>
+                        <p>Return with a documentary, photographs, interviews, church presentations, and social-media content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Transparency & FAQ -->
+    <section class="info-section" id="info">
+        <div class="container">
+            <div class="info-grid">
+                <!-- Transparency -->
+                <div class="transparency-box fade-up">
+                    <h2>Financial Transparency</h2>
+                    <p>Donations will be securely administered through The Foundery Church. All funds will be exclusively used for approved trip-related costs.</p>
+                    <p>These costs include international airfare, in-country transportation, lodging, meals, travel requirements, insurance, media storage, and documentary production needs.</p>
+                </div>
+                
+                <!-- FAQ -->
+                <div class="faq-container fade-up">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">What is the total fundraising goal?</button>
+                        <div class="faq-answer">
+                            <p>We are raising $6,000 to cover the estimated costs of $3,000 per person for Pastor Bobby and Sidney to travel to Liberia and produce the documentary.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">Does sponsoring an acre mean I own part of the property?</button>
+                        <div class="faq-answer">
+                            <p>No. Sponsoring an acre is strictly a symbolic gesture to represent the 100-acre development. It does not provide any legal ownership or rights to the land in Liberia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">What will be produced after the trip?</button>
+                        <div class="faq-answer">
+                            <p>We will produce a modern cinematic documentary, along with a library of short videos, high-quality photographs, interviews, and presentation materials to support the ongoing work of the Liberian Free Methodist Church.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">Whose story will the documentary center?</button>
+                        <div class="faq-answer">
+                            <p>The documentary will explicitly center Liberian voices. Our goal is to listen, record, and share what Liberian church leaders and community members are building, rather than focusing on the American visitors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">Can a business, family, or ministry make a larger gift?</button>
+                        <div class="faq-answer">
+                            <p>Absolutely. You can choose any donation amount through our official Church Center giving link. Larger gifts significantly help us reach our $6,000 goal more quickly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-up">
+                <h2>Help Us Tell What God Is Growing</h2>
+                <p>Your support helps carry the voices, faith, work, and future vision of Liberian church leaders far beyond the 100 acres where this story is taking root.</p>
+                <a href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" class="btn btn-primary">Donate to 100 Acres of Hope</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="margin-bottom: 1rem;">The Foundery Church</div>
+            <p>Wellsburg, West Virginia</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 The Foundery Church. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Intersection Observer for Scroll Animations ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-up');
+            fadeElements.forEach(el => observer.observe(el));
+
+
+            // --- Dynamic Fundraising Progress Bar ---
+            const tracker = document.getElementById('fundraising-tracker');
+            const goal = parseFloat(tracker.getAttribute('data-goal'));
+            const raised = parseFloat(tracker.getAttribute('data-raised'));
+            
+            // Calculate values
+            const percentage = Math.min((raised / goal) * 100, 100).toFixed(0);
+            const remaining = Math.max(goal - raised, 0);
+            
+            // Format as Currency
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+            // Update DOM
+            document.getElementById('raised-text').textContent = `Raised: ${formatter.format(raised)}`;
+            document.getElementById('goal-text').textContent = `Goal: ${formatter.format(goal)}`;
+            document.getElementById('percentage-text').textContent = `${percentage}% Funded`;
+            document.getElementById('remaining-text').textContent = `${formatter.format(remaining)} Remaining`;
+
+            // Animate progress bar fill on scroll
+            const progressObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            document.getElementById('progress-fill').style.width = `${percentage}%`;
+                        }, 300); // slight delay for cinematic effect
+                        progressObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            progressObserver.observe(tracker);
+
+
+            // --- FAQ Accordion Logic ---
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    const answer = question.nextElementSibling;
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other accordions
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+                    
+                    // Toggle current accordion
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
