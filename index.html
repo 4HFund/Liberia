@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>100 Acres of Hope | The Foundery Church</title>
+
+  <meta
+    name="description"
+    content="Support Pastor Bobby and Sidney as they travel to Liberia to document the Free Methodist Church and its 100-acre cacao and animal development."
+  />
+
+  <style>
+    :root {
+      --navy: #102732;
+      --navy-light: #1c414d;
+      --green: #496d4b;
+      --green-dark: #294530;
+      --orange: #cf682f;
+      --orange-light: #e98748;
+      --gold: #e0b652;
+      --cream: #f8f3e8;
+      --cream-dark: #e9dfca;
+      --white: #ffffff;
+      --text: #17272e;
+      --muted: #63737a;
+      --shadow: 0 24px 60px rgba(16, 39, 50, 0.15);
+      --radius: 26px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--text);
+      background: var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      transition: 0.25s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(16, 39, 50, 0.94);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .brand-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: -3px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border: 0;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--orange-light), var(--orange));
+      box-shadow: 0 13px 28px rgba(207, 104, 47, 0.32);
+    }
+
+    .button-secondary {
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .button-dark {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 900px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(224, 182, 82, 0.25), transparent 25%),
+        radial-gradient(circle at 12% 76%, rgba(207, 104, 47, 0.24), transparent 30%),
+        linear-gradient(130deg, #102732 0%, #173b48 48%, #294530 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 70
