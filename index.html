@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#10251d">
   <title>100 Acres of Hope | The Foundery Church</title>
   <meta name="description" content="Help Pastor Bobby and Sidney travel to Liberia to center Liberian voices in a modern documentary about churches, leaders, worship, community, cacao, animals, and a growing vision for the future.">
+
   <meta property="og:title" content="100 Acres of Hope">
   <meta property="og:description" content="Plant hope with us and help tell the story of what God is growing through the Free Methodist Church in Liberia.">
   <meta property="og:type" content="website">
@@ -18,101 +19,427 @@
   <meta name="twitter:title" content="100 Acres of Hope">
   <meta name="twitter:description" content="Plant hope with us and help tell what God is growing in Liberia.">
   <meta name="twitter:image" content="https://4hfund.github.io/Liberia/assets/social-card.svg">
+
   <link rel="icon" href="assets/cacao-cross.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://upload.wikimedia.org">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add('js');</script>
 
   <style>
     :root {
-      --ink:#162019; --muted:#526055; --ivory:#f7f2e7; --paper:#fffdf8; --sand:#e9dfcc;
-      --forest-950:#081711; --forest-900:#10251d; --forest-800:#17382b; --forest-700:#23503d;
-      --leaf:#47745a; --cacao:#6c3f2b; --clay:#a74c32; --sun:#e1ad42;
-      --line:rgba(22,32,25,.12); --line-light:rgba(255,253,248,.16);
-      --shadow:0 24px 70px rgba(20,37,29,.14); --radius-lg:32px; --radius-md:22px; --radius-sm:14px;
-      --max:1180px; --scene-opacity:.1;
+      --ink:#162019;
+      --muted:#526055;
+      --ivory:#f7f2e7;
+      --paper:#fffdf8;
+      --sand:#e9dfcc;
+      --forest-950:#081711;
+      --forest-900:#10251d;
+      --forest-800:#17382b;
+      --forest-700:#23503d;
+      --leaf:#47745a;
+      --cacao:#6c3f2b;
+      --clay:#a74c32;
+      --sun:#e1ad42;
+      --line:rgba(22,32,25,.12);
+      --line-light:rgba(255,253,248,.16);
+      --shadow:0 24px 70px rgba(20,37,29,.14);
+      --radius-lg:32px;
+      --radius-md:22px;
+      --max:1180px;
+      --scene-opacity:.1;
     }
+
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:88px;background:var(--forest-950)}
-    body{margin:0;min-width:320px;overflow-x:hidden;background:var(--ivory);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;animation:pageIn .7s ease both}
-    @keyframes pageIn{from{opacity:0}to{opacity:1}}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");mix-blend-mode:multiply}
-    .ambient{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:var(--scene-opacity);transition:background 1.2s ease,opacity 1.2s ease;background:radial-gradient(circle at 70% 12%,#f1c86a,transparent 38%),linear-gradient(#fbf2d5,#dce8d8)}
-    body[data-scene="day"] .ambient{background:radial-gradient(circle at 73% 14%,#ffe29b,transparent 35%),linear-gradient(#fff8e8,#dce9dd)}
+    body{
+      margin:0;
+      min-width:320px;
+      overflow-x:hidden;
+      background:var(--ivory);
+      color:var(--ink);
+      font-family:"DM Sans",sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      animation:pageIn .5s ease both;
+    }
+    @keyframes pageIn{from{opacity:.01}to{opacity:1}}
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:100;
+      opacity:.09;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+      mix-blend-mode:multiply;
+    }
+
+    .ambient{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity:var(--scene-opacity);
+      transition:background 1.2s ease,opacity 1.2s ease;
+      background:radial-gradient(circle at 73% 14%,#ffe29b,transparent 35%),linear-gradient(#fff8e8,#dce9dd);
+    }
     body[data-scene="dusk"] .ambient{background:radial-gradient(circle at 18% 26%,#d97848,transparent 36%),linear-gradient(#8f6659,#243b31);opacity:.16}
     body[data-scene="night"] .ambient{background:radial-gradient(circle at 78% 18%,#345d4a,transparent 34%),linear-gradient(#142920,#06110d);opacity:.22}
+
     main,nav,header,footer{position:relative;z-index:1}
-    h1,h2,h3,p{margin-top:0} h1,h2,h3{font-family:"Fraunces",serif;line-height:1.04;letter-spacing:-.025em}
-    a{color:inherit} img{display:block;width:100%;max-width:100%} button,a{-webkit-tap-highlight-color:transparent} button{font:inherit}
-    .skip-link{position:fixed;left:16px;top:-70px;z-index:999;padding:12px 16px;border-radius:10px;background:var(--paper);color:var(--forest-900);font-weight:700;transition:top .2s ease}.skip-link:focus{top:12px}
-    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.section{padding:clamp(76px,9vw,126px) 0;position:relative}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;color:var(--clay);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.eyebrow::before{content:"";width:30px;height:2px;background:currentColor}
-    .section-title{font-size:clamp(2.15rem,5vw,4.25rem);color:var(--forest-900)}.section-copy{color:var(--muted);font-size:clamp(1rem,1.6vw,1.14rem);line-height:1.78}
-    .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border:1px solid transparent;border-radius:999px;text-decoration:none;font-weight:700;line-height:1;transition:transform .22s ease,background-color .22s ease,border-color .22s ease,box-shadow .22s ease}.btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--clay);color:#fff;box-shadow:0 14px 30px rgba(167,76,50,.28)}.btn-primary:hover{background:#8f3f2a;box-shadow:0 18px 34px rgba(167,76,50,.34)}
-    .btn-light{border-color:rgba(255,255,255,.48);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}.btn-light:hover{background:rgba(255,255,255,.15);border-color:#fff}.btn-outline{border-color:var(--forest-900);color:var(--forest-900);background:transparent}.btn-outline:hover{background:var(--forest-900);color:#fff}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:"Fraunces",serif;line-height:1.04;letter-spacing:-.025em}
+    a{color:inherit}
+    img{display:block;width:100%;max-width:100%}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button{font:inherit}
 
-    .nav{position:absolute;inset:0 0 auto;z-index:20;color:#fff}.nav-inner{width:min(var(--max),calc(100% - 40px));margin-inline:auto;min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.2)}
-    .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:"Fraunces",serif;font-weight:700;font-size:clamp(1rem,2vw,1.2rem)}.brand img{width:40px;height:40px}.nav .btn{min-height:44px;padding:12px 19px;font-size:.9rem}
+    .skip-link{position:fixed;left:16px;top:-70px;z-index:999;padding:12px 16px;border-radius:10px;background:var(--paper);color:var(--forest-900);font-weight:700;transition:top .2s ease}
+    .skip-link:focus{top:12px}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .section{padding:clamp(76px,9vw,126px) 0;position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;color:var(--clay);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:30px;height:2px;background:currentColor}
+    .section-title{font-size:clamp(2.15rem,5vw,4.25rem);color:var(--forest-900)}
+    .section-copy{color:var(--muted);font-size:clamp(1rem,1.6vw,1.14rem);line-height:1.78}
 
-    .hero{min-height:min(940px,100svh);display:grid;align-items:end;color:#fff;isolation:isolate;overflow:hidden;background:var(--forest-950)}
-    .hero-media{position:absolute;inset:-7%;width:114%;height:114%;object-fit:cover;object-position:center 42%;z-index:-4;transform:translate3d(0,var(--parallax-y,0),0) scale(1.04);will-change:transform}
-    .hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(6,20,14,.18),rgba(6,20,14,.44) 42%,rgba(6,20,14,.96)),linear-gradient(90deg,rgba(8,23,17,.76),rgba(8,23,17,.08) 72%)}
+    .btn{
+      min-height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 24px;
+      border:1px solid transparent;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      line-height:1;
+      transition:transform .22s ease,background-color .22s ease,border-color .22s ease,box-shadow .22s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--clay);color:#fff;box-shadow:0 14px 30px rgba(167,76,50,.28)}
+    .btn-primary:hover{background:#8f3f2a;box-shadow:0 18px 34px rgba(167,76,50,.34)}
+    .btn-light{border-color:rgba(255,255,255,.48);color:#fff;background:rgba(8,23,17,.34)}
+    .btn-light:hover{background:rgba(8,23,17,.52);border-color:#fff}
+    .btn-outline{border-color:var(--forest-900);color:var(--forest-900);background:transparent}
+    .btn-outline:hover{background:var(--forest-900);color:#fff}
+
+    .nav{position:absolute;inset:0 0 auto;z-index:20;color:#fff}
+    .nav-inner{width:min(var(--max),calc(100% - 40px));margin-inline:auto;min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid rgba(255,255,255,.22)}
+    .brand{display:inline-flex;align-items:center;gap:12px;min-width:0;text-decoration:none;font-family:"Fraunces",serif;font-weight:700;font-size:clamp(1rem,2vw,1.2rem)}
+    .brand img{width:40px;height:40px;flex:0 0 auto}
+    .nav .btn{min-height:44px;padding:12px 19px;font-size:.9rem;white-space:nowrap}
+    .mobile-label{display:none}
+
+    .hero{
+      position:relative;
+      min-height:min(940px,100vh);
+      display:grid;
+      align-items:end;
+      overflow:hidden;
+      isolation:isolate;
+      color:#fff;
+      background:linear-gradient(145deg,var(--forest-950),var(--forest-800));
+    }
+    .hero-media{
+      position:absolute;
+      inset:-5%;
+      width:110%;
+      height:110%;
+      max-width:none;
+      object-fit:cover;
+      object-position:center 42%;
+      z-index:-4;
+      transform:translate3d(0,var(--parallax-y,0),0) scale(1.025);
+    }
+    .hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(6,20,14,.15),rgba(6,20,14,.42) 42%,rgba(6,20,14,.97)),linear-gradient(90deg,rgba(8,23,17,.8),rgba(8,23,17,.08) 76%)}
     .hero-glow{position:absolute;inset:auto -12vw -24vw auto;width:min(70vw,850px);aspect-ratio:1;border-radius:50%;z-index:-1;background:radial-gradient(circle,rgba(225,173,66,.25),transparent 67%);pointer-events:none}
-    .hero-watermark{position:absolute;right:max(4vw,22px);top:18%;width:min(28vw,320px);opacity:.12;filter:drop-shadow(0 20px 50px rgba(0,0,0,.32))}
-    .hero-inner{width:min(var(--max),calc(100% - 40px));margin-inline:auto;padding:170px 0 72px}.hero-content{max-width:810px}.hero .eyebrow{color:var(--sun)}.hero h1{max-width:790px;margin-bottom:24px;font-size:clamp(3.25rem,9.2vw,7.5rem);font-weight:600;text-wrap:balance}.hero-lede{max-width:700px;margin-bottom:34px;color:rgba(255,255,255,.86);font-size:clamp(1.08rem,2vw,1.32rem);line-height:1.65}.hero-actions{display:flex;flex-wrap:wrap;gap:13px}.hero-note{margin-top:54px;display:flex;align-items:center;gap:18px;max-width:690px;color:rgba(255,255,255,.74);font-size:.92rem;line-height:1.55}.hero-note::before{content:"";flex:0 0 56px;height:1px;background:rgba(255,255,255,.44)}
+    .hero-watermark{position:absolute;right:max(4vw,22px);top:18%;width:min(28vw,320px);opacity:.1}
+    .hero-inner{width:min(var(--max),calc(100% - 40px));margin-inline:auto;padding:170px 0 72px}
+    .hero-content{max-width:810px;opacity:1;transform:none}
+    .hero .eyebrow{color:var(--sun)}
+    .hero h1{max-width:790px;margin-bottom:24px;font-size:clamp(3.25rem,9.2vw,7.5rem);font-weight:600;text-wrap:balance}
+    .hero-lede{max-width:700px;margin-bottom:34px;color:rgba(255,255,255,.88);font-size:clamp(1.08rem,2vw,1.32rem);line-height:1.65}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:13px}
+    .hero-note{margin-top:48px;display:flex;align-items:center;gap:18px;max-width:690px;color:rgba(255,255,255,.76);font-size:.92rem;line-height:1.55}
+    .hero-note::before{content:"";flex:0 0 56px;height:1px;background:rgba(255,255,255,.44)}
 
-    .woven{position:relative;overflow:hidden}.woven::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23fffdf8' stroke-opacity='.16' stroke-width='1.5'%3E%3Cpath d='M0 11h44M0 33h44M11 0v44M33 0v44'/%3E%3Cpath d='m0 0 44 44M44 0 0 44' stroke-opacity='.08'/%3E%3C/g%3E%3C/svg%3E")}
-    .mission-band{background:var(--forest-900);color:#fff}.mission-band-inner{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,6vw,80px);align-items:center;padding:clamp(48px,6vw,74px) 0}.mission-kicker{color:var(--sun);font-family:"Fraunces",serif;font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.08}.mission-band p{margin:0;color:rgba(255,255,255,.76);font-size:clamp(1rem,1.8vw,1.17rem);line-height:1.75}
+    .woven{position:relative;overflow:hidden}
+    .woven::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23fffdf8' stroke-opacity='.16' stroke-width='1.5'%3E%3Cpath d='M0 11h44M0 33h44M11 0v44M33 0v44'/%3E%3Cpath d='m0 0 44 44M44 0 0 44' stroke-opacity='.08'/%3E%3C/g%3E%3C/svg%3E")}
+    .mission-band{background:var(--forest-900);color:#fff}
+    .mission-band-inner{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,6vw,80px);align-items:center;padding:clamp(48px,6vw,74px) 0}
+    .mission-kicker{color:var(--sun);font-family:"Fraunces",serif;font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.08}
+    .mission-band p{margin:0;color:rgba(255,255,255,.76);font-size:clamp(1rem,1.8vw,1.17rem);line-height:1.75}
 
-    .story-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(40px,8vw,108px);align-items:center}.story-copy .section-title{margin-bottom:26px}.story-copy .section-copy+.section-copy{margin-top:18px}.quote{margin-top:32px;padding:24px 0 4px 24px;border-left:3px solid var(--sun);color:var(--forest-700);font-family:"Fraunces",serif;font-size:clamp(1.3rem,2.7vw,1.85rem);font-style:italic;line-height:1.35}
-    .story-visual{position:relative;padding:0 0 42px 42px}.story-visual::before{content:"";position:absolute;left:0;bottom:0;width:58%;height:54%;border-radius:var(--radius-md);background:var(--sun)}.story-photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow);background:var(--sand)}.story-photo img{height:112%;object-fit:cover;object-position:center;transform:translate3d(0,var(--parallax-y,0),0) scale(1.04);will-change:transform}.photo-label{position:absolute;left:18px;right:18px;bottom:18px;padding:14px 16px;border:1px solid rgba(255,255,255,.28);border-radius:14px;background:rgba(8,23,17,.72);color:#fff;backdrop-filter:blur(10px);font-size:.85rem;line-height:1.45}
+    .story-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(40px,8vw,108px);align-items:center}
+    .story-copy .section-title{margin-bottom:26px}
+    .story-copy .section-copy+.section-copy{margin-top:18px}
+    .quote{margin-top:32px;padding:24px 0 4px 24px;border-left:3px solid var(--sun);color:var(--forest-700);font-family:"Fraunces",serif;font-size:clamp(1.3rem,2.7vw,1.85rem);font-style:italic;line-height:1.35}
+    .story-visual{position:relative;padding:0 0 42px 42px}
+    .story-visual::before{content:"";position:absolute;left:0;bottom:0;width:58%;height:54%;border-radius:var(--radius-md);background:var(--sun)}
+    .story-photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow);background:var(--sand)}
+    .story-photo img{height:112%;object-fit:cover;object-position:center;transform:translate3d(0,var(--parallax-y,0),0) scale(1.03)}
+    .photo-label{position:absolute;left:18px;right:18px;bottom:18px;padding:14px 16px;border:1px solid rgba(255,255,255,.28);border-radius:14px;background:rgba(8,23,17,.82);color:#fff;font-size:.85rem;line-height:1.45}
 
-    .cinematic-quote{min-height:640px;display:grid;align-items:center;isolation:isolate;overflow:hidden;color:#fff;background:var(--forest-950)}.cinematic-quote>img{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;z-index:-3;transform:translate3d(0,var(--parallax-y,0),0) scale(1.04)}.cinematic-quote::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(8,23,17,.92),rgba(8,23,17,.56) 62%,rgba(8,23,17,.28)),linear-gradient(0deg,rgba(8,23,17,.55),transparent 55%)}.cinematic-quote blockquote{max-width:920px;margin:0;padding:90px 0;font-family:"Fraunces",serif;font-size:clamp(2.2rem,5.8vw,5rem);line-height:1.06;letter-spacing:-.03em;text-wrap:balance}.cinematic-quote blockquote::before{content:"“";display:block;margin-bottom:10px;color:var(--sun);font-size:1.35em;line-height:.55}.cinematic-quote cite{display:block;margin-top:28px;color:rgba(255,255,255,.7);font-family:"DM Sans",sans-serif;font-size:.84rem;font-style:normal;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .cinematic-quote{position:relative;min-height:640px;display:grid;align-items:center;isolation:isolate;overflow:hidden;color:#fff;background:var(--forest-950)}
+    .cinematic-quote>img{position:absolute;inset:-6%;width:112%;height:112%;max-width:none;object-fit:cover;z-index:-3;transform:translate3d(0,var(--parallax-y,0),0) scale(1.03)}
+    .cinematic-quote::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(8,23,17,.94),rgba(8,23,17,.58) 62%,rgba(8,23,17,.3)),linear-gradient(0deg,rgba(8,23,17,.55),transparent 55%)}
+    .cinematic-quote blockquote{max-width:920px;margin:0;padding:90px 0;font-family:"Fraunces",serif;font-size:clamp(2.2rem,5.8vw,5rem);line-height:1.06;letter-spacing:-.03em;text-wrap:balance}
+    .cinematic-quote blockquote::before{content:"“";display:block;margin-bottom:10px;color:var(--sun);font-size:1.35em;line-height:.55}
+    .cinematic-quote cite{display:block;margin-top:28px;color:rgba(255,255,255,.72);font-family:"DM Sans",sans-serif;font-size:.84rem;font-style:normal;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 
-    .image-story{background:var(--paper)}.photo-grid{display:grid;grid-template-columns:1.25fr .75fr;grid-template-rows:repeat(2,minmax(230px,1fr));gap:16px}.photo-card{position:relative;min-height:260px;overflow:hidden;border-radius:var(--radius-md);background:var(--sand)}.photo-card:first-child{grid-row:1/3;min-height:540px}.photo-card img{width:100%;height:112%;object-fit:cover;transform:translate3d(0,var(--parallax-y,0),0) scale(1.04);transition:filter .5s ease;will-change:transform}.photo-card:hover img{filter:saturate(1.08) contrast(1.03)}.photo-card::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.23;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.16'/%3E%3C/svg%3E");mix-blend-mode:soft-light}.photo-card::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(8,23,17,.84))}.photo-caption{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;color:#fff}.photo-caption strong{display:block;margin-bottom:5px;font-family:"Fraunces",serif;font-size:1.22rem}.photo-caption span{color:rgba(255,255,255,.76);font-size:.8rem;line-height:1.4}
+    .image-story{background:var(--paper)}
+    .photo-grid{display:grid;grid-template-columns:1.25fr .75fr;grid-template-rows:repeat(2,minmax(230px,1fr));gap:16px}
+    .photo-card{position:relative;min-height:260px;overflow:hidden;border-radius:var(--radius-md);background:var(--sand)}
+    .photo-card:first-child{grid-row:1/3;min-height:540px}
+    .photo-card img{width:100%;height:112%;object-fit:cover;transform:translate3d(0,var(--parallax-y,0),0) scale(1.03);transition:filter .5s ease}
+    .photo-card:hover img{filter:saturate(1.08) contrast(1.03)}
+    .photo-card::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(8,23,17,.84))}
+    .photo-caption{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;color:#fff}
+    .photo-caption strong{display:block;margin-bottom:5px;font-family:"Fraunces",serif;font-size:1.22rem}
+    .photo-caption span{color:rgba(255,255,255,.76);font-size:.8rem;line-height:1.4}
 
-    .impact{background:var(--forest-900);color:#fff;overflow:hidden}.impact::after{content:"";position:absolute;right:-180px;top:-240px;width:620px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(225,173,66,.22);box-shadow:0 0 0 90px rgba(225,173,66,.025),0 0 0 180px rgba(225,173,66,.018)}.impact .section-title{color:#fff}.impact .section-copy{color:rgba(255,255,255,.7)}.impact-head{max-width:760px;margin-bottom:54px}.impact-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}.impact-card{position:relative;min-height:235px;padding:30px;border:1px solid var(--line-light);border-radius:var(--radius-md);background:rgba(255,255,255,.045);backdrop-filter:blur(6px);transition:transform .25s ease,background .25s ease,border-color .25s ease}.impact-card:nth-child(1){grid-column:span 7;min-height:310px}.impact-card:nth-child(2){grid-column:span 5}.impact-card:nth-child(3),.impact-card:nth-child(4),.impact-card:nth-child(5){grid-column:span 4}.impact-card:nth-child(6){grid-column:span 12;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;min-height:170px}.impact-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.075);border-color:rgba(225,173,66,.42)}.impact-icon{width:48px;height:48px;margin-bottom:28px;display:grid;place-items:center;border-radius:50%;background:rgba(225,173,66,.12);color:var(--sun);font-size:1.15rem}.impact-card:nth-child(6) .impact-icon{margin:0}.impact-card h3{margin-bottom:12px;font-size:1.45rem;color:#fff}.impact-card p{margin-bottom:0;color:rgba(255,255,255,.68);line-height:1.66}
+    .impact{background:var(--forest-900);color:#fff;overflow:hidden}
+    .impact::after{content:"";position:absolute;right:-180px;top:-240px;width:620px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(225,173,66,.22);box-shadow:0 0 0 90px rgba(225,173,66,.025),0 0 0 180px rgba(225,173,66,.018)}
+    .impact .section-title{color:#fff}
+    .impact .section-copy{color:rgba(255,255,255,.7)}
+    .impact-head{max-width:760px;margin-bottom:54px}
+    .impact-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+    .impact-card{position:relative;min-height:235px;padding:30px;border:1px solid var(--line-light);border-radius:var(--radius-md);background:rgba(255,255,255,.045);transition:transform .25s ease,background .25s ease,border-color .25s ease}
+    .impact-card:nth-child(1){grid-column:span 7;min-height:310px}
+    .impact-card:nth-child(2){grid-column:span 5}
+    .impact-card:nth-child(3),.impact-card:nth-child(4),.impact-card:nth-child(5){grid-column:span 4}
+    .impact-card:nth-child(6){grid-column:span 12;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;min-height:170px}
+    .impact-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.075);border-color:rgba(225,173,66,.42)}
+    .impact-icon{width:48px;height:48px;margin-bottom:28px;display:grid;place-items:center;border-radius:50%;background:rgba(225,173,66,.12);color:var(--sun);font-size:1.15rem}
+    .impact-card:nth-child(6) .impact-icon{margin:0}
+    .impact-card h3{margin-bottom:12px;font-size:1.45rem;color:#fff}
+    .impact-card p{margin-bottom:0;color:rgba(255,255,255,.68);line-height:1.66}
 
-    .journey{background:linear-gradient(180deg,#fffaf0 0%,#edf2e9 55%,#d7e1d8 100%);overflow:clip}.journey::before{content:"";position:absolute;inset:0;opacity:.24;background-image:radial-gradient(circle at 16% 16%,rgba(225,173,66,.42),transparent 24%),radial-gradient(circle at 86% 68%,rgba(35,80,61,.32),transparent 30%)}.journey-head{position:relative;z-index:1;display:grid;grid-template-columns:.86fr 1.14fr;gap:50px;align-items:end;margin-bottom:56px}.journey-head .section-copy{margin-bottom:4px}.journey-shell{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(330px,.72fr);gap:clamp(30px,5vw,72px);align-items:start}.journey-map{position:sticky;top:24px;min-height:650px;border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(145deg,#10251d,#17382b 52%,#6c3f2b);box-shadow:var(--shadow);color:#fff}.journey-map::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.16))}.journey-map svg{position:absolute;inset:0;width:100%;height:100%}.map-label{position:absolute;z-index:2;left:30px;bottom:26px;max-width:320px}.map-label strong{display:block;margin-bottom:7px;font-family:"Fraunces",serif;font-size:1.5rem}.map-label span{color:rgba(255,255,255,.7);font-size:.84rem;line-height:1.5}.route-base{fill:none;stroke:rgba(255,255,255,.18);stroke-width:5;stroke-linecap:round;stroke-dasharray:8 14}.route-progress{fill:none;stroke:var(--sun);stroke-width:6;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;filter:drop-shadow(0 0 8px rgba(225,173,66,.55));transition:stroke-dashoffset .75s cubic-bezier(.2,.8,.2,1)}.route-node circle:first-child{fill:#10251d;stroke:rgba(255,255,255,.32);stroke-width:3;transition:fill .4s ease,stroke .4s ease,transform .4s ease;transform-origin:center}.route-node circle:last-child{fill:var(--sun);opacity:0;transition:opacity .4s ease}.route-node.active circle:first-child{fill:var(--clay);stroke:var(--sun);transform:scale(1.08)}.route-node.active circle:last-child{opacity:1}.route-node text{fill:rgba(255,255,255,.76);font:700 18px "DM Sans",sans-serif;letter-spacing:.02em}.map-land{fill:rgba(255,255,255,.065);stroke:rgba(255,255,255,.12);stroke-width:2}.map-ocean-line{fill:none;stroke:rgba(255,255,255,.04);stroke-width:2}
-    .journey-stops{display:grid;gap:22px;padding:4px 0 120px}.journey-stop{position:relative;overflow:hidden;min-height:360px;padding:230px 26px 28px;border:1px solid rgba(22,32,25,.1);border-radius:var(--radius-md);background:var(--paper);box-shadow:0 16px 46px rgba(20,37,29,.08);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}.journey-stop.active{transform:translateX(-8px);border-color:rgba(167,76,50,.42);box-shadow:0 24px 64px rgba(20,37,29,.16)}.journey-thumb{position:absolute;inset:0 0 auto;height:205px;overflow:hidden;background:var(--forest-800)}.journey-thumb img{width:100%;height:118%;object-fit:cover;transform:translate3d(0,var(--parallax-y,0),0) scale(1.05)}.journey-thumb::after{content:"";position:absolute;inset:38% 0 0;background:linear-gradient(transparent,rgba(8,23,17,.58))}.journey-stop-tag{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:var(--clay);font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.journey-stop-tag::before{content:"";width:22px;height:2px;background:currentColor}.journey-stop h3{margin-bottom:12px;color:var(--forest-900);font-size:clamp(1.5rem,2.4vw,2rem)}.journey-stop p{margin:0;color:var(--muted);line-height:1.68}
+    .journey{background:linear-gradient(180deg,#fffaf0 0%,#edf2e9 55%,#d7e1d8 100%);overflow:clip}
+    .journey::before{content:"";position:absolute;inset:0;opacity:.24;background-image:radial-gradient(circle at 16% 16%,rgba(225,173,66,.42),transparent 24%),radial-gradient(circle at 86% 68%,rgba(35,80,61,.32),transparent 30%)}
+    .journey-head{position:relative;z-index:1;display:grid;grid-template-columns:.86fr 1.14fr;gap:50px;align-items:end;margin-bottom:56px}
+    .journey-head .section-copy{margin-bottom:4px}
+    .journey-shell{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(330px,.72fr);gap:clamp(30px,5vw,72px);align-items:start}
+    .journey-map{position:sticky;top:24px;min-height:650px;border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(145deg,#10251d,#17382b 52%,#6c3f2b);box-shadow:var(--shadow);color:#fff}
+    .journey-map::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.16))}
+    .journey-map svg{position:absolute;inset:0;width:100%;height:100%}
+    .map-label{position:absolute;z-index:2;left:30px;bottom:26px;max-width:320px}
+    .map-label strong{display:block;margin-bottom:7px;font-family:"Fraunces",serif;font-size:1.5rem}
+    .map-label span{color:rgba(255,255,255,.72);font-size:.84rem;line-height:1.5}
+    .route-base{fill:none;stroke:rgba(255,255,255,.18);stroke-width:5;stroke-linecap:round;stroke-dasharray:8 14}
+    .route-progress{fill:none;stroke:var(--sun);stroke-width:6;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;filter:drop-shadow(0 0 8px rgba(225,173,66,.55));transition:stroke-dashoffset .75s cubic-bezier(.2,.8,.2,1)}
+    .route-node circle:first-child{fill:#10251d;stroke:rgba(255,255,255,.32);stroke-width:3;transition:fill .4s ease,stroke .4s ease,transform .4s ease;transform-origin:center}
+    .route-node circle:last-child{fill:var(--sun);opacity:0;transition:opacity .4s ease}
+    .route-node.active circle:first-child{fill:var(--clay);stroke:var(--sun);transform:scale(1.08)}
+    .route-node.active circle:last-child{opacity:1}
+    .route-node text{fill:rgba(255,255,255,.76);font:700 18px "DM Sans",sans-serif;letter-spacing:.02em}
+    .map-land{fill:rgba(255,255,255,.065);stroke:rgba(255,255,255,.12);stroke-width:2}
+    .map-ocean-line{fill:none;stroke:rgba(255,255,255,.04);stroke-width:2}
+    .journey-stops{display:grid;gap:22px;padding:4px 0 120px}
+    .journey-stop{position:relative;overflow:hidden;min-height:360px;padding:230px 26px 28px;border:1px solid rgba(22,32,25,.1);border-radius:var(--radius-md);background:var(--paper);box-shadow:0 16px 46px rgba(20,37,29,.08);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+    .journey-stop.active{transform:translateX(-8px);border-color:rgba(167,76,50,.42);box-shadow:0 24px 64px rgba(20,37,29,.16)}
+    .journey-thumb{position:absolute;inset:0 0 auto;height:205px;overflow:hidden;background:var(--forest-800)}
+    .journey-thumb img{width:100%;height:118%;object-fit:cover;transform:translate3d(0,var(--parallax-y,0),0) scale(1.04)}
+    .journey-thumb::after{content:"";position:absolute;inset:38% 0 0;background:linear-gradient(transparent,rgba(8,23,17,.58))}
+    .journey-stop-tag{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;color:var(--clay);font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .journey-stop-tag::before{content:"";width:22px;height:2px;background:currentColor}
+    .journey-stop h3{margin-bottom:12px;color:var(--forest-900);font-size:clamp(1.5rem,2.4vw,2rem)}
+    .journey-stop p{margin:0;color:var(--muted);line-height:1.68}
 
-    .mission-progress{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.mission-progress-inner{padding:48px 0}.mission-progress-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:28px}.mission-progress-head h2{margin:0;color:var(--forest-900);font-size:clamp(1.65rem,3vw,2.45rem)}.mission-progress-head span{color:var(--clay);font-weight:800;font-size:.8rem;letter-spacing:.11em;text-transform:uppercase}.progress-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.progress-track::before{content:"";position:absolute;left:8%;right:8%;top:15px;height:2px;background:var(--sand)}.progress-track::after{content:"";position:absolute;left:8%;top:15px;width:21%;height:2px;background:var(--clay)}.progress-phase{position:relative;z-index:1;text-align:center;color:var(--muted);font-size:.78rem;font-weight:700}.progress-dot{width:30px;height:30px;margin:0 auto 10px;border:5px solid var(--paper);border-radius:50%;background:var(--sand);box-shadow:0 0 0 1px var(--line)}.progress-phase.done .progress-dot{background:var(--forest-700)}.progress-phase.active .progress-dot{background:var(--clay);box-shadow:0 0 0 1px var(--clay),0 0 0 7px rgba(167,76,50,.12)}.progress-phase.active{color:var(--clay)}
+    .mission-progress{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .mission-progress-inner{padding:48px 0}
+    .mission-progress-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:28px}
+    .mission-progress-head h2{margin:0;color:var(--forest-900);font-size:clamp(1.65rem,3vw,2.45rem)}
+    .mission-progress-head span{color:var(--clay);font-weight:800;font-size:.8rem;letter-spacing:.11em;text-transform:uppercase}
+    .progress-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+    .progress-track::before{content:"";position:absolute;left:8%;right:8%;top:15px;height:2px;background:var(--sand)}
+    .progress-track::after{content:"";position:absolute;left:8%;top:15px;width:21%;height:2px;background:var(--clay)}
+    .progress-phase{position:relative;z-index:1;text-align:center;color:var(--muted);font-size:.78rem;font-weight:700}
+    .progress-dot{width:30px;height:30px;margin:0 auto 10px;border:5px solid var(--paper);border-radius:50%;background:var(--sand);box-shadow:0 0 0 1px var(--line)}
+    .progress-phase.done .progress-dot{background:var(--forest-700)}
+    .progress-phase.active .progress-dot{background:var(--clay);box-shadow:0 0 0 1px var(--clay),0 0 0 7px rgba(167,76,50,.12)}
+    .progress-phase.active{color:var(--clay)}
 
-    .giving{background:var(--ivory)}.giving-head{max-width:760px;margin-inline:auto;text-align:center;margin-bottom:52px}.giving-head .eyebrow{justify-content:center}.giving-head .section-title{margin-bottom:20px}.giving-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.gift-card{display:flex;flex-direction:column;min-height:390px;padding:34px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--paper);box-shadow:0 14px 50px rgba(20,37,29,.06)}.gift-card.featured{background:var(--forest-900);color:#fff;border-color:var(--forest-900);transform:translateY(-10px);box-shadow:0 26px 70px rgba(20,37,29,.22)}.gift-amount{margin-bottom:12px;color:var(--clay);font-family:"Fraunces",serif;font-size:clamp(2.4rem,4vw,3.4rem);font-weight:700}.featured .gift-amount{color:var(--sun)}.gift-card h3{margin-bottom:16px;font-size:1.48rem}.gift-card p{flex:1;margin-bottom:28px;color:var(--muted);line-height:1.68}.featured p{color:rgba(255,255,255,.7)}.gift-card .btn{width:100%}.giving-note{max-width:770px;margin:34px auto 0;color:var(--muted);text-align:center;font-size:.9rem;line-height:1.6}
-    .transparency{padding:0 0 clamp(76px,9vw,126px);background:var(--ivory)}.transparency-card{position:relative;overflow:hidden;display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center;padding:clamp(34px,6vw,64px);border-radius:var(--radius-lg);background:var(--cacao);color:#fff;box-shadow:var(--shadow)}.transparency-card::after{content:"";position:absolute;right:-120px;bottom:-190px;width:400px;aspect-ratio:1;border-radius:50%;border:70px solid rgba(255,255,255,.04)}.transparency-card h2{margin:0;font-size:clamp(2rem,4vw,3.2rem)}.transparency-card p{position:relative;z-index:2;margin:0;color:rgba(255,255,255,.78);line-height:1.75}
-    .faq{background:var(--paper)}.faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(40px,8vw,100px)}.faq-title{position:sticky;top:30px;align-self:start}.faq-title .section-title{margin-bottom:20px}.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0;border:0;background:transparent;color:var(--forest-900);text-align:left;font-family:"Fraunces",serif;font-size:clamp(1.08rem,2.2vw,1.3rem);font-weight:700;cursor:pointer}.faq-icon{flex:0 0 34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--clay);transition:transform .25s ease,background .25s ease}.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--forest-900);color:#fff}.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease}.faq-a>div{overflow:hidden}.faq-a p{margin:0;padding:0 54px 0 0;color:var(--muted);line-height:1.72}.faq-item.open .faq-a{grid-template-rows:1fr}.faq-item.open .faq-a p{padding-bottom:25px}
+    .giving{background:var(--ivory)}
+    .giving-head{max-width:760px;margin-inline:auto;text-align:center;margin-bottom:52px}
+    .giving-head .eyebrow{justify-content:center}
+    .giving-head .section-title{margin-bottom:20px}
+    .giving-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .gift-card{display:flex;flex-direction:column;min-height:390px;padding:34px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--paper);box-shadow:0 14px 50px rgba(20,37,29,.06)}
+    .gift-card.featured{background:var(--forest-900);color:#fff;border-color:var(--forest-900);transform:translateY(-10px);box-shadow:0 26px 70px rgba(20,37,29,.22)}
+    .gift-amount{margin-bottom:12px;color:var(--clay);font-family:"Fraunces",serif;font-size:clamp(2.4rem,4vw,3.4rem);font-weight:700}
+    .featured .gift-amount{color:var(--sun)}
+    .gift-card h3{margin-bottom:16px;font-size:1.48rem}
+    .gift-card p{flex:1;margin-bottom:28px;color:var(--muted);line-height:1.68}
+    .featured p{color:rgba(255,255,255,.7)}
+    .gift-card .btn{width:100%}
+    .giving-note{max-width:770px;margin:34px auto 0;color:var(--muted);text-align:center;font-size:.9rem;line-height:1.6}
 
-    .final-cta{position:relative;min-height:680px;display:grid;align-items:center;isolation:isolate;color:#fff;background:var(--forest-950);overflow:hidden}.final-cta>img{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;z-index:-3;transform:translate3d(0,var(--parallax-y,0),0) scale(1.04)}.final-cta::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,23,17,.95),rgba(8,23,17,.76) 55%,rgba(8,23,17,.42))}.final-inner{max-width:790px;padding:90px 0}.final-cta .eyebrow{color:var(--sun)}.final-cta h2{margin-bottom:24px;font-size:clamp(2.8rem,7vw,5.7rem);text-wrap:balance}.final-cta p{max-width:660px;margin-bottom:34px;color:rgba(255,255,255,.78);font-size:clamp(1.03rem,1.8vw,1.2rem);line-height:1.72}
-    footer{padding:48px 0 90px;background:var(--forest-950);color:rgba(255,255,255,.62)}.footer-inner{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end}.footer-brand{margin-bottom:8px;color:#fff;font-family:"Fraunces",serif;font-size:1.3rem;font-weight:700}.footer-copy{max-width:560px;font-size:.88rem;line-height:1.6}.credits{max-width:520px;text-align:right;font-size:.72rem;line-height:1.55}.credits a{color:rgba(255,255,255,.78)}
-    .mobile-give{position:fixed;z-index:80;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:none;min-height:54px;align-items:center;justify-content:center;border-radius:999px;background:var(--clay);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 16px 36px rgba(8,23,17,.35)}
-    .reveal{opacity:0;transform:translateY(28px);filter:blur(4px);transition:opacity .8s ease,transform .8s ease,filter .8s ease}.reveal.in{opacity:1;transform:none;filter:none}:focus-visible{outline:3px solid var(--sun);outline-offset:4px}
+    .transparency{padding:0 0 clamp(76px,9vw,126px);background:var(--ivory)}
+    .transparency-card{position:relative;overflow:hidden;display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center;padding:clamp(34px,6vw,64px);border-radius:var(--radius-lg);background:var(--cacao);color:#fff;box-shadow:var(--shadow)}
+    .transparency-card::after{content:"";position:absolute;right:-120px;bottom:-190px;width:400px;aspect-ratio:1;border-radius:50%;border:70px solid rgba(255,255,255,.04)}
+    .transparency-card h2{margin:0;font-size:clamp(2rem,4vw,3.2rem)}
+    .transparency-card p{position:relative;z-index:2;margin:0;color:rgba(255,255,255,.8);line-height:1.75}
 
-    @media(max-width:1000px){.story-grid,.journey-head,.faq-layout{grid-template-columns:1fr}.impact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.impact-card,.impact-card:nth-child(n){grid-column:auto;min-height:240px}.impact-card:nth-child(6){display:block}.impact-card:nth-child(6) .impact-icon{margin-bottom:28px}.journey-shell{grid-template-columns:1fr}.journey-map{display:none}.journey-stops{position:relative;padding:0 0 20px 44px}.journey-stops::before{content:"";position:absolute;left:14px;top:20px;bottom:42px;width:2px;background:linear-gradient(var(--sun),var(--clay),var(--forest-700))}.journey-stop::before{content:"";position:absolute;z-index:4;left:-39px;top:34px;width:18px;height:18px;border:4px solid #fff;border-radius:50%;background:var(--clay);box-shadow:0 0 0 2px rgba(167,76,50,.35)}.journey-stop.active{transform:none}.giving-grid{grid-template-columns:1fr;max-width:680px;margin-inline:auto}.gift-card,.gift-card.featured{min-height:0;transform:none}.transparency-card{grid-template-columns:1fr;gap:22px}.faq-title{position:static}}
-    @media(max-width:760px){.wrap,.nav-inner,.hero-inner{width:min(100% - 28px,var(--max))}.section{padding:74px 0}.nav-inner{min-height:76px}.brand img{width:34px;height:34px}.nav .btn{padding:11px 15px}.hero{min-height:780px}.hero-media{object-position:58% center}.hero-inner{padding:144px 0 52px}.hero h1{font-size:clamp(3.2rem,17vw,5.6rem)}.hero-actions .btn{width:100%}.hero-note{margin-top:34px;align-items:flex-start}.hero-watermark{top:12%;width:160px}.mission-band-inner{grid-template-columns:1fr;gap:18px}.story-grid{gap:54px}.story-visual{padding:0 0 24px 24px}.cinematic-quote{min-height:590px}.photo-grid{grid-template-columns:1fr;grid-template-rows:auto}.photo-card,.photo-card:first-child{grid-row:auto;min-height:340px}.impact-grid{grid-template-columns:1fr}.impact-card{min-height:0}.journey-stops{padding-left:34px}.journey-stops::before{left:8px}.journey-stop::before{left:-34px}.journey-stop{min-height:0;padding:210px 22px 26px}.journey-thumb{height:185px}.mission-progress-head{align-items:flex-start;flex-direction:column}.progress-track{gap:2px}.progress-phase{font-size:.66rem}.footer-inner{grid-template-columns:1fr}.credits{text-align:left}.mobile-give{display:flex}footer{padding-bottom:104px}}
-    @media(max-width:480px){.brand span{max-width:150px;line-height:1.02}.nav .btn{font-size:.78rem}.hero-note::before{flex-basis:30px}.gift-card{padding:28px 24px}.transparency-card{border-radius:24px}.faq-a p{padding-right:0}.progress-phase span{display:none}.progress-phase.active span{display:inline}.progress-track::before{left:5%;right:5%}.progress-track::after{left:5%;width:22%}}
+    .faq{background:var(--paper)}
+    .faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(40px,8vw,100px)}
+    .faq-title{position:sticky;top:30px;align-self:start}
+    .faq-title .section-title{margin-bottom:20px}
+    .faq-list{border-top:1px solid var(--line)}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0;border:0;background:transparent;color:var(--forest-900);text-align:left;font-family:"Fraunces",serif;font-size:clamp(1.08rem,2.2vw,1.3rem);font-weight:700;cursor:pointer}
+    .faq-icon{flex:0 0 34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--clay);transition:transform .25s ease,background .25s ease}
+    .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--forest-900);color:#fff}
+    .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease}
+    .faq-a>div{overflow:hidden}
+    .faq-a p{margin:0;padding:0 54px 0 0;color:var(--muted);line-height:1.72}
+    .faq-item.open .faq-a{grid-template-rows:1fr}
+    .faq-item.open .faq-a p{padding-bottom:25px}
+
+    .final-cta{position:relative;min-height:680px;display:grid;align-items:center;isolation:isolate;color:#fff;background:var(--forest-950);overflow:hidden}
+    .final-cta>img{position:absolute;inset:-6%;width:112%;height:112%;max-width:none;object-fit:cover;z-index:-3;transform:translate3d(0,var(--parallax-y,0),0) scale(1.03)}
+    .final-cta::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,23,17,.95),rgba(8,23,17,.76) 55%,rgba(8,23,17,.42))}
+    .final-inner{max-width:790px;padding:90px 0}
+    .final-cta .eyebrow{color:var(--sun)}
+    .final-cta h2{margin-bottom:24px;font-size:clamp(2.8rem,7vw,5.7rem);text-wrap:balance}
+    .final-cta p{max-width:660px;margin-bottom:34px;color:rgba(255,255,255,.8);font-size:clamp(1.03rem,1.8vw,1.2rem);line-height:1.72}
+
+    footer{padding:48px 0 90px;background:var(--forest-950);color:rgba(255,255,255,.62)}
+    .footer-inner{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end}
+    .footer-brand{margin-bottom:8px;color:#fff;font-family:"Fraunces",serif;font-size:1.3rem;font-weight:700}
+    .footer-copy{max-width:560px;font-size:.88rem;line-height:1.6}
+    .credits{max-width:520px;text-align:right;font-size:.72rem;line-height:1.55}
+    .credits a{color:rgba(255,255,255,.78)}
+
+    .mobile-give{position:fixed;z-index:80;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:none;min-height:56px;align-items:center;justify-content:center;border-radius:999px;background:var(--clay);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 16px 36px rgba(8,23,17,.35)}
+
+    .reveal{opacity:1;transform:none}
+    @media(min-width:761px){
+      .js-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+      .js-ready .reveal.in{opacity:1;transform:none}
+    }
+    :focus-visible{outline:3px solid var(--sun);outline-offset:4px}
+
+    @media(max-width:1000px){
+      .story-grid,.journey-head,.faq-layout{grid-template-columns:1fr}
+      .impact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .impact-card,.impact-card:nth-child(n){grid-column:auto;min-height:240px}
+      .impact-card:nth-child(6){display:block}
+      .impact-card:nth-child(6) .impact-icon{margin-bottom:28px}
+      .journey-shell{grid-template-columns:1fr}
+      .journey-map{display:none}
+      .journey-stops{position:relative;padding:0 0 20px 44px}
+      .journey-stops::before{content:"";position:absolute;left:14px;top:20px;bottom:42px;width:2px;background:linear-gradient(var(--sun),var(--clay),var(--forest-700))}
+      .journey-stop::before{content:"";position:absolute;z-index:4;left:-39px;top:34px;width:18px;height:18px;border:4px solid #fff;border-radius:50%;background:var(--clay);box-shadow:0 0 0 2px rgba(167,76,50,.35)}
+      .journey-stop.active{transform:none}
+      .giving-grid{grid-template-columns:1fr;max-width:680px;margin-inline:auto}
+      .gift-card,.gift-card.featured{min-height:0;transform:none}
+      .transparency-card{grid-template-columns:1fr;gap:22px}
+      .faq-title{position:static}
+    }
+
+    @media(max-width:760px){
+      body{animation:none}
+      body::before{position:absolute;opacity:.045;mix-blend-mode:normal}
+      .ambient{display:none}
+      .wrap,.nav-inner,.hero-inner{width:min(calc(100% - 28px),var(--max))}
+      .section{padding:72px 0}
+      .nav-inner{min-height:76px;gap:10px}
+      .brand{gap:9px;font-size:1rem}
+      .brand img{width:34px;height:34px}
+      .brand span{white-space:nowrap}
+      .nav .btn{min-height:42px;padding:10px 14px;font-size:.8rem;background:rgba(8,23,17,.48)}
+      .desktop-label{display:none}
+      .mobile-label{display:inline}
+
+      .hero{min-height:760px;align-items:end}
+      .hero-media{inset:0;width:100%;height:100%;object-position:56% center;transform:none!important;will-change:auto}
+      .hero::after{background:linear-gradient(180deg,rgba(5,16,12,.35),rgba(5,16,12,.47) 34%,rgba(5,16,12,.98) 83%),linear-gradient(90deg,rgba(8,23,17,.4),rgba(8,23,17,.08))}
+      .hero-watermark{display:none}
+      .hero-inner{padding:122px 0 88px}
+      .hero-content{display:block!important;opacity:1!important;transform:none!important;filter:none!important;visibility:visible!important}
+      .hero .eyebrow{margin-bottom:14px;font-size:.66rem;line-height:1.45}
+      .hero h1{margin-bottom:18px;font-size:clamp(3rem,15vw,4.8rem)}
+      .hero-lede{margin-bottom:25px;font-size:1rem;line-height:1.58}
+      .hero-actions{gap:10px}
+      .hero-actions .btn{width:100%}
+      .hero-note{margin-top:25px;align-items:flex-start;font-size:.82rem}
+      .hero-note::before{flex-basis:30px}
+
+      .mission-band-inner{grid-template-columns:1fr;gap:18px}
+      .story-grid{gap:52px}
+      .story-visual{padding:0 0 24px 24px}
+      .story-photo img,.photo-card img,.journey-thumb img,.cinematic-quote>img,.final-cta>img{transform:none!important;will-change:auto}
+      .cinematic-quote{min-height:560px}
+      .cinematic-quote>img,.final-cta>img{inset:0;width:100%;height:100%}
+      .photo-grid{grid-template-columns:1fr;grid-template-rows:auto}
+      .photo-card,.photo-card:first-child{grid-row:auto;min-height:340px}
+      .impact-grid{grid-template-columns:1fr}
+      .impact-card{min-height:0}
+      .journey-stops{padding-left:34px}
+      .journey-stops::before{left:8px}
+      .journey-stop::before{left:-34px}
+      .journey-stop{min-height:0;padding:210px 22px 26px}
+      .journey-thumb{height:185px}
+      .mission-progress-head{align-items:flex-start;flex-direction:column}
+      .progress-track{gap:2px}
+      .progress-phase{font-size:.66rem}
+      .footer-inner{grid-template-columns:1fr}
+      .credits{text-align:left}
+      .mobile-give{display:flex}
+      footer{padding-bottom:104px}
+    }
+
+    @media(max-width:480px){
+      .brand span{max-width:175px;overflow:hidden;text-overflow:ellipsis}
+      .nav .btn{font-size:.76rem;padding-inline:12px}
+      .gift-card{padding:28px 24px}
+      .transparency-card{border-radius:24px}
+      .faq-a p{padding-right:0}
+      .progress-phase span{display:none}
+      .progress-phase.active span{display:inline}
+      .progress-track::before{left:5%;right:5%}
+      .progress-track::after{left:5%;width:22%}
+    }
+
     @media(hover:none){.btn:hover,.impact-card:hover{transform:none}.photo-card:hover img{filter:none}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none;filter:none}.hero-media,.story-photo img,.photo-card img,.journey-thumb img,.cinematic-quote>img,.final-cta>img{transform:scale(1.04)!important}}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .reveal{opacity:1!important;transform:none!important}
+      .hero-media,.story-photo img,.photo-card img,.journey-thumb img,.cinematic-quote>img,.final-cta>img{transform:none!important}
+    }
   </style>
 </head>
+
 <body data-scene="day">
   <div class="ambient" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to the story</a>
 
   <nav class="nav" aria-label="Primary navigation">
     <div class="nav-inner">
-      <a class="brand" href="#top" aria-label="100 Acres of Hope home"><img src="assets/cacao-cross.svg" alt=""><span>100 Acres of Hope</span></a>
-      <a class="btn btn-light" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Plant Hope With Us</a>
+      <a class="brand" href="#top" aria-label="100 Acres of Hope home">
+        <img src="assets/cacao-cross.svg" alt="">
+        <span>100 Acres of Hope</span>
+      </a>
+      <a class="btn btn-light" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">
+        <span class="desktop-label">Plant Hope With Us</span>
+        <span class="mobile-label">Plant Hope</span>
+      </a>
     </div>
   </nav>
 
   <header class="hero" id="top" data-scene="day">
-    <img class="hero-media" data-parallax="0.16" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Liberia%2C_west_africa_2014_-_panoramio_%282%29.jpg?width=1900" alt="A Methodist church and green landscape in Liberia">
+    <img class="hero-media" data-parallax="0.11" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Liberia%2C_west_africa_2014_-_panoramio_%282%29.jpg" alt="A Methodist church and green landscape in Liberia" fetchpriority="high" decoding="async">
     <div class="hero-glow" aria-hidden="true"></div>
     <img class="hero-watermark" src="assets/cacao-cross.svg" alt="" aria-hidden="true">
+
     <div class="hero-inner">
-      <div class="hero-content reveal">
+      <div class="hero-content">
         <div class="eyebrow">The Foundery Church · Liberia Documentary Mission</div>
         <h1>Help us tell what God is growing.</h1>
         <p class="hero-lede">Pastor Bobby and Sidney are traveling to Liberia as ministry partners, listeners, and storytellers. Together, they will create a modern documentary centered on Liberian churches, leaders, worship, community life, and a growing cacao and animal development project.</p>
@@ -142,19 +469,23 @@
           <p class="section-copy">Pastor Bobby and Sidney will capture interviews, worship, teaching, agriculture, community life, and the vision behind the cacao and animal development. The goal is not to make themselves the story, but to help Liberian leaders tell it in their own words.</p>
           <div class="quote">“Faith is being planted in people, and hope is being planted in the ground.”</div>
         </div>
+
         <div class="story-visual reveal">
           <figure class="story-photo">
-            <img data-parallax="0.08" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ganta%2C_Liberia_-_panoramio.jpg?width=1200" alt="Green fields and countryside near Ganta, Liberia" loading="lazy" decoding="async">
+            <img data-parallax="0.05" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Ganta%2C_Liberia_-_panoramio.jpg" alt="Green rice fields and countryside near Ganta, Liberia" loading="lazy" decoding="async">
             <figcaption class="photo-label">Ganta, Liberia · A landscape shaped by agriculture, community, and possibility.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="cinematic-quote" data-scene="dusk" aria-label="Documentary vision">
-      <img data-parallax="0.12" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Monrovia%2C_Liberia_-_panoramio_%2820%29.jpg?width=1800" alt="A wide view of Monrovia, Liberia" loading="lazy">
+    <section class="cinematic-quote" data-scene="night" aria-label="Documentary purpose">
+      <img data-parallax="0.07" src="https://upload.wikimedia.org/wikipedia/commons/5/58/Monrovia%2C_Liberia_-_panoramio_%2820%29.jpg" alt="A view of Monrovia, Liberia" loading="lazy" decoding="async">
       <div class="wrap reveal">
-        <blockquote>We are not going to make ourselves the story. We are going to listen carefully, document faithfully, and help Liberian voices travel farther.<cite>100 Acres of Hope · Documentary Vision</cite></blockquote>
+        <blockquote>
+          We are not going to become the center of the story. We are going to help the story travel farther.
+          <cite>100 Acres of Hope · Documentary Mission</cite>
+        </blockquote>
       </div>
     </section>
 
@@ -163,16 +494,30 @@
         <div class="eyebrow reveal">A Glimpse of Place and Purpose</div>
         <h2 class="section-title reveal" id="liberia-gallery-title" style="max-width:850px;margin-bottom:38px">Rooted in real places, real churches, and real work.</h2>
         <div class="photo-grid">
-          <figure class="photo-card reveal"><img data-parallax="0.07" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Liberia%2C_west_africa_2014_-_panoramio_%282%29.jpg?width=1400" alt="A Methodist church building in Liberia" loading="lazy" decoding="async"><figcaption class="photo-caption"><strong>A Methodist church in Liberia</strong><span>The documentary will center worship, leadership, teaching, and local ministry.</span></figcaption></figure>
-          <figure class="photo-card reveal"><img data-parallax="0.09" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Providence_Baptist_Church_old_sanctuary.jpg?width=1000" alt="Historic Providence Baptist Church sanctuary in Monrovia, Liberia" loading="lazy" decoding="async"><figcaption class="photo-caption"><strong>Faith with deep roots</strong><span>Providence Baptist Church in Monrovia, a historic Liberian sanctuary.</span></figcaption></figure>
-          <figure class="photo-card reveal"><img data-parallax="0.1" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cocoa_farm_006.jpg?width=1000" alt="Cacao trees growing on a farm" loading="lazy" decoding="async"><figcaption class="photo-caption"><strong>Cacao and sustainability</strong><span>Reference image showing the kind of agricultural work the project will explore.</span></figcaption></figure>
+          <figure class="photo-card reveal">
+            <img data-parallax="0.05" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Liberia%2C_west_africa_2014_-_panoramio_%282%29.jpg" alt="A Methodist church building in Liberia" loading="lazy" decoding="async">
+            <figcaption class="photo-caption"><strong>A Methodist church in Liberia</strong><span>The documentary will center worship, leadership, teaching, and local ministry.</span></figcaption>
+          </figure>
+          <figure class="photo-card reveal">
+            <img data-parallax="0.06" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Providence_Baptist_Church_old_sanctuary.jpg" alt="Historic Providence Baptist Church sanctuary in Monrovia, Liberia" loading="lazy" decoding="async">
+            <figcaption class="photo-caption"><strong>Faith with deep roots</strong><span>Providence Baptist Church in Monrovia, a historic Liberian sanctuary.</span></figcaption>
+          </figure>
+          <figure class="photo-card reveal">
+            <img data-parallax="0.06" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Cocoa_farm_006.jpg" alt="Cacao trees growing on a farm" loading="lazy" decoding="async">
+            <figcaption class="photo-caption"><strong>Cacao and sustainability</strong><span>Reference image showing the kind of agricultural work the project will explore.</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <section class="section impact woven" id="impact" data-scene="night">
       <div class="wrap">
-        <div class="impact-head reveal"><div class="eyebrow">What Your Gift Makes Possible</div><h2 class="section-title">A story built to keep serving.</h2><p class="section-copy">Support helps make the trip possible and creates useful media for churches, ministry partners, future fundraising, and long-term awareness.</p></div>
+        <div class="impact-head reveal">
+          <div class="eyebrow">What Your Gift Makes Possible</div>
+          <h2 class="section-title">A story built to keep serving.</h2>
+          <p class="section-copy">Support helps make the trip possible and creates useful media for churches, ministry partners, future fundraising, and long-term awareness.</p>
+        </div>
+
         <div class="impact-grid">
           <article class="impact-card reveal"><div class="impact-icon" aria-hidden="true">▶</div><h3>A Modern Documentary</h3><p>A cinematic film centered on Liberian voices, leadership, worship, agriculture, and future vision.</p></article>
           <article class="impact-card reveal"><div class="impact-icon" aria-hidden="true">✦</div><h3>The Land and Its Vision</h3><p>A closer look at how cacao, animals, training, food production, and employment can work together.</p></article>
@@ -194,11 +539,12 @@
         <div class="journey-shell">
           <div class="journey-map" aria-label="Animated route from West Virginia to Liberia and back for the documentary premiere">
             <svg viewBox="0 0 1100 720" role="img" aria-labelledby="mapTitle mapDesc">
-              <title id="mapTitle">Journey from West Virginia to Liberia</title><desc id="mapDesc">A stylized Atlantic map showing the route to Monrovia, local churches, the agricultural development, and the return home for a documentary premiere.</desc>
+              <title id="mapTitle">Journey from West Virginia to Liberia</title>
+              <desc id="mapDesc">A stylized Atlantic map showing the route to Monrovia, local churches, the agricultural development, and the return home for a documentary premiere.</desc>
               <path class="map-ocean-line" d="M80 180C300 120 530 120 1000 170M60 300C340 250 660 250 1040 310M90 440C390 390 730 420 1010 470M140 570C440 530 720 560 950 610"/>
               <path class="map-land" d="M80 70 210 38l112 42 48 88-28 88-76 40-18 91-80 28-72-62-34-116 30-84Z"/>
               <path class="map-land" d="M790 120 920 86l108 70 30 118-36 78-48 25-2 94-62 128-78-30-34-106-71-104 26-107Z"/>
-              <path id="routeBase" class="route-base" pathLength="100" d="M230 236C430 98 670 110 842 282C910 350 952 392 954 442C956 494 912 532 842 555C670 612 440 605 250 560"/>
+              <path class="route-base" pathLength="100" d="M230 236C430 98 670 110 842 282C910 350 952 392 954 442C956 494 912 532 842 555C670 612 440 605 250 560"/>
               <path id="routeProgress" class="route-progress" pathLength="100" d="M230 236C430 98 670 110 842 282C910 350 952 392 954 442C956 494 912 532 842 555C670 612 440 605 250 560"/>
               <g class="route-node" data-route-node="0" transform="translate(230 236)"><circle r="18"/><circle r="5"/><text x="-86" y="-30">West Virginia</text></g>
               <g class="route-node" data-route-node="1" transform="translate(842 282)"><circle r="18"/><circle r="5"/><text x="24" y="6">Monrovia</text></g>
@@ -211,23 +557,23 @@
 
           <div class="journey-stops">
             <article class="journey-stop active reveal" data-step="0" data-title="West Virginia" data-copy="The journey begins at The Foundery Church with prayer, preparation, and a commitment to listen well.">
-              <div class="journey-thumb"><img data-parallax="0.05" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Wellsburg_%28Taber_Andrew_Bain%29_-_Flickr.jpg?width=1000" alt="A street scene in Wellsburg, West Virginia" loading="lazy"></div>
+              <div class="journey-thumb"><img data-parallax="0.04" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Wellsburg_%28Taber_Andrew_Bain%29_-_Flickr.jpg" alt="A street scene in Wellsburg, West Virginia" loading="lazy" decoding="async"></div>
               <div class="journey-stop-tag">The Sending Place</div><h3>West Virginia</h3><p>The Foundery Church sends Pastor Bobby and Sidney as ministry partners and storytellers, supported by a church family committed to prayer and partnership.</p>
             </article>
             <article class="journey-stop reveal" data-step="1" data-title="Monrovia" data-copy="Arrival in Liberia begins with orientation, relationships, and listening before the cameras lead the way.">
-              <div class="journey-thumb"><img data-parallax="0.06" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Monrovia%2C_Liberia_-_panoramio_%2820%29.jpg?width=1200" alt="A wide city view of Monrovia, Liberia" loading="lazy"></div>
+              <div class="journey-thumb"><img data-parallax="0.04" src="https://upload.wikimedia.org/wikipedia/commons/5/58/Monrovia%2C_Liberia_-_panoramio_%2820%29.jpg" alt="A wide city view of Monrovia, Liberia" loading="lazy" decoding="async"></div>
               <div class="journey-stop-tag">Arrival and Listening</div><h3>Monrovia</h3><p>The first chapter is about meeting people, learning context, and allowing Liberian partners to shape how the story should be told.</p>
             </article>
             <article class="journey-stop reveal" data-step="2" data-title="Local Churches" data-copy="Worship, teaching, leadership, and everyday community life become the human center of the documentary.">
-              <div class="journey-thumb"><img data-parallax="0.07" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Liberia%2C_west_africa_2014_-_panoramio_%282%29.jpg?width=1200" alt="A Methodist church building in Liberia" loading="lazy"></div>
+              <div class="journey-thumb"><img data-parallax="0.04" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Liberia%2C_west_africa_2014_-_panoramio_%282%29.jpg" alt="A Methodist church building in Liberia" loading="lazy" decoding="async"></div>
               <div class="journey-stop-tag">Faith in Community</div><h3>Local Churches</h3><p>Interviews, worship, preaching, families, and local ministry reveal the people already carrying the church forward.</p>
             </article>
             <article class="journey-stop reveal" data-step="3" data-title="100-Acre Development" data-copy="The land connects cacao, animals, food production, training, employment, and a long-term vision for sustainability.">
-              <div class="journey-thumb"><img data-parallax="0.08" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cocoa_farm_006.jpg?width=1100" alt="Cacao growing on an agricultural property" loading="lazy"></div>
+              <div class="journey-thumb"><img data-parallax="0.04" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Cocoa_farm_006.jpg" alt="Cacao growing on an agricultural property" loading="lazy" decoding="async"></div>
               <div class="journey-stop-tag">The Vision in the Ground</div><h3>100-Acre Development</h3><p>The film follows the cacao, animals, workers, plans, and possibility growing from a property designed to serve communities for years to come.</p>
             </article>
             <article class="journey-stop reveal" data-step="4" data-title="Documentary Premiere" data-copy="The story returns home as a finished film, ready to build awareness, partnership, prayer, and future support.">
-              <div class="journey-thumb"><img data-parallax="0.06" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ganta%2C_Liberia_-_panoramio.jpg?width=1200" alt="Green Liberian countryside representing the story brought home" loading="lazy"></div>
+              <div class="journey-thumb"><img data-parallax="0.04" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Ganta%2C_Liberia_-_panoramio.jpg" alt="Green Liberian countryside representing the story brought home" loading="lazy" decoding="async"></div>
               <div class="journey-stop-tag">The Story Comes Home</div><h3>Documentary Premiere</h3><p>The journey ends with a film, photographs, interviews, church presentations, and short-form content created to keep serving the mission.</p>
             </article>
           </div>
@@ -278,7 +624,7 @@
     </section>
 
     <section class="final-cta" data-scene="night">
-      <img data-parallax="0.12" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ganta%2C_Liberia_-_panoramio.jpg?width=1800" alt="Green countryside in Liberia" loading="lazy">
+      <img data-parallax="0.06" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Ganta%2C_Liberia_-_panoramio.jpg" alt="Green countryside in Liberia" loading="lazy" decoding="async">
       <div class="wrap"><div class="final-inner reveal"><div class="eyebrow">A Shared Mission</div><h2>Help us tell what God is growing in Liberia.</h2><p>Your support helps carry the voices, faith, work, and future vision of Liberian church leaders far beyond the place where this story is taking root.</p><a class="btn btn-primary" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Plant Hope With Us <span aria-hidden="true">→</span></a></div></div>
     </section>
   </main>
@@ -286,32 +632,94 @@
   <footer>
     <div class="wrap footer-inner">
       <div><div class="footer-brand">The Foundery Church</div><div class="footer-copy">Wellsburg, West Virginia · Traveling as ministry partners, listeners, and storytellers alongside the Free Methodist Church in Liberia.</div></div>
-      <div class="credits">Photography: Wellsburg by Taber Andrew Bain; Liberia, Monrovia, and Ganta photography by blk24ga, CC BY 3.0; Providence Baptist Church by Jforest59, CC BY-SA 4.0; cacao farm by Otuo-Akyampong Boakye, CC BY-SA 4.0. Images are cropped for layout. Sources available on <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>.</div>
+      <div class="credits">Photography: Methodist church in Liberia and Ganta landscape by blk24ga, CC BY 3.0; Providence Baptist Church by Jforest59, CC BY-SA 4.0; cacao farm by Otuo-Akyampong Boakye, CC BY-SA 4.0. Images are cropped for layout. Sources available on <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>.</div>
     </div>
   </footer>
 
   <a class="mobile-give" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Plant Hope With Us</a>
 
   <script>
-    document.querySelectorAll('.faq-q').forEach((button)=>{button.addEventListener('click',()=>{const item=button.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach((openItem)=>{if(openItem!==item){openItem.classList.remove('open');openItem.querySelector('.faq-q').setAttribute('aria-expanded','false')}});item.classList.toggle('open',!isOpen);button.setAttribute('aria-expanded',String(!isOpen))})});
+    document.querySelectorAll('.faq-q').forEach((button)=>{
+      button.addEventListener('click',()=>{
+        const item=button.closest('.faq-item');
+        const isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach((openItem)=>{
+          if(openItem!==item){openItem.classList.remove('open');openItem.querySelector('.faq-q').setAttribute('aria-expanded','false')}
+        });
+        item.classList.toggle('open',!isOpen);
+        button.setAttribute('aria-expanded',String(!isOpen));
+      });
+    });
 
     const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems=document.querySelectorAll('.reveal');
-    if(reducedMotion||!('IntersectionObserver' in window)){revealItems.forEach((item)=>item.classList.add('in'))}else{const revealObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('in');revealObserver.unobserve(entry.target)}})},{threshold:.12});revealItems.forEach((item)=>revealObserver.observe(item))}
+    const desktopMotion=window.matchMedia('(min-width: 761px)').matches&&!reducedMotion;
+    const revealItems=[...document.querySelectorAll('.reveal')];
+
+    if(desktopMotion&&'IntersectionObserver' in window){
+      document.documentElement.classList.add('js-ready');
+      requestAnimationFrame(()=>{
+        const revealObserver=new IntersectionObserver((entries)=>{
+          entries.forEach((entry)=>{
+            if(entry.isIntersecting){entry.target.classList.add('in');revealObserver.unobserve(entry.target)}
+          });
+        },{threshold:.08,rootMargin:'0px 0px -5%'});
+        revealItems.forEach((item)=>revealObserver.observe(item));
+      });
+    }else{
+      revealItems.forEach((item)=>item.classList.add('in'));
+    }
 
     const sceneSections=document.querySelectorAll('[data-scene]');
-    if('IntersectionObserver' in window){const sceneObserver=new IntersectionObserver((entries)=>{const visible=entries.filter((entry)=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)document.body.dataset.scene=visible.target.dataset.scene},{rootMargin:'-28% 0px -42%',threshold:[0,.2,.45,.7]});sceneSections.forEach((section)=>sceneObserver.observe(section))}
+    if(desktopMotion&&'IntersectionObserver' in window){
+      const sceneObserver=new IntersectionObserver((entries)=>{
+        const visible=entries.filter((entry)=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+        if(visible)document.body.dataset.scene=visible.target.dataset.scene;
+      },{rootMargin:'-28% 0px -42%',threshold:[0,.2,.45,.7]});
+      sceneSections.forEach((section)=>sceneObserver.observe(section));
+    }
 
     const stops=[...document.querySelectorAll('.journey-stop')];
     const nodes=[...document.querySelectorAll('[data-route-node]')];
     const routeProgress=document.getElementById('routeProgress');
     const mapStageTitle=document.getElementById('mapStageTitle');
     const mapStageCopy=document.getElementById('mapStageCopy');
-    const setJourneyStep=(step)=>{stops.forEach((stop,index)=>stop.classList.toggle('active',index===step));nodes.forEach((node,index)=>node.classList.toggle('active',index<=step));if(routeProgress)routeProgress.style.strokeDashoffset=String(100-(step/(stops.length-1))*100);const stop=stops[step];if(stop&&mapStageTitle&&mapStageCopy){mapStageTitle.textContent=stop.dataset.title;mapStageCopy.textContent=stop.dataset.copy}};
-    setJourneyStep(0);
-    if('IntersectionObserver' in window){const journeyObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting)setJourneyStep(Number(entry.target.dataset.step))})},{rootMargin:'-34% 0px -46%',threshold:.2});stops.forEach((stop)=>journeyObserver.observe(stop))}
 
-    if(!reducedMotion){const parallaxItems=[...document.querySelectorAll('[data-parallax]')];let ticking=false;const updateParallax=()=>{const vh=window.innerHeight;parallaxItems.forEach((item)=>{const rect=item.getBoundingClientRect();if(rect.bottom>0&&rect.top<vh){const center=rect.top+rect.height/2-vh/2;const speed=Number(item.dataset.parallax||.08);item.style.setProperty('--parallax-y',`${Math.max(-42,Math.min(42,-center*speed))}px`)}});ticking=false};const requestParallax=()=>{if(!ticking){requestAnimationFrame(updateParallax);ticking=true}};window.addEventListener('scroll',requestParallax,{passive:true});window.addEventListener('resize',requestParallax);requestParallax()}
+    const setJourneyStep=(step)=>{
+      stops.forEach((stop,index)=>stop.classList.toggle('active',index===step));
+      nodes.forEach((node,index)=>node.classList.toggle('active',index<=step));
+      if(routeProgress&&stops.length>1)routeProgress.style.strokeDashoffset=String(100-(step/(stops.length-1))*100);
+      const stop=stops[step];
+      if(stop&&mapStageTitle&&mapStageCopy){mapStageTitle.textContent=stop.dataset.title;mapStageCopy.textContent=stop.dataset.copy}
+    };
+    setJourneyStep(0);
+
+    if('IntersectionObserver' in window){
+      const journeyObserver=new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{if(entry.isIntersecting)setJourneyStep(Number(entry.target.dataset.step))});
+      },{rootMargin:'-34% 0px -46%',threshold:.2});
+      stops.forEach((stop)=>journeyObserver.observe(stop));
+    }
+
+    if(desktopMotion){
+      const parallaxItems=[...document.querySelectorAll('[data-parallax]')];
+      let ticking=false;
+      const updateParallax=()=>{
+        const vh=window.innerHeight;
+        parallaxItems.forEach((item)=>{
+          const rect=item.getBoundingClientRect();
+          if(rect.bottom>0&&rect.top<vh){
+            const center=rect.top+rect.height/2-vh/2;
+            const speed=Number(item.dataset.parallax||.05);
+            item.style.setProperty('--parallax-y',`${Math.max(-28,Math.min(28,-center*speed))}px`);
+          }
+        });
+        ticking=false;
+      };
+      const requestParallax=()=>{if(!ticking){requestAnimationFrame(updateParallax);ticking=true}};
+      window.addEventListener('scroll',requestParallax,{passive:true});
+      window.addEventListener('resize',requestParallax);
+      requestParallax();
+    }
   </script>
 </body>
 </html>
