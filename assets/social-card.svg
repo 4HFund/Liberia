@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">100 Acres of Hope social sharing image</title>
+  <desc id="desc">A cinematic green and gold campaign graphic for The Foundery Church's Liberia documentary mission.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071510"/><stop offset=".55" stop-color="#17382b"/><stop offset="1" stop-color="#6c3f2b"/></linearGradient>
+    <radialGradient id="glow" cx="75%" cy="25%" r="70%"><stop stop-color="#e1ad42" stop-opacity=".34"/><stop offset="1" stop-color="#e1ad42" stop-opacity="0"/></radialGradient>
+    <pattern id="weave" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 17h34M17 0v34" stroke="#fffdf8" stroke-opacity=".045" stroke-width="2"/></pattern>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="7"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .13 0"/></filter>
+    <linearGradient id="leafA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#84a884"/><stop offset="1" stop-color="#244f3d"/></linearGradient>
+    <linearGradient id="leafB" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#a4c18c"/><stop offset="1" stop-color="#315f49"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4d47d"/><stop offset="1" stop-color="#d4962d"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#weave)"/>
+  <path d="M820 0c132 71 242 184 380 318v312H733c88-89 130-183 121-284C846 244 782 135 820 0Z" fill="#081711" fill-opacity=".38"/>
+  <g transform="translate(860 105) scale(1.55)">
+    <circle cx="80" cy="80" r="73" fill="#10251d" stroke="#e1ad42" stroke-width="3"/>
+    <circle cx="80" cy="80" r="62" fill="none" stroke="#fffdf8" stroke-opacity=".16"/>
+    <path d="M76 112C54 109 37 95 32 70c18-2 35 3 46 15 8 9 11 19 11 30-4-2-8-3-13-3Z" fill="url(#leafA)"/>
+    <path d="M84 112c22-3 39-17 44-42-18-2-35 3-46 15-8 9-11 19-11 30 4-2 8-3 13-3Z" fill="url(#leafB)"/>
+    <path d="M48 76c13 8 23 18 31 31M112 76c-13 8-23 18-31 31" fill="none" stroke="#d9ead8" stroke-opacity=".65" stroke-width="2" stroke-linecap="round"/>
+    <path d="M74 37h12v24h19v12H86v49H74V73H55V61h19V37Z" fill="url(#gold)"/>
+    <circle cx="80" cy="80" r="4" fill="#fff4c8"/>
+  </g>
+  <text x="86" y="92" fill="#e1ad42" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="5">THE FOUNDERY CHURCH · LIBERIA</text>
+  <text x="82" y="220" fill="#fffdf8" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="700">100 Acres</text>
+  <text x="82" y="304" fill="#fffdf8" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="700">of Hope</text>
+  <path d="M87 350h142" stroke="#e1ad42" stroke-width="7" stroke-linecap="round"/>
+  <text x="84" y="414" fill="#f7f2e7" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="600">Help us tell what God is growing in Liberia.</text>
+  <text x="84" y="474" fill="#f7f2e7" fill-opacity=".72" font-family="Arial, Helvetica, sans-serif" font-size="23">A documentary mission centered on Liberian voices, faith,</text>
+  <text x="84" y="509" fill="#f7f2e7" fill-opacity=".72" font-family="Arial, Helvetica, sans-serif" font-size="23">community, cacao, and a vision for the future.</text>
+  <rect x="84" y="552" width="244" height="4" rx="2" fill="#a74c32"/>
+  <text x="84" y="590" fill="#fffdf8" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2">PLANT HOPE WITH US</text>
+  <rect width="1200" height="630" filter="url(#grain)" opacity=".52"/>
+</svg>
