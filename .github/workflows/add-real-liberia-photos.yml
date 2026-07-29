@@ -1,4 +1,5 @@
 name: Add real Liberia mission photos
+# Trigger the one-time site update now that the workflow exists on main.
 
 on:
   push:
