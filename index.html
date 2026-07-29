@@ -16,303 +16,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --forest:#071a14;
-      --forest-2:#0b261d;
-      --paper:#fffdf8;
-      --ivory:#f4efe5;
-      --gold:#f0be54;
-      --clay:#a94c32;
-      --ink:#142019;
-      --muted:#5c685f;
-      --line:rgba(20,32,25,.14);
-      --max:1180px;
-    }
-
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; scroll-padding-top:78px; }
-    body { margin:0; overflow-x:hidden; background:var(--ivory); color:var(--ink); font-family:"DM Sans",sans-serif; line-height:1.6; }
-    img,video { display:block; width:100%; }
-    h1,h2,h3,p { margin-top:0; }
-    h1,h2,h3 { font-family:"Fraunces",Georgia,serif; line-height:1.04; letter-spacing:-.035em; }
-    a { color:inherit; }
-    .wrap { width:min(var(--max),calc(100% - 40px)); margin-inline:auto; }
-
-    .button { min-height:52px; display:inline-flex; align-items:center; justify-content:center; padding:14px 24px; border:1px solid transparent; border-radius:999px; text-decoration:none; font-weight:800; }
-    .button-gold { background:var(--gold); color:var(--forest); }
-    .button-outline { border-color:rgba(11,38,29,.45); color:var(--forest-2); }
-
-    .site-nav { position:fixed; inset:0 0 auto; z-index:100; color:white; background:rgba(7,26,20,.94); backdrop-filter:blur(15px); }
-    .nav-inner { width:min(var(--max),calc(100% - 40px)); min-height:76px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; font:700 1.12rem "Fraunces",Georgia,serif; }
-    .brand img { width:40px; height:40px; }
-    .nav-links { display:flex; align-items:center; gap:22px; }
-    .nav-links a { text-decoration:none; font-size:.86rem; font-weight:700; color:rgba(255,255,255,.8); }
-    .nav-toggle { display:none; width:46px; height:46px; border:1px solid rgba(255,255,255,.35); border-radius:50%; background:transparent; color:white; font-size:1.5rem; }
-
-    .hero { min-height:100svh; position:relative; display:grid; align-items:end; isolation:isolate; overflow:hidden; color:white; background:var(--forest); }
-    .hero-video { position:absolute; inset:0; z-index:-3; width:100%; height:100%; object-fit:cover; object-position:center; background:var(--forest); }
-    .hero::after { content:""; position:absolute; inset:0; z-index:-2; pointer-events:none; background:linear-gradient(180deg,rgba(3,14,10,.38),rgba(3,14,10,.3) 35%,rgba(3,14,10,.94) 92%),linear-gradient(90deg,rgba(3,14,10,.78),transparent 75%); }
-    .hero-content { padding:150px 0 64px; }
-    .hero-grid { display:grid; grid-template-columns:1.3fr .7fr; align-items:end; gap:60px; }
-    .kicker { color:var(--gold); font-size:.74rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
-    .hero h1 { max-width:850px; margin:14px 0 18px; font-size:clamp(4rem,9vw,8rem); }
-    .hero p { max-width:650px; margin-bottom:28px; color:rgba(255,255,255,.84); font-size:clamp(1.05rem,1.7vw,1.22rem); }
-    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
-    .progress-card { padding:28px; border:1px solid rgba(255,255,255,.2); border-radius:24px; background:rgba(7,26,20,.78); backdrop-filter:blur(16px); }
-    .progress-card small { color:var(--gold); font-weight:800; text-transform:uppercase; letter-spacing:.12em; }
-    .raised { margin:6px 0 2px; font:700 3rem "Fraunces",Georgia,serif; }
-    .goal { color:rgba(255,255,255,.68); }
-    .track { height:13px; margin-top:20px; border-radius:999px; background:rgba(255,255,255,.12); overflow:hidden; }
-    .fill { width:.4217%; min-width:4px; height:100%; background:linear-gradient(90deg,var(--clay),var(--gold)); }
-
-    .hero-play { position:absolute; z-index:5; right:18px; bottom:18px; display:none; align-items:center; gap:9px; min-height:46px; padding:11px 16px; border:1px solid rgba(255,255,255,.45); border-radius:999px; background:rgba(7,26,20,.82); color:white; font:700 .84rem "DM Sans",sans-serif; backdrop-filter:blur(12px); }
-    .hero-play.visible { display:inline-flex; }
-    .hero-play-icon { font-size:1rem; line-height:1; }
-
-    .intro { padding:95px 0; background:var(--forest); color:white; text-align:center; }
-    .intro h2 { max-width:900px; margin:0 auto 18px; font-size:clamp(2.8rem,6vw,5rem); }
-    .intro p { max-width:670px; margin:auto; color:rgba(255,255,255,.72); font-size:1.08rem; }
-
-    .story-panel { position:relative; min-height:78svh; display:grid; align-items:end; isolation:isolate; overflow:hidden; color:white; background:var(--forest-2); }
-    .story-panel>img { position:absolute; inset:0; z-index:-3; width:100%; height:100%; object-fit:cover; }
-    .story-panel::after { content:""; position:absolute; inset:0; z-index:-2; background:linear-gradient(180deg,rgba(7,26,20,.08),rgba(7,26,20,.28) 45%,rgba(7,26,20,.95)); }
-    .story-copy { padding:80px 0 64px; max-width:780px; }
-    .story-copy h2 { margin-bottom:14px; font-size:clamp(3rem,7vw,6rem); }
-    .story-copy p { max-width:650px; margin:0; color:rgba(255,255,255,.82); font-size:1.08rem; }
-    .tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
-    .tag { padding:9px 14px; border:1px solid rgba(255,255,255,.25); border-radius:999px; background:rgba(7,26,20,.55); font-size:.8rem; font-weight:800; }
-
-    .trailer { padding:95px 0; background:linear-gradient(145deg,var(--forest),#6c432f); color:white; }
-    .trailer h2 { margin-bottom:14px; font-size:clamp(2.8rem,6vw,5.2rem); }
-    .video-frame { position:relative; aspect-ratio:16/9; margin-top:34px; overflow:hidden; border-radius:28px; background:black; }
-    .video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-
-    .team { padding:95px 0; background:var(--ivory); }
-    .section-heading { max-width:800px; margin-bottom:42px; }
-    .section-heading h2 { margin-bottom:14px; color:var(--forest-2); font-size:clamp(2.8rem,6vw,5rem); }
-    .team-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
-    .team-card { overflow:hidden; border:1px solid var(--line); border-radius:30px; background:var(--paper); box-shadow:0 24px 65px rgba(7,26,20,.13); }
-    .team-photo { margin:0; background:var(--forest-2); aspect-ratio:4/3; overflow:hidden; }
-    .team-photo img { width:100%; height:100%; object-fit:contain; object-position:center; background:var(--forest-2); }
-    .team-copy { padding:28px 30px 32px; }
-    .team-role { margin-bottom:8px; color:var(--clay); font-size:.72rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
-    .team-copy h3 { margin-bottom:10px; color:var(--forest-2); font-size:2rem; }
-    .team-copy p { margin:0; color:var(--muted); }
-
-    .give { padding:95px 0; background:var(--paper); text-align:center; }
-    .give h2 { margin-bottom:14px; color:var(--forest-2); font-size:clamp(2.8rem,6vw,5rem); }
-    .give>.wrap>p { max-width:620px; margin:0 auto 38px; color:var(--muted); }
-    .tiers { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; text-align:left; }
-    .tier { display:flex; flex-direction:column; padding:28px; border:1px solid var(--line); border-radius:22px; background:white; }
-    .tier.featured { background:var(--forest-2); color:white; border-color:var(--gold); }
-    .amount { color:var(--clay); font:700 2.6rem "Fraunces",Georgia,serif; }
-    .featured .amount { color:var(--gold); }
-    .tier h3 { margin:5px 0 10px; font-size:1.42rem; }
-    .tier p { flex:1; color:var(--muted); font-size:.92rem; }
-    .featured p { color:rgba(255,255,255,.7); }
-    .note { margin-top:25px; color:var(--muted); font-size:.82rem; }
-
-    .final { position:relative; min-height:600px; display:grid; align-items:center; isolation:isolate; overflow:hidden; color:white; background:var(--forest); }
-    .final img { position:absolute; inset:0; z-index:-3; height:100%; object-fit:cover; }
-    .final::after { content:""; position:absolute; inset:0; z-index:-2; background:linear-gradient(90deg,rgba(7,26,20,.98),rgba(7,26,20,.65)); }
-    .final-copy { max-width:760px; padding:80px 0; }
-    .final h2 { margin-bottom:16px; font-size:clamp(3rem,7vw,6rem); }
-    .final p { max-width:600px; margin-bottom:28px; color:rgba(255,255,255,.8); }
-
-    footer { padding:45px 0 90px; background:var(--forest); color:rgba(255,255,255,.65); font-size:.88rem; }
-    .footer-grid { display:flex; justify-content:space-between; gap:30px; }
-    .footer-title { color:white; font:700 1.3rem "Fraunces",Georgia,serif; }
-
-    .mobile-give { position:fixed; z-index:120; left:10px; right:10px; bottom:calc(10px + env(safe-area-inset-bottom)); min-height:60px; display:none; align-items:center; justify-content:space-between; padding:8px 9px 8px 18px; border-radius:999px; background:rgba(7,26,20,.97); color:white; text-decoration:none; box-shadow:0 18px 48px rgba(0,0,0,.35); transform:translateY(150%); transition:transform .25s ease; }
-    .mobile-give.visible { transform:translateY(0); }
-    .mobile-give b { padding:12px 18px; border-radius:999px; background:var(--gold); color:var(--forest); }
-
-    @media(max-width:950px) {
-      .hero-grid { grid-template-columns:1fr; }
-      .progress-card { max-width:560px; }
-      .tiers { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    }
-
-    @media(max-width:720px) {
-      .wrap,.nav-inner { width:calc(100% - 28px); }
-      .nav-inner { min-height:68px; }
-      .brand { font-size:1rem; }
-      .brand img { width:36px; height:36px; }
-      .nav-toggle { display:block; }
-      .nav-links { position:absolute; top:70px; left:14px; right:14px; display:none; padding:10px; border-radius:18px; background:var(--forest); }
-      .nav-links.open { display:grid; }
-      .nav-links a { padding:12px 14px; }
-      .hero { min-height:100svh; }
-      .hero-content { padding:112px 0 52px; }
-      .hero h1 { font-size:clamp(3.55rem,16vw,5.35rem); }
-      .hero-actions { display:grid; }
-      .hero-actions .button { width:100%; }
-      .progress-card { display:none; }
-      .hero-play { right:14px; bottom:14px; }
-      .intro,.trailer,.team,.give { padding:72px 0; }
-      .story-panel { min-height:68svh; }
-      .story-copy { padding:65px 0 48px; }
-      .team-grid,.tiers { grid-template-columns:1fr; }
-      .team-photo { aspect-ratio:auto; height:auto; background:var(--paper); }
-      .team-photo img { width:100%; height:auto; object-fit:contain; background:var(--paper); }
-      .team-copy { padding:25px 22px 28px; }
-      .video-frame { border-radius:18px; }
-      .footer-grid { display:block; }
-      .footer-grid>div+div { margin-top:18px; }
-      .mobile-give { display:flex; }
-      footer { padding-bottom:110px; }
-    }
+    :root{--forest:#071a14;--forest-2:#0b261d;--paper:#fffdf8;--ivory:#f4efe5;--gold:#f0be54;--clay:#a94c32;--ink:#142019;--muted:#5c685f;--line:rgba(20,32,25,.14);--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:78px}body{margin:0;overflow-x:hidden;background:var(--ivory);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}img,video{display:block;width:100%}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.04;letter-spacing:-.035em}a{color:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .button{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border:1px solid transparent;border-radius:999px;text-decoration:none;font-weight:800}.button-gold{background:var(--gold);color:var(--forest)}.button-outline{border-color:rgba(11,38,29,.45);color:var(--forest-2)}
+    .site-nav{position:fixed;inset:0 0 auto;z-index:100;color:#fff;background:rgba(7,26,20,.94);backdrop-filter:blur(15px)}.nav-inner{width:min(var(--max),calc(100% - 40px));min-height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.12rem "Fraunces",Georgia,serif}.brand img{width:40px;height:40px}.nav-links{display:flex;align-items:center;gap:22px}.nav-links a{text-decoration:none;font-size:.86rem;font-weight:700;color:rgba(255,255,255,.8)}.nav-toggle{display:none;width:46px;height:46px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:transparent;color:#fff;font-size:1.5rem}
+    .hero{min-height:100svh;position:relative;display:grid;align-items:end;isolation:isolate;overflow:hidden;color:#fff;background:var(--forest)}.hero-video{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:center;background:var(--forest);opacity:0;transition:opacity .35s ease}.hero-video.ready{opacity:1}.hero::after{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(180deg,rgba(3,14,10,.38),rgba(3,14,10,.3) 35%,rgba(3,14,10,.94) 92%),linear-gradient(90deg,rgba(3,14,10,.78),transparent 75%)}.hero-content{padding:150px 0 64px}.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:end;gap:60px}.kicker{color:var(--gold);font-size:.74rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.hero h1{max-width:850px;margin:14px 0 18px;font-size:clamp(4rem,9vw,8rem)}.hero p{max-width:650px;margin-bottom:28px;color:rgba(255,255,255,.84);font-size:clamp(1.05rem,1.7vw,1.22rem)}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.progress-card{padding:28px;border:1px solid rgba(255,255,255,.2);border-radius:24px;background:rgba(7,26,20,.78);backdrop-filter:blur(16px)}.progress-card small{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.12em}.raised{margin:6px 0 2px;font:700 3rem "Fraunces",Georgia,serif}.goal{color:rgba(255,255,255,.68)}.track{height:13px;margin-top:20px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}.fill{width:.4217%;min-width:4px;height:100%;background:linear-gradient(90deg,var(--clay),var(--gold))}.hero-play{position:absolute;z-index:5;right:18px;bottom:18px;display:none;align-items:center;gap:9px;min-height:46px;padding:11px 16px;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(7,26,20,.9);color:#fff;font:700 .84rem "DM Sans",sans-serif;backdrop-filter:blur(12px)}.hero-play.visible{display:inline-flex}.hero-play-icon{font-size:1rem;line-height:1}
+    .intro{padding:95px 0;background:var(--forest);color:#fff;text-align:center}.intro h2{max-width:900px;margin:0 auto 18px;font-size:clamp(2.8rem,6vw,5rem)}.intro p{max-width:670px;margin:auto;color:rgba(255,255,255,.72);font-size:1.08rem}.story-panel{position:relative;min-height:78svh;display:grid;align-items:end;isolation:isolate;overflow:hidden;color:#fff;background:var(--forest-2)}.story-panel>img{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover}.story-panel::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(7,26,20,.08),rgba(7,26,20,.28) 45%,rgba(7,26,20,.95))}.story-copy{padding:80px 0 64px;max-width:780px}.story-copy h2{margin-bottom:14px;font-size:clamp(3rem,7vw,6rem)}.story-copy p{max-width:650px;margin:0;color:rgba(255,255,255,.82);font-size:1.08rem}.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.tag{padding:9px 14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(7,26,20,.55);font-size:.8rem;font-weight:800}
+    .trailer{padding:95px 0;background:linear-gradient(145deg,var(--forest),#6c432f);color:#fff}.trailer h2{margin-bottom:14px;font-size:clamp(2.8rem,6vw,5.2rem)}.video-frame{position:relative;aspect-ratio:16/9;margin-top:34px;overflow:hidden;border-radius:28px;background:#000}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .team{padding:95px 0;background:var(--ivory)}.section-heading{max-width:800px;margin-bottom:42px}.section-heading h2{margin-bottom:14px;color:var(--forest-2);font-size:clamp(2.8rem,6vw,5rem)}.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}.team-card{overflow:hidden;border:1px solid var(--line);border-radius:30px;background:var(--paper);box-shadow:0 24px 65px rgba(7,26,20,.13)}.team-photo{margin:0;background:var(--forest-2);aspect-ratio:4/3;overflow:hidden}.team-photo img{width:100%;height:100%;object-fit:contain;object-position:center;background:var(--forest-2)}.team-copy{padding:28px 30px 32px}.team-role{margin-bottom:8px;color:var(--clay);font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.team-copy h3{margin-bottom:10px;color:var(--forest-2);font-size:2rem}.team-copy p{margin:0;color:var(--muted)}
+    .give{padding:95px 0;background:var(--paper);text-align:center}.give h2{margin-bottom:14px;color:var(--forest-2);font-size:clamp(2.8rem,6vw,5rem)}.give>.wrap>p{max-width:620px;margin:0 auto 38px;color:var(--muted)}.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;text-align:left}.tier{display:flex;flex-direction:column;padding:28px;border:1px solid var(--line);border-radius:22px;background:#fff}.tier.featured{background:var(--forest-2);color:#fff;border-color:var(--gold)}.amount{color:var(--clay);font:700 2.6rem "Fraunces",Georgia,serif}.featured .amount{color:var(--gold)}.tier h3{margin:5px 0 10px;font-size:1.42rem}.tier p{flex:1;color:var(--muted);font-size:.92rem}.featured p{color:rgba(255,255,255,.7)}.note{margin-top:25px;color:var(--muted);font-size:.82rem}
+    .final{position:relative;min-height:600px;display:grid;align-items:center;isolation:isolate;overflow:hidden;color:#fff;background:var(--forest)}.final img{position:absolute;inset:0;z-index:-3;height:100%;object-fit:cover}.final::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(7,26,20,.98),rgba(7,26,20,.65))}.final-copy{max-width:760px;padding:80px 0}.final h2{margin-bottom:16px;font-size:clamp(3rem,7vw,6rem)}.final p{max-width:600px;margin-bottom:28px;color:rgba(255,255,255,.8)}footer{padding:45px 0 90px;background:var(--forest);color:rgba(255,255,255,.65);font-size:.88rem}.footer-grid{display:flex;justify-content:space-between;gap:30px}.footer-title{color:#fff;font:700 1.3rem "Fraunces",Georgia,serif}.mobile-give{position:fixed;z-index:120;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));min-height:60px;display:none;align-items:center;justify-content:space-between;padding:8px 9px 8px 18px;border-radius:999px;background:rgba(7,26,20,.97);color:#fff;text-decoration:none;box-shadow:0 18px 48px rgba(0,0,0,.35);transform:translateY(150%);transition:transform .25s ease}.mobile-give.visible{transform:translateY(0)}.mobile-give b{padding:12px 18px;border-radius:999px;background:var(--gold);color:var(--forest)}
+    @media(max-width:950px){.hero-grid{grid-template-columns:1fr}.progress-card{max-width:560px}.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:720px){.wrap,.nav-inner{width:calc(100% - 28px)}.nav-inner{min-height:68px}.brand{font-size:1rem}.brand img{width:36px;height:36px}.nav-toggle{display:block}.nav-links{position:absolute;top:70px;left:14px;right:14px;display:none;padding:10px;border-radius:18px;background:var(--forest)}.nav-links.open{display:grid}.nav-links a{padding:12px 14px}.hero{min-height:100svh}.hero-content{padding:112px 0 52px}.hero h1{font-size:clamp(3.55rem,16vw,5.35rem)}.hero-actions{display:grid}.hero-actions .button{width:100%}.progress-card{display:none}.hero-play{right:14px;bottom:14px}.intro,.trailer,.team,.give{padding:72px 0}.story-panel{min-height:68svh}.story-copy{padding:65px 0 48px}.team-grid,.tiers{grid-template-columns:1fr}.team-photo{aspect-ratio:auto;height:auto;background:var(--paper)}.team-photo img{width:100%;height:auto;object-fit:contain;background:var(--paper)}.team-copy{padding:25px 22px 28px}.video-frame{border-radius:18px}.footer-grid{display:block}.footer-grid>div+div{margin-top:18px}.mobile-give{display:flex}footer{padding-bottom:110px}}
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a class="brand" href="#top"><img src="assets/cacao-cross.svg" alt=""><span>100 Acres of Hope</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">☰</button>
-      <div class="nav-links"><a href="#story">The Story</a><a href="#team">The Team</a><a href="#give">Give</a></div>
-    </div>
-  </nav>
-
+  <nav class="site-nav" aria-label="Primary navigation"><div class="nav-inner"><a class="brand" href="#top"><img src="assets/cacao-cross.svg" alt=""><span>100 Acres of Hope</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">☰</button><div class="nav-links"><a href="#story">The Story</a><a href="#team">The Team</a><a href="#give">Give</a></div></div></nav>
   <header class="hero" id="top">
-    <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/IMG_20260723_190709.jpeg" aria-label="Scenes from Liberia">
-      <source src="assets/1000052389.mp4?v=4" type="video/mp4">
-    </video>
-    <button class="hero-play" type="button" aria-label="Play background video"><span class="hero-play-icon">▶</span><span class="hero-play-text">Play video</span></button>
-    <div class="wrap hero-content">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker">A documentary mission to Liberia</div>
-          <h1>100 Acres of Hope</h1>
-          <p>Help us share what God is growing through faith, land, and opportunity.</p>
-          <div class="hero-actions">
-            <a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a>
-            <a class="button button-outline" href="#story" style="color:white;border-color:rgba(255,255,255,.55)">See the Story</a>
-          </div>
-        </div>
-        <aside class="progress-card">
-          <small>Campaign progress</small>
-          <div class="raised">$25.30</div>
-          <div class="goal">raised toward our $6,000 goal</div>
-          <div class="track"><div class="fill"></div></div>
-        </aside>
-      </div>
-    </div>
+    <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Scenes from Liberia"><source src="assets/1000052389.mp4?v=6" type="video/mp4"></video>
+    <button class="hero-play" type="button" aria-label="Play opening video"><span class="hero-play-icon">▶</span><span class="hero-play-text">Play video</span></button>
+    <div class="wrap hero-content"><div class="hero-grid"><div><div class="kicker">A documentary mission to Liberia</div><h1>100 Acres of Hope</h1><p>Help us share what God is growing through faith, land, and opportunity.</p><div class="hero-actions"><a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a><a class="button button-outline" href="#story" style="color:white;border-color:rgba(255,255,255,.55)">See the Story</a></div></div><aside class="progress-card"><small>Campaign progress</small><div class="raised">$25.30</div><div class="goal">raised toward our $6,000 goal</div><div class="track"><div class="fill"></div></div></aside></div></div>
   </header>
-
   <main>
     <section class="intro" id="story"><div class="wrap"><div class="kicker">The mission</div><h2>The story is already happening.</h2><p>We are going to listen, film, and help Liberian leaders share it with the world.</p></div></section>
     <section class="story-panel"><img src="assets/IMG_20260723_190709.jpeg" alt="A Liberian family traveling together"><div class="wrap"><div class="story-copy"><h2>Listen first.</h2><p>Relationships come before cameras.</p></div></div></section>
     <section class="story-panel"><img src="assets/IMG_20260723_190655.jpeg" alt="Worship and community life in Liberia"><div class="wrap"><div class="story-copy"><h2>Faith in motion.</h2><p>Worship, joy, and everyday life tell the real story.</p></div></div></section>
     <section class="story-panel"><img src="assets/IMG_20260723_190650.jpeg" alt="Liberian church leaders and ministry partners"><div class="wrap"><div class="story-copy"><h2>Hope from the ground up.</h2><p>One hundred acres can grow food, ministry, jobs, and a stronger future.</p><div class="tags"><span class="tag">Cacao</span><span class="tag">Animals</span><span class="tag">Training</span><span class="tag">Opportunity</span></div></div></div></section>
-
     <section class="trailer"><div class="wrap"><div class="kicker">Watch the trailer</div><h2>See why this matters.</h2><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/1P6kR2Qn2kA?rel=0" title="100 Acres of Hope trailer" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div></section>
-
-    <section class="team" id="team"><div class="wrap"><div class="section-heading"><div class="kicker" style="color:var(--clay)">The team</div><h2>Going to listen and tell the story.</h2></div><div class="team-grid">
-      <article class="team-card"><figure class="team-photo"><img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall" loading="lazy"></figure><div class="team-copy"><div class="team-role">Pastor · Listener · Storyteller</div><h3>Pastor Bobby Westfall</h3><p>Leading relationships and interviews while also helping capture photography and audio.</p></div></article>
-      <article class="team-card"><figure class="team-photo"><img src="assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png" alt="Sidney Mozingo" loading="lazy"></figure><div class="team-copy"><div class="team-role">Army Veteran · Documentarian · Creative Director</div><h3>Sidney Mozingo</h3><p>Leading filming, photography, audio, and editing.</p></div></article>
-    </div></div></section>
-
-    <section class="give" id="give"><div class="wrap"><div class="kicker" style="color:var(--clay)">Join the mission</div><h2>Help us tell the story.</h2><p>Every gift helps cover travel and documentary production.</p><div class="tiers">
-      <article class="tier"><div class="amount">$25</div><h3>Fuel the Journey</h3><p>Help with basic travel needs.</p><a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $25</a></article>
-      <article class="tier"><div class="amount">$60</div><h3>Sponsor an Acre</h3><p>Support the 100-acre vision.</p><a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $60</a></article>
-      <article class="tier featured"><div class="amount">$100</div><h3>Sponsor a Day</h3><p>Support a day of filming and travel.</p><a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $100</a></article>
-      <article class="tier"><div class="amount">$300</div><h3>Bridge the Distance</h3><p>Help with international airfare.</p><a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $300</a></article>
-    </div><p class="note">Acre sponsorship is symbolic and does not provide land ownership. Gifts are processed through The Foundery Church.</p></div></section>
-
+    <section class="team" id="team"><div class="wrap"><div class="section-heading"><div class="kicker" style="color:var(--clay)">The team</div><h2>Going to listen and tell the story.</h2></div><div class="team-grid"><article class="team-card"><figure class="team-photo"><img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall" loading="lazy"></figure><div class="team-copy"><div class="team-role">Pastor · Listener · Storyteller</div><h3>Pastor Bobby Westfall</h3><p>Leading relationships and interviews while also helping capture photography and audio.</p></div></article><article class="team-card"><figure class="team-photo"><img src="assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png" alt="Sidney Mozingo" loading="lazy"></figure><div class="team-copy"><div class="team-role">Army Veteran · Documentarian · Creative Director</div><h3>Sidney Mozingo</h3><p>Leading filming, photography, audio, and editing.</p></div></article></div></div></section>
+    <section class="give" id="give"><div class="wrap"><div class="kicker" style="color:var(--clay)">Join the mission</div><h2>Help us tell the story.</h2><p>Every gift helps cover travel and documentary production.</p><div class="tiers"><article class="tier"><div class="amount">$25</div><h3>Fuel the Journey</h3><p>Help with basic travel needs.</p><a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $25</a></article><article class="tier"><div class="amount">$60</div><h3>Sponsor an Acre</h3><p>Support the 100-acre vision.</p><a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $60</a></article><article class="tier featured"><div class="amount">$100</div><h3>Sponsor a Day</h3><p>Support a day of filming and travel.</p><a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $100</a></article><article class="tier"><div class="amount">$300</div><h3>Bridge the Distance</h3><p>Help with international airfare.</p><a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $300</a></article></div><p class="note">Acre sponsorship is symbolic and does not provide land ownership. Gifts are processed through The Foundery Church.</p></div></section>
     <section class="final"><img src="assets/IMG_20260723_190650.jpeg" alt="Liberian church leaders and ministry partners"><div class="wrap"><div class="final-copy"><div class="kicker">100 Acres of Hope</div><h2>Help hope travel farther.</h2><p>Your gift helps bring this story home.</p><a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a></div></div></section>
   </main>
-
   <footer><div class="wrap footer-grid"><div><div class="footer-title">100 Acres of Hope</div><div>A documentary mission of The Foundery Church.</div></div><div>The Foundery Church<br>Wellsburg, West Virginia<br>office@thefoundery.church</div></div></footer>
-
   <a class="mobile-give" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener"><span><strong>$25.30 raised</strong></span><b>Give Hope</b></a>
-
   <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
-    const hero = document.querySelector('.hero');
-    const heroVideo = document.querySelector('.hero-video');
-    const heroPlay = document.querySelector('.hero-play');
-    const heroPlayIcon = document.querySelector('.hero-play-icon');
-    const heroPlayText = document.querySelector('.hero-play-text');
-    const mobileGive = document.querySelector('.mobile-give');
-
-    toggle?.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      toggle.textContent = open ? '☰' : '×';
-      links.classList.toggle('open', !open);
-    });
-
-    links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-      toggle.textContent = '☰';
-    }));
-
-    function updateVideoButton() {
-      if (!heroVideo || !heroPlay) return;
-      if (heroVideo.paused) {
-        heroPlayIcon.textContent = '▶';
-        heroPlayText.textContent = 'Play video';
-        heroPlay.setAttribute('aria-label','Play background video');
-      } else {
-        heroPlayIcon.textContent = 'Ⅱ';
-        heroPlayText.textContent = 'Pause video';
-        heroPlay.setAttribute('aria-label','Pause background video');
-      }
-    }
-
-    function tryAutoplay() {
-      if (!heroVideo) return;
-      heroVideo.muted = true;
-      const attempt = heroVideo.play();
-      if (attempt && typeof attempt.then === 'function') {
-        attempt.then(() => {
-          heroPlay?.classList.remove('visible');
-          updateVideoButton();
-        }).catch(() => {
-          heroPlay?.classList.add('visible');
-          updateVideoButton();
-        });
-      }
-    }
-
-    heroPlay?.addEventListener('click', async () => {
-      if (!heroVideo) return;
-      try {
-        if (heroVideo.paused) {
-          heroVideo.muted = true;
-          await heroVideo.play();
-        } else {
-          heroVideo.pause();
-        }
-        heroPlay.classList.add('visible');
-        updateVideoButton();
-      } catch (error) {
-        heroPlay.classList.add('visible');
-        heroPlayText.textContent = 'Video unavailable';
-      }
-    });
-
-    heroVideo?.addEventListener('play', updateVideoButton);
-    heroVideo?.addEventListener('pause', updateVideoButton);
-    heroVideo?.addEventListener('loadedmetadata', tryAutoplay, { once:true });
-
-    function updateMobileGive() {
-      if (!mobileGive || window.innerWidth > 720 || !hero) return;
-      const heroBottom = hero.getBoundingClientRect().bottom;
-      mobileGive.classList.toggle('visible', heroBottom < 100);
-    }
-
-    window.addEventListener('scroll', updateMobileGive, { passive:true });
-    window.addEventListener('resize', updateMobileGive);
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) tryAutoplay();
-    });
-
-    tryAutoplay();
-    updateMobileGive();
+    const toggle=document.querySelector('.nav-toggle'),links=document.querySelector('.nav-links'),hero=document.querySelector('.hero'),heroVideo=document.querySelector('.hero-video'),heroPlay=document.querySelector('.hero-play'),heroPlayIcon=document.querySelector('.hero-play-icon'),heroPlayText=document.querySelector('.hero-play-text'),mobileGive=document.querySelector('.mobile-give');
+    toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));toggle.textContent=open?'☰':'×';links.classList.toggle('open',!open)});links?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
+    function updateVideoButton(){if(!heroVideo||!heroPlay)return;if(heroVideo.paused){heroPlayIcon.textContent='▶';heroPlayText.textContent='Play video';heroPlay.setAttribute('aria-label','Play opening video')}else{heroPlayIcon.textContent='Ⅱ';heroPlayText.textContent='Pause video';heroPlay.setAttribute('aria-label','Pause opening video')}}
+    function showVideo(){heroVideo?.classList.add('ready')}
+    function tryAutoplay(){if(!heroVideo)return;heroVideo.muted=true;const attempt=heroVideo.play();if(attempt&&typeof attempt.then==='function'){attempt.then(()=>{showVideo();heroPlay?.classList.remove('visible');updateVideoButton()}).catch(()=>{heroPlay?.classList.add('visible');updateVideoButton()})}}
+    heroPlay?.addEventListener('click',async()=>{if(!heroVideo)return;try{if(heroVideo.paused){heroVideo.muted=true;await heroVideo.play();showVideo()}else{heroVideo.pause()}heroPlay.classList.add('visible');updateVideoButton()}catch(e){heroPlay.classList.add('visible');heroPlayText.textContent='Tap again to play'}});
+    heroVideo?.addEventListener('loadeddata',showVideo,{once:true});heroVideo?.addEventListener('canplay',()=>{showVideo();tryAutoplay()},{once:true});heroVideo?.addEventListener('play',updateVideoButton);heroVideo?.addEventListener('pause',updateVideoButton);
+    function updateMobileGive(){if(!mobileGive||window.innerWidth>720||!hero)return;mobileGive.classList.toggle('visible',hero.getBoundingClientRect().bottom<100)}window.addEventListener('scroll',updateMobileGive,{passive:true});window.addEventListener('resize',updateMobileGive);document.addEventListener('visibilitychange',()=>{if(!document.hidden)tryAutoplay()});tryAutoplay();updateMobileGive();
   </script>
 </body>
 </html>
