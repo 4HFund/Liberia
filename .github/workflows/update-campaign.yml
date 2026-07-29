@@ -1,0 +1,54 @@
+name: One-time campaign update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update-campaign.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update photo and fundraising progress
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          replacements = {
+              '--progress:35%': '--progress:.4217%',
+              '$2,100 raised': '$25.30 raised',
+              'Campaign is 35 percent funded': 'Campaign is 0.42 percent funded',
+              'aria-valuenow="35"': 'aria-valuenow="0.42"',
+              '35% funded': '0.4% funded',
+              '$3,900 to go': '$5,974.70 to go',
+              '<div class="campaign-number">$2,100<span>': '<div class="campaign-number">$25.30<span>',
+              'assets/IMG_3063.png': 'assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png',
+              'alt="Sidney Mozingo with his wife, Jacy Mozingo"': 'alt="Sidney Mozingo"',
+              '<figcaption class="portrait-label">Sidney &amp; Jacy Mozingo</figcaption>': '<figcaption class="portrait-label">Sidney Mozingo</figcaption>',
+              'Pictured with his wife, Jacy, he approaches': 'He approaches',
+          }
+
+          missing = [old for old in replacements if old not in text]
+          if missing:
+              raise SystemExit(f'Missing expected text: {missing}')
+
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit update and remove temporary workflow
+        run: |
+          rm .github/workflows/update-campaign.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/update-campaign.yml
+          git commit -m "Update Sidney photo and campaign total"
+          git push
