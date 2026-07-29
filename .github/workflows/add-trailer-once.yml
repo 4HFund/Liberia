@@ -1,0 +1,117 @@
+name: Add trailer to campaign site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/add-trailer-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add responsive trailer section
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("index.html")
+          html = path.read_text(encoding="utf-8")
+
+          if 'id="trailer"' in html:
+              print("Trailer section already exists; no changes needed.")
+              raise SystemExit(0)
+
+          css_marker = "    .story-grid { display: grid;"
+          if css_marker not in html:
+              raise SystemExit("Could not find CSS insertion marker")
+
+          trailer_css = '''    .trailer { position: relative; overflow: hidden; background: var(--forest-950); color: #fff; }
+    .trailer::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 82% 16%, rgba(225,173,66,0.18), transparent 34%), linear-gradient(135deg, rgba(255,255,255,0.025), transparent 55%); }
+    .trailer .wrap { position: relative; z-index: 1; }
+    .trailer-head { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: clamp(28px,6vw,80px); align-items: end; margin-bottom: 42px; }
+    .trailer .eyebrow { color: var(--sun); }
+    .trailer .section-title { margin-bottom: 0; color: #fff; }
+    .trailer .section-copy { margin-bottom: 0; color: rgba(255,255,255,0.74); }
+    .trailer-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-lg); background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.38); }
+    .trailer-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .trailer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 22px; }
+    .trailer-note { margin: 0; color: rgba(255,255,255,0.62); font-size: 0.86rem; line-height: 1.55; }
+
+    @media (max-width: 760px) {
+      .trailer-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 26px; }
+      .trailer-frame { border-radius: 18px; }
+      .trailer-actions { align-items: stretch; flex-direction: column; }
+      .trailer-actions .btn { width: 100%; }
+      .trailer-note { text-align: center; font-size: 0.8rem; }
+    }
+
+'''
+          html = html.replace(css_marker, trailer_css + css_marker, 1)
+
+          html = html.replace(
+              '<link rel="preconnect" href="https://upload.wikimedia.org">',
+              '<link rel="preconnect" href="https://upload.wikimedia.org">\n  <link rel="preconnect" href="https://drive.google.com">',
+              1,
+          )
+
+          old_button = '<a class="btn btn-light" href="#journey">Follow the Journey</a>'
+          new_button = '<a class="btn btn-light" href="#trailer">Watch the Trailer</a>'
+          if old_button not in html:
+              raise SystemExit("Could not find hero journey button")
+          html = html.replace(old_button, new_button, 1)
+
+          section_marker = '    <section class="section" id="story">'
+          if section_marker not in html:
+              raise SystemExit("Could not find story section insertion marker")
+
+          trailer_section = '''    <section class="section trailer" id="trailer" aria-labelledby="trailer-title">
+      <div class="wrap">
+        <div class="trailer-head reveal">
+          <div>
+            <div class="eyebrow">Official Campaign Trailer</div>
+            <h2 class="section-title" id="trailer-title">See the vision. Hear the invitation.</h2>
+          </div>
+          <p class="section-copy">Watch the official trailer for <em>100 Acres of Hope</em> and discover why this journey to Liberia matters, what the documentary will capture, and how your support can help carry the story forward.</p>
+        </div>
+
+        <div class="trailer-frame reveal">
+          <iframe
+            src="https://drive.google.com/file/d/17keFlqjGvH21adQh5FqCAw2Y1uq14zxY/preview"
+            title="100 Acres of Hope official campaign trailer"
+            loading="lazy"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="trailer-actions reveal">
+          <a class="btn btn-primary" href="https://drive.google.com/file/d/17keFlqjGvH21adQh5FqCAw2Y1uq14zxY/view?usp=drivesdk" target="_blank" rel="noopener">Open the Trailer Full Screen <span aria-hidden="true">↗</span></a>
+          <p class="trailer-note">Press play to watch with sound. The trailer will not autoplay.</p>
+        </div>
+      </div>
+    </section>
+
+'''
+          html = html.replace(section_marker, trailer_section + section_marker, 1)
+          path.write_text(html, encoding="utf-8")
+          PY
+
+      - name: Commit trailer update
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Add official campaign trailer"
+          git push
