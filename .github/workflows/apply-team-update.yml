@@ -1,0 +1,128 @@
+name: Apply team portraits and hide totals
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  update-site:
+    if: github.event.issue.title == '[site] apply team photos'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update site
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          s = re.sub(
+              r'    \.hero-top \{\n      display: grid;\n      grid-template-columns: minmax\(0, 1\.2fr\) minmax\(320px, 0\.68fr\);\n      gap: clamp\(38px, 7vw, 92px\);\n      align-items: end;\n    \}',
+              '    .hero-top {\n      display: block;\n      max-width: 900px;\n    }',
+              s,
+              count=1,
+          )
+
+          s = re.sub(r'\n    \.progress-card \{.*?\n    \.trailer-block \{', '\n    .trailer-block {', s, count=1, flags=re.S)
+          s = re.sub(r'\n        <aside class="progress-card" aria-label="Fundraising progress">.*?</aside>', '', s, count=1, flags=re.S)
+          s = s.replace('      .progress-card { max-width: 650px; }\n', '')
+          s = s.replace('      .progress-card { padding: 24px; }\n', '')
+
+          s = re.sub(
+              r'    \.bio-portrait \{.*?    \.bio-portrait span \{.*?\n    \}',
+              '''    .bio-portrait {
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      background: var(--forest-900);
+    }
+    .bio-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .bio-card.sidney-card .bio-portrait img {
+      object-fit: contain;
+      object-position: center;
+      background: var(--forest-900);
+    }
+    .bio-portrait::after {
+      content: "";
+      position: absolute;
+      inset: 48% 0 0;
+      pointer-events: none;
+      background: linear-gradient(transparent, rgba(6, 23, 17, 0.82));
+    }
+    .portrait-caption {
+      position: absolute;
+      z-index: 2;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }''',
+              s,
+              count=1,
+              flags=re.S,
+          )
+
+          s = s.replace('      .bio-portrait { min-height: 150px; }', '      .bio-portrait { min-height: 290px; }')
+
+          s = s.replace(
+              '<div class="bio-portrait" aria-label="Pastor Bobby Westfall identity panel"><span>BW</span></div>',
+              '''<div class="bio-portrait">
+              <img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall" loading="lazy" decoding="async">
+              <span class="portrait-caption">Pastor Bobby Westfall</span>
+            </div>''',
+              1,
+          )
+
+          s = s.replace(
+              '''<article class="bio-card">
+            <div class="bio-portrait" aria-label="Sidney Mozingo identity panel"><span>SM</span></div>''',
+              '''<article class="bio-card sidney-card">
+            <div class="bio-portrait">
+              <img src="assets/IMG_3063.png" alt="Sidney Mozingo with his wife, Jacy Mozingo" loading="lazy" decoding="async">
+              <span class="portrait-caption">Sidney &amp; Jacy Mozingo</span>
+            </div>''',
+              1,
+          )
+
+          s = s.replace(
+              'Sidney will lead cinematography, photography, audio, and post-production. His focus is to build a film with context and excellence—one that protects dignity, centers Liberian voices, and gives churches and partners meaningful media for years to come.',
+              'Sidney will lead cinematography, photography, audio, and post-production. Pictured with his wife, Jacy, he approaches this mission with the support of his family and a commitment to build a film with context and excellence—one that protects dignity, centers Liberian voices, and gives churches and partners meaningful media for years to come.',
+              1,
+          )
+
+          if '$2,100 raised' in s or 'progress-card' in s:
+              raise SystemExit('Public fundraising progress was not fully removed')
+          if 'assets/IMG_2452.jpeg' not in s or 'assets/IMG_3063.png' not in s:
+              raise SystemExit('Team portraits were not inserted')
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/update-team-photos.yml .github/workflows/apply-team-update.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows
+          git commit -m "Add Bobby, Sidney and Jacy photos and hide public totals"
+          git push
+
+      - name: Close trigger issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close "${{ github.event.issue.number }}" --comment "Site update applied."
