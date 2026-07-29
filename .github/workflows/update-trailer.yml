@@ -1,0 +1,47 @@
+name: Update trailer embed
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-trailer.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-trailer:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Replace Google Drive trailer with YouTube
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = {
+              '<link rel="preconnect" href="https://drive.google.com">': '<link rel="preconnect" href="https://www.youtube-nocookie.com">',
+              'https://drive.google.com/file/d/17keFlqjGvH21adQh5FqCAw2Y1uq14zxY/preview': 'https://www.youtube-nocookie.com/embed/1P6kR2Qn2kA?rel=0',
+              'https://drive.google.com/file/d/17keFlqjGvH21adQh5FqCAw2Y1uq14zxY/view?usp=drivesdk': 'https://www.youtube.com/watch?v=1P6kR2Qn2kA',
+          }
+
+          for old, new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f'Expected text was not found: {old}')
+              text = text.replace(old, new)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+          rm .github/workflows/update-trailer.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/update-trailer.yml
+          git commit -m "Replace Google Drive trailer with YouTube embed"
+          git push
