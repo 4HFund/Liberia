@@ -164,6 +164,22 @@
     .gift-close:hover,.gift-close:focus-visible{background:var(--gold);border-color:var(--gold)}
     .gift-close:focus-visible{outline:3px solid rgba(169,76,50,.3);outline-offset:3px}
 
+    .gift-preview-modal{width:min(1120px,calc(100% - 28px));max-height:calc(100dvh - 28px);padding:0;overflow:hidden;border:1px solid rgba(255,255,255,.2);border-radius:30px;background:var(--paper);color:var(--ink);box-shadow:0 40px 120px rgba(0,0,0,.56)}
+    .gift-preview-modal::backdrop{background:rgba(3,14,10,.88);backdrop-filter:blur(10px)}
+    .gift-preview-modal[open]{animation:modal-in .25s ease both}
+    .gift-preview-shell{position:relative;max-height:calc(100dvh - 28px);overflow:auto;padding:58px 44px 44px}
+    .gift-preview-heading{max-width:760px;margin-bottom:26px;text-align:left}
+    .gift-preview-heading .kicker{margin-bottom:10px;color:var(--clay)}
+    .gift-preview-heading h2{margin-bottom:12px;color:var(--forest-2);font-size:clamp(2.35rem,6vw,4.2rem)}
+    .gift-preview-heading p{margin:0;color:var(--muted)}
+    .gift-preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:20px}
+    .gift-preview-card{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 18px 48px rgba(7,26,20,.12)}
+    .gift-preview-card img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f7f1e8}
+    .gift-preview-card figcaption{padding:15px 18px;color:var(--forest-2);font-size:.84rem;font-weight:800;text-align:left}
+    .gift-preview-close{position:absolute;z-index:5;top:14px;right:14px;width:48px;height:48px;border:1px solid rgba(20,32,25,.18);border-radius:50%;background:rgba(255,253,248,.94);color:var(--forest);font-size:1.8rem;line-height:1;cursor:pointer;box-shadow:0 8px 25px rgba(7,26,20,.15);backdrop-filter:blur(10px)}
+    .gift-preview-close:hover,.gift-preview-close:focus-visible{background:var(--gold);border-color:var(--gold)}
+    .gift-preview-close:focus-visible{outline:3px solid rgba(169,76,50,.3);outline-offset:3px}
+
     .final{position:relative;min-height:600px;display:grid;align-items:center;isolation:isolate;overflow:hidden;color:#fff;background:var(--forest)}
     .final img{position:absolute;inset:0;z-index:-3;height:100%;object-fit:cover}
     .final::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(7,26,20,.98),rgba(7,26,20,.65))}
@@ -178,7 +194,7 @@
     .mobile-give b{padding:12px 18px;border-radius:999px;background:var(--gold);color:var(--forest)}
 
     @keyframes modal-in{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.team-card,.team-card::after,.team-photo img,.bio-modal[open],.vision-modal[open],.gift-modal[open]{transition:none;animation:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.team-card,.team-card::after,.team-photo img,.bio-modal[open],.vision-modal[open],.gift-modal[open],.gift-preview-modal[open]{transition:none;animation:none}}
 
     @media(max-width:950px){
       .hero-grid{grid-template-columns:1fr}
@@ -229,6 +245,13 @@
       .gift-level{grid-template-columns:68px 1fr;gap:12px;padding:16px}
       .gift-amount{font-size:1.55rem}
       .gift-close{top:10px;right:10px;width:44px;height:44px}
+      .gift-preview-modal{width:calc(100% - 14px);max-height:calc(100dvh - 14px);border-radius:20px}
+      .gift-preview-shell{max-height:calc(100dvh - 14px);padding:50px 14px 18px}
+      .gift-preview-heading{padding:0 6px;margin-bottom:20px}
+      .gift-preview-heading h2{font-size:clamp(2.2rem,12vw,3.35rem)}
+      .gift-preview-grid{grid-template-columns:1fr;gap:14px}
+      .gift-preview-card{border-radius:17px}
+      .gift-preview-close{top:9px;right:9px;width:44px;height:44px}
       .footer-grid{display:block}
       .footer-grid>div+div{margin-top:18px}
       .mobile-give{display:flex}
@@ -380,7 +403,7 @@
             <div class="amount">$25</div>
             <h3>Fuel the Journey</h3>
             <p>Help with basic travel needs.</p>
-            <button class="gift-hint" type="button" data-gift-open aria-haspopup="dialog"><span aria-hidden="true">✦</span> Supporter gift included</button>
+            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$25 Fuel the Journey gift" data-gift-note="Includes the limited-edition 100 Acres of Hope vinyl sticker." data-gift-images="assets/615DC4B5-6B1F-44FF-97C4-362CFBC483A9.png" data-gift-alts="100 Acres of Hope vinyl supporter sticker" data-gift-captions="Limited-edition vinyl sticker" aria-haspopup="dialog" aria-controls="gift-preview-modal"><span aria-hidden="true">✦</span> Supporter gift included</button>
             <a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $25</a>
           </article>
 
@@ -388,7 +411,7 @@
             <div class="amount">$60</div>
             <h3>Sponsor an Acre</h3>
             <p>Support the 100-acre vision.</p>
-            <button class="gift-hint" type="button" data-gift-open aria-haspopup="dialog"><span aria-hidden="true">✦</span> Supporter gift included</button>
+            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$60 Sponsor an Acre gifts" data-gift-note="Includes the numbered acre sponsorship certificate and wristband, plus the $25 vinyl sticker. The certificate will be signed by Pastor Bobby Westfall and Sidney Mozingo." data-gift-images="assets/36FC8731-AEC8-484F-845B-99BF907F5D36.png|assets/E543597A-5A8F-4635-9E51-BE9CF6A62FB9.png" data-gift-alts="100 Acres of Hope supporter wristband|Numbered acre sponsorship certificate signed by Pastor Bobby Westfall and Sidney Mozingo" data-gift-captions="100 Acres of Hope supporter wristband|Numbered acre sponsorship certificate" aria-haspopup="dialog" aria-controls="gift-preview-modal"><span aria-hidden="true">✦</span> Supporter gift included</button>
             <a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $60</a>
           </article>
 
@@ -396,7 +419,7 @@
             <div class="amount">$100</div>
             <h3>Sponsor a Day</h3>
             <p>Support a day of filming and travel.</p>
-            <button class="gift-hint" type="button" data-gift-open aria-haspopup="dialog"><span aria-hidden="true">✦</span> Supporter gift included</button>
+            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$100 Sponsor a Day gift" data-gift-note="Includes the limited-edition mission shirt plus all previous supporter gifts." data-gift-images="assets/752684E8-793E-4A97-AAD0-57CF629B53B5.png" data-gift-alts="Limited-edition green 100 Acres of Hope mission shirt" data-gift-captions="Limited-edition 100 Acres of Hope mission shirt" aria-haspopup="dialog" aria-controls="gift-preview-modal"><span aria-hidden="true">✦</span> Supporter gift included</button>
             <a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $100</a>
           </article>
 
@@ -404,7 +427,7 @@
             <div class="amount">$300</div>
             <h3>Bridge the Distance</h3>
             <p>Help with international airfare.</p>
-            <button class="gift-hint" type="button" data-gift-open aria-haspopup="dialog"><span aria-hidden="true">✦</span> Supporter gift included</button>
+            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$300 Bridge the Distance gifts" data-gift-note="Includes a framed Liberia mission photograph, Hope Partner recognition in the documentary's ending credits, and all previous supporter gifts." data-gift-images="assets/7F3C3F27-40ED-4CB3-84AC-84E93776CD04.png" data-gift-alts="Framed Liberia mission photograph and Hope Partner end-credit recognition" data-gift-captions="Framed mission photograph and Hope Partner ending-credit recognition" aria-haspopup="dialog" aria-controls="gift-preview-modal"><span aria-hidden="true">✦</span> Supporter gift included</button>
             <a class="button button-outline" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $300</a>
           </article>
         </div>
@@ -428,7 +451,7 @@
           </div>
           <div class="gift-level">
             <div class="gift-amount">$60</div>
-            <div><h3>Sponsor an Acre</h3><p>Sticker, wristband, and symbolic acre card.</p></div>
+            <div><h3>Sponsor an Acre</h3><p>Sticker, wristband, and numbered acre sponsorship certificate signed by Pastor Bobby Westfall and Sidney Mozingo.</p></div>
           </div>
           <div class="gift-level">
             <div class="gift-amount">$100</div>
@@ -436,11 +459,23 @@
           </div>
           <div class="gift-level">
             <div class="gift-amount">$300</div>
-            <div><h3>Bridge the Distance</h3><p>All previous gifts plus a framed Liberia photograph and Hope Partner recognition.</p></div>
+            <div><h3>Bridge the Distance</h3><p>All previous gifts plus a framed Liberia photograph and Hope Partner recognition in the documentary's ending credits.</p></div>
           </div>
         </div>
 
         <p class="gift-modal-note">Thank-you gifts are optional, cumulative, and available while supplies last. Donors may decline their gift so more of their donation supports the mission. Pickup, delivery, shirt sizing, and photograph details will be provided after donating.</p>
+      </div>
+    </dialog>
+
+    <dialog class="gift-preview-modal" id="gift-preview-modal" aria-labelledby="gift-preview-title">
+      <div class="gift-preview-shell">
+        <button class="gift-preview-close" type="button" data-gift-preview-close aria-label="Close supporter gift pictures">×</button>
+        <div class="gift-preview-heading">
+          <div class="kicker">Supporter thank-you gift</div>
+          <h2 id="gift-preview-title">Supporter gift</h2>
+          <p id="gift-preview-note"></p>
+        </div>
+        <div class="gift-preview-grid" id="gift-preview-grid"></div>
       </div>
     </dialog>
 
@@ -567,6 +602,47 @@
     giftDialog?.addEventListener('click',event=>{if(event.target===giftDialog)giftDialog.close()});
     giftDialog?.addEventListener('close',()=>document.body.classList.remove('modal-open'));
     giftDialog?.addEventListener('cancel',()=>document.body.classList.remove('modal-open'));
+
+    const giftPreviewOpeners=document.querySelectorAll('[data-gift-preview]');
+    const giftPreviewDialog=document.getElementById('gift-preview-modal');
+    const giftPreviewTitle=document.getElementById('gift-preview-title');
+    const giftPreviewNote=document.getElementById('gift-preview-note');
+    const giftPreviewGrid=document.getElementById('gift-preview-grid');
+
+    giftPreviewOpeners.forEach(opener=>opener.addEventListener('click',()=>{
+      if(!giftPreviewDialog||!giftPreviewTitle||!giftPreviewNote||!giftPreviewGrid)return;
+      const images=(opener.dataset.giftImages||'').split('|').filter(Boolean);
+      const alts=(opener.dataset.giftAlts||'').split('|');
+      const captions=(opener.dataset.giftCaptions||'').split('|');
+
+      giftPreviewTitle.textContent=opener.dataset.giftTitle||'Supporter gift';
+      giftPreviewNote.textContent=opener.dataset.giftNote||'';
+      giftPreviewGrid.replaceChildren();
+
+      images.forEach((src,index)=>{
+        const figure=document.createElement('figure');
+        figure.className='gift-preview-card';
+        const image=document.createElement('img');
+        image.src=src;
+        image.alt=alts[index]||captions[index]||'Supporter gift preview';
+        image.loading='eager';
+        const caption=document.createElement('figcaption');
+        caption.textContent=captions[index]||image.alt;
+        figure.append(image,caption);
+        giftPreviewGrid.append(figure);
+      });
+
+      document.body.classList.add('modal-open');
+      if(typeof giftPreviewDialog.showModal==='function')giftPreviewDialog.showModal();else giftPreviewDialog.setAttribute('open','');
+    }));
+
+    giftPreviewDialog?.querySelector('[data-gift-preview-close]')?.addEventListener('click',()=>giftPreviewDialog.close());
+    giftPreviewDialog?.addEventListener('click',event=>{if(event.target===giftPreviewDialog)giftPreviewDialog.close()});
+    giftPreviewDialog?.addEventListener('close',()=>{
+      document.body.classList.remove('modal-open');
+      giftPreviewGrid?.replaceChildren();
+    });
+    giftPreviewDialog?.addEventListener('cancel',()=>document.body.classList.remove('modal-open'));
 
     const bioOpeners=document.querySelectorAll('[data-bio-open]');
     const bioDialogs=document.querySelectorAll('.bio-modal');
