@@ -1,0 +1,156 @@
+@keyframes modal-in{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}.story-panel:hover>img{transform:none}}
+
+    @media(max-width:1020px){
+      .hero-grid{grid-template-columns:minmax(0,1fr) minmax(270px,.72fr);gap:32px}
+      .tiers{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .tier{min-height:310px}
+      .support-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .journey-shell{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:28px}
+      .bio-modal-shell{grid-template-columns:minmax(260px,.75fr) minmax(0,1.25fr)}
+      .bio-modal-copy{padding:60px 40px}
+    }
+
+    @media(max-width:820px){
+      .hero-grid{grid-template-columns:1fr}
+      .progress-card{max-width:560px}
+      .journey-shell{grid-template-columns:1fr}
+      .journey-intro h2{max-width:none}
+      .team-card{min-height:510px}
+    }
+
+    @media(max-width:720px){
+      :root{--top-offset:101px;--section-space:60px}
+      html{scroll-padding-top:var(--top-offset)}
+      .wrap,.nav-inner{width:calc(100% - 28px)}
+      .nav-inner{min-height:68px}
+      .brand{font-size:.98rem}
+      .brand img{width:35px;height:35px}
+      .nav-toggle{display:grid;place-items:center}
+      .nav-links{position:absolute;top:74px;left:14px;right:14px;display:none;padding:8px;border:1px solid rgba(255,255,255,.09);border-radius:17px;background:rgba(7,26,20,.98);box-shadow:0 18px 48px rgba(0,0,0,.3);backdrop-filter:blur(18px)}
+      .nav-links.open{display:grid}
+      .nav-links a{padding:11px 13px;border-radius:11px}
+      .deadline-banner{top:68px;min-height:33px;padding-inline:12px;font-size:.68rem}
+      .hero{min-height:auto}
+      .hero-content{padding:148px 0 43px}
+      .hero-grid{gap:28px}
+      .hero h1{max-width:7ch;margin:11px 0 15px;font-size:clamp(3.35rem,15.5vw,5rem);line-height:.9}
+      .hero-lead{margin-bottom:23px;font-size:.98rem}
+      .hero-actions{display:grid}
+      .hero-actions .button{width:100%}
+      .progress-card{margin-top:1px;padding:18px;border-radius:20px}
+      .progress-card h2{font-size:1.28rem}
+      .raised{font-size:2rem}
+      .hero-play{right:14px;bottom:14px}
+      .intro{padding:62px 0}
+      .intro h2{font-size:clamp(2.45rem,11vw,3.45rem)}
+      .intro p{font-size:.96rem}
+      .story-panel{min-height:67svh}
+      .story-copy{padding:64px 0 46px}
+      .story-copy h2{font-size:clamp(2.85rem,13vw,4.2rem)}
+      .story-copy p{font-size:.98rem}
+
+      .compact-info{padding:54px 0 58px}
+      .compact-info .section-heading{margin-bottom:23px}
+      .compact-info .section-heading h2{max-width:11ch;margin-top:7px;font-size:clamp(2.25rem,10vw,3.15rem);line-height:1}
+      .support-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .support-item{min-height:124px;padding:15px;border-radius:18px;font-size:.76rem;gap:13px}
+      .support-item::before{right:9px;bottom:7px;font-size:3rem}
+      .support-item::after{left:15px;right:15px}
+      .support-icon{width:40px;height:40px;flex-basis:40px;border-radius:12px;font-size:.95rem}
+      .support-item>span:last-child{max-width:13ch}
+
+      .trailer h2{font-size:clamp(2.55rem,11.5vw,3.65rem)}
+      .video-frame{margin-top:23px;border-radius:18px}
+      .team-grid,.tiers{grid-template-columns:1fr}
+      .team-grid{gap:18px}
+      .team-card{min-height:480px;border-radius:23px}
+      .team-copy{padding:28px 22px 23px}
+      .team-copy p{font-size:.9rem}
+      .team-card::after{top:15px;right:15px;width:42px;height:42px}
+
+      .campaign-community{padding:58px 0}
+      .journey-shell{gap:22px}
+      .journey-intro{padding:0}
+      .journey-intro h2{margin:9px 0 14px;font-size:clamp(2.55rem,11.8vw,3.55rem);line-height:.96}
+      .journey-copy{font-size:.91rem}
+      .journey-marker{margin-top:18px}
+      .supporter-wall-card{padding:20px 17px;border-radius:22px}
+      .wall-header{display:block}
+      .wall-badge{display:inline-flex;margin-top:10px}
+      .supporter-wall-card h3{font-size:1.9rem}
+      .wall-copy{margin:12px 0 17px;font-size:.84rem}
+      .supporter-wall{grid-template-columns:1fr;gap:10px}
+      .wall-plaque{min-height:82px;padding:13px}
+      .plaque-mark{width:44px;height:44px;flex-basis:44px;font-size:1.14rem}
+      .wall-plaque strong{font-size:1.18rem}
+      .wall-footer{display:grid;gap:12px;margin-top:16px;padding-top:16px}
+      .wall-footer .button{width:100%}
+
+      .give{padding:60px 0}
+      .give h2{font-size:clamp(2.55rem,12vw,3.65rem)}
+      .give>.wrap>p{margin-bottom:25px;font-size:.93rem}
+      .tiers{gap:11px}
+      .tier{min-height:0;padding:20px;border-radius:19px}
+      .tier:hover{transform:none}
+      .tier.featured::before{top:12px;right:12px;font-size:.53rem}
+      .amount{font-size:2.2rem}
+      .tier h3{margin:6px 0 7px;font-size:1.24rem}
+      .tier p{margin-bottom:11px;font-size:.83rem}
+      .gift-hint{margin:4px 0 14px;font-size:.68rem}
+      .tier .button{min-height:44px}
+      .gift-details-button{margin-top:21px}
+      .note{margin-top:14px;font-size:.71rem}
+
+      .share-section{padding:44px 0}
+      .share-section .wrap{width:calc(100% - 28px);padding:23px 16px 18px;border-radius:22px}
+      .share-section .wrap::after{position:static;display:block;margin-bottom:10px;content:"Share the hope"}
+      .share-section h2{max-width:10ch;margin-bottom:9px;font-size:clamp(2.12rem,9.8vw,2.9rem);line-height:1}
+      .share-section p{margin-bottom:18px;font-size:.9rem}
+      .share-actions{grid-template-columns:1fr;gap:8px}
+      .share-button{min-height:55px;padding:8px 11px;border-radius:14px;font-size:.82rem}
+      .share-button::before{width:34px;height:34px;flex-basis:34px;border-radius:10px}
+
+      .faq{padding:58px 0}
+      .section-heading h2{font-size:clamp(2.35rem,10.5vw,3.2rem)}
+      .faq .section-heading{margin-bottom:21px}
+      .faq summary{padding:15px 45px 15px 16px;font-size:.88rem}
+      .faq summary::after{right:14px}
+      .faq details p{padding:0 16px 15px;font-size:.84rem}
+
+      .partners{padding:46px 0}
+      .partners-card{display:block;padding:20px;border-radius:19px}
+      .partners-card h2{font-size:1.7rem}
+      .partners-card p{font-size:.89rem}
+      .partners-card .button{width:100%;margin-top:16px}
+      .vision-modal,.gift-preview-modal{width:calc(100% - 14px);max-height:calc(100dvh - 14px);border-radius:17px}
+      .vision-modal-shell,.vision-modal img{max-height:calc(100dvh - 14px)}
+      .bio-modal{width:calc(100% - 18px);max-height:calc(100dvh - 18px);border-radius:22px}
+      .bio-modal-shell{display:block;max-height:calc(100dvh - 18px)}
+      .bio-modal-photo{min-height:0;height:42vh;max-height:390px}
+      .bio-modal-copy{padding:32px 22px 36px}
+      .bio-modal-copy h2{font-size:clamp(2.35rem,12.5vw,3.5rem)}
+      .bio-modal-copy p{font-size:.91rem}
+      .gift-modal{width:calc(100% - 18px);max-height:calc(100dvh - 18px);border-radius:22px}
+      .gift-modal-shell{max-height:calc(100dvh - 18px);padding:46px 18px 26px}
+      .gift-level{grid-template-columns:64px 1fr;gap:11px;padding:14px}
+      .gift-preview-shell{max-height:calc(100dvh - 14px);padding:48px 13px 17px}
+      .gift-preview-grid{grid-template-columns:1fr;gap:12px}
+      .final{min-height:520px}
+      .final::before{background:linear-gradient(90deg,rgba(7,26,20,.98),rgba(7,26,20,.72))}
+      .final-copy{padding:65px 0}
+      .final h2{font-size:clamp(2.9rem,13vw,4.4rem)}
+      .footer-grid{display:block}
+      .footer-grid>div+div{margin-top:16px}
+      .mobile-give{display:flex}
+      footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+    }
+
+    @media(max-width:390px){
+      .brand span{max-width:175px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+      .hero-content{padding-top:143px}
+      .hero h1{font-size:3.25rem}
+      .support-item{padding:13px;min-height:120px}
+      .support-icon{width:38px;height:38px;flex-basis:38px}
+      .team-card{min-height:450px}
+    }
