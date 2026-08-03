@@ -14,6 +14,11 @@ if(supporterList&&!supporterList.textContent.includes('Lisa D.')){
   supporterList.append(supporter);
 }
 
+const heroProgressText=document.querySelector('.hero-progress p');
+if(heroProgressText)heroProgressText.textContent='toward our first $500 milestone';
+const milestoneText=document.querySelector('.milestone-top span');
+if(milestoneText)milestoneText.textContent='First milestone: $500';
+
 navToggle?.addEventListener('click',()=>{
   const open=navToggle.getAttribute('aria-expanded')==='true';
   navToggle.setAttribute('aria-expanded',String(!open));
