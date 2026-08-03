@@ -2,6 +2,18 @@ const body=document.body;
 const navToggle=document.querySelector('.nav-toggle');
 const navLinks=document.querySelector('.nav-links');
 
+const supporterList=document.querySelector('.supporter-list');
+if(supporterList&&!supporterList.textContent.includes('Lisa D.')){
+  const supporter=document.createElement('div');
+  supporter.className='supporter-name';
+  const label=document.createElement('small');
+  label.textContent='Founding Supporter';
+  const name=document.createElement('strong');
+  name.textContent='Lisa D.';
+  supporter.append(label,name);
+  supporterList.append(supporter);
+}
+
 navToggle?.addEventListener('click',()=>{
   const open=navToggle.getAttribute('aria-expanded')==='true';
   navToggle.setAttribute('aria-expanded',String(!open));
