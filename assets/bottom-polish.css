@@ -1,8 +1,8 @@
-/* Emergency header repair: keep the campaign-card concept compact and responsive. */
+/* Compact campaign-card overlay that preserves the opening video. */
 .hero{min-height:100svh;align-items:end;background:var(--forest);color:#fff;padding-top:0}
 .hero-video{opacity:1;filter:none;transform:none}
 .hero-video.ready{opacity:1}
-.hero-shade{background:linear-gradient(180deg,rgba(4,14,10,.2),rgba(4,14,10,.32) 45%,rgba(4,14,10,.94) 100%)}
+.hero-shade{background:linear-gradient(180deg,rgba(4,14,10,.12),rgba(4,14,10,.16) 45%,rgba(4,14,10,.82) 100%)}
 .hero-layout{width:min(var(--max),calc(100% - 40px));margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.44fr);align-items:end;gap:28px;padding:90px 0 52px}
 
 .campaign-header-card{position:relative;max-width:760px;padding:38px 42px 32px;overflow:hidden;border:5px solid #071b14;border-radius:34px;background:linear-gradient(145deg,#fbf5e8,#e9dfca);color:var(--forest);box-shadow:0 24px 65px rgba(0,0,0,.28),inset 0 0 0 2px rgba(255,255,255,.55)}
@@ -38,25 +38,34 @@
 }
 
 @media(max-width:720px){
-  .hero{min-height:auto;padding-top:18px}
-  .hero-layout{width:calc(100% - 24px);gap:14px;padding:18px 0 28px}
-  .campaign-header-card{width:100%;padding:22px 18px 20px;border-width:4px;border-radius:26px}
-  .campaign-corner-top{top:16px;left:16px}.campaign-corner-bottom{right:16px;bottom:16px}
-  .campaign-card-title{grid-template-columns:minmax(0,1fr) 72px;gap:10px;padding:18px 4px 12px}
-  .campaign-header-card h1{font-size:clamp(2.75rem,13.5vw,4.25rem);line-height:.84}
-  .campaign-card-logo{width:70px;height:70px;padding:10px;border-width:4px}
-  .campaign-card-rule{margin:4px 4px 16px;gap:9px}
-  .campaign-card-deadline{padding:0 4px 6px;gap:10px;font-size:.58rem;letter-spacing:.1em}
-  .campaign-card-deadline strong{padding:5px 7px;font-size:.68rem;white-space:nowrap}
-  .hero-progress{padding:18px;border-radius:20px}
-  .hero-progress h2{font-size:1.85rem}
-  .hero-actions{display:grid;grid-template-columns:1fr 1fr}
-  .hero-actions .button{min-height:46px;padding:11px 12px;font-size:.82rem}
+  .hero{min-height:100svh;padding:0}
+  .hero-layout{width:100%;min-height:100svh;padding:18px 14px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+  .campaign-header-card{width:min(88%,420px);align-self:flex-start;padding:14px 14px 13px;border-width:3px;border-radius:22px;box-shadow:0 15px 34px rgba(0,0,0,.25)}
+  .campaign-header-card::before,.campaign-header-card::after{height:7px;background-size:14px 7px}
+  .campaign-corner{width:20px;height:20px}
+  .campaign-corner-top{top:11px;left:11px}.campaign-corner-bottom{right:11px;bottom:11px}
+  .campaign-card-title{grid-template-columns:minmax(0,1fr) 54px;gap:8px;padding:11px 3px 7px}
+  .campaign-header-card h1{font-size:clamp(2.15rem,10.5vw,3.2rem);line-height:.82}
+  .campaign-card-logo{width:52px;height:52px;padding:7px;border-width:3px}
+  .campaign-card-rule{margin:2px 3px 8px;gap:7px;grid-template-columns:1fr 6px 1fr}
+  .campaign-card-rule i{width:6px;height:6px}
+  .campaign-card-deadline{padding:0 3px 3px;gap:8px;font-size:.48rem;letter-spacing:.09em}
+  .campaign-card-deadline strong{padding:3px 5px;font-size:.56rem;white-space:nowrap}
+
+  .hero-progress{width:min(88%,420px);align-self:flex-end;padding:14px 15px;border-radius:18px;background:rgba(6,20,15,.7);backdrop-filter:blur(10px)}
+  .hero-progress{gap:6px}
+  .hero-progress span{font-size:.58rem}
+  .hero-progress h2{font-size:1.45rem;margin:0}
+  .hero-progress p{font-size:.76rem;margin:0}
+  .hero-progress small{font-size:.62rem}
+  .hero-progress .progress-track{height:7px}
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+  .hero-actions .button{min-height:40px;padding:8px 10px;font-size:.75rem}
 }
 
 @media(max-width:390px){
-  .campaign-header-card h1{font-size:2.7rem}
-  .campaign-card-title{grid-template-columns:minmax(0,1fr) 62px}
-  .campaign-card-logo{width:60px;height:60px}
-  .campaign-card-deadline{align-items:flex-start;flex-direction:column;gap:7px}
+  .campaign-header-card,.hero-progress{width:92%}
+  .campaign-header-card h1{font-size:2.15rem}
+  .campaign-card-title{grid-template-columns:minmax(0,1fr) 48px}
+  .campaign-card-logo{width:46px;height:46px}
 }
