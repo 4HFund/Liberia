@@ -2,18 +2,6 @@ const body=document.body;
 const navToggle=document.querySelector('.nav-toggle');
 const navLinks=document.querySelector('.nav-links');
 
-const supporterList=document.querySelector('.supporter-list');
-if(supporterList&&!supporterList.textContent.includes('Lisa D.')){
-  const supporter=document.createElement('div');
-  supporter.className='supporter-name';
-  const label=document.createElement('small');
-  label.textContent='Founding Supporter';
-  const name=document.createElement('strong');
-  name.textContent='Lisa D.';
-  supporter.append(label,name);
-  supporterList.append(supporter);
-}
-
 const heroProgressText=document.querySelector('.hero-progress p');
 if(heroProgressText)heroProgressText.textContent='toward our first $500 milestone';
 const milestoneText=document.querySelector('.milestone-top span');
