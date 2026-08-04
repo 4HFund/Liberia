@@ -15,31 +15,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/fullscreen.css?v=2">
+  <link rel="stylesheet" href="assets/fullscreen.css?v=3">
   <link rel="stylesheet" href="assets/vision-crops.css?v=1">
   <link rel="stylesheet" href="assets/bottom-polish.css?v=2">
   <script src="assets/fullscreen.js?v=1" defer></script>
 </head>
 <body>
-  <a class="deadline-ribbon" href="#give"><span>Campaign deadline</span><strong>August 31</strong></a>
-
-  <nav class="site-nav" aria-label="Primary navigation">
-    <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="100 Acres of Hope home">
-        <img src="assets/cacao-cross.svg" alt="">
-        <span>100 Acres<br>of Hope</span>
-      </a>
-      <div class="nav-links" id="nav-links">
-        <a href="#story">The Story</a>
-        <a href="#vision">The Vision</a>
-        <a href="#team">The Team</a>
-        <a href="#give">Give</a>
-      </div>
-      <a class="nav-give" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a>
-      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
-    </div>
-  </nav>
-
   <header class="hero" id="top">
     <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Scenes from Liberia">
       <source src="assets/1000052389.mp4?v=6" type="video/mp4">
@@ -47,21 +28,29 @@
     <div class="hero-shade"></div>
     <button class="hero-play" type="button" aria-label="Play opening video"><span>▶</span> Play film</button>
     <div class="hero-layout">
-      <div class="hero-copy reveal">
-        <span class="eyebrow">A documentary mission to Liberia</span>
-        <h1><span>100 Acres</span><em>of Hope</em></h1>
-        <p>Help us share what God is growing through faith, land, and opportunity.</p>
-        <div class="hero-actions">
-          <a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a>
-          <a class="button button-outline" href="#story">See the Story</a>
+      <section class="campaign-header-card reveal" aria-label="100 Acres of Hope campaign header">
+        <span class="campaign-corner campaign-corner-top"></span>
+        <span class="campaign-corner campaign-corner-bottom"></span>
+        <div class="campaign-card-title">
+          <h1><span>100 Acres</span><em>of Hope</em></h1>
+          <div class="campaign-card-logo"><img src="assets/cacao-cross.svg" alt="100 Acres of Hope emblem"></div>
         </div>
-      </div>
+        <div class="campaign-card-rule"><span></span><i></i><span></span></div>
+        <div class="campaign-card-deadline">
+          <span>Campaign deadline</span>
+          <strong>August 31</strong>
+        </div>
+      </section>
       <aside class="hero-progress reveal" aria-label="Fundraising progress">
         <span>Campaign progress</span>
         <h2>$225.00 raised</h2>
         <p>toward our first $500 milestone</p>
         <div class="progress-track" role="progressbar" aria-label="First milestone progress" aria-valuemin="0" aria-valuemax="500" aria-valuenow="225"><i></i></div>
         <small>Overall goal: $6,000 by August 31</small>
+        <div class="hero-actions">
+          <a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a>
+          <a class="button button-outline" href="#story">See the Story</a>
+        </div>
       </aside>
     </div>
   </header>
@@ -77,202 +66,46 @@
 
     <section class="story-scene">
       <img src="assets/IMG_20260723_190709.jpeg" alt="A Liberian family traveling together">
-      <div class="story-caption reveal">
-        <h2>Listen first.</h2>
-        <p>Relationships come before cameras.</p>
-      </div>
+      <div class="story-caption reveal"><h2>Listen first.</h2><p>Relationships come before cameras.</p></div>
     </section>
 
     <section class="story-scene">
       <img src="assets/IMG_20260723_190655.jpeg" alt="Worship and community life in Liberia" loading="lazy">
-      <div class="story-caption reveal">
-        <h2>Faith in motion.</h2>
-        <p>Worship, joy, work, and everyday life tell the real story.</p>
-      </div>
+      <div class="story-caption reveal"><h2>Faith in motion.</h2><p>Worship, joy, work, and everyday life tell the real story.</p></div>
     </section>
 
     <section class="story-scene">
       <img src="assets/IMG_20260723_190650.jpeg" alt="Liberian church leaders and ministry partners" loading="lazy">
-      <div class="story-caption reveal">
-        <h2>Hope from the ground up.</h2>
-        <p>Land can grow food, jobs, ministry, and a stronger future.</p>
-      </div>
+      <div class="story-caption reveal"><h2>Hope from the ground up.</h2><p>Land can grow food, jobs, ministry, and a stronger future.</p></div>
     </section>
 
     <section class="vision" id="vision">
       <div class="page-shell">
-        <div class="section-heading reveal">
-          <div>
-            <span class="eyebrow eyebrow-dark">The 100-acre vision</span>
-            <h2>More than land. A living future.</h2>
-          </div>
-          <p>Tap a picture to see more.</p>
-        </div>
+        <div class="section-heading reveal"><div><span class="eyebrow eyebrow-dark">The 100-acre vision</span><h2>More than land. A living future.</h2></div><p>Tap a picture to see more.</p></div>
         <div class="vision-grid">
-          <button class="vision-card vision-card-cacao reveal" type="button" data-vision-image="assets/AE5052C6-85EB-4073-B88F-AE28B0D0D1A5.png" data-vision-alt="Cacao cultivation and sustainable income">
-            <img src="assets/AE5052C6-85EB-4073-B88F-AE28B0D0D1A5.png" alt="" loading="lazy">
-            <span class="vision-copy"><strong>Cacao</strong><span>Sustainable cultivation and income</span></span>
-          </button>
-          <button class="vision-card vision-card-animals reveal" type="button" data-vision-image="assets/C9D81B3E-7505-4BA0-BEDB-1432E6519CDC.png" data-vision-alt="Goats, chickens, and livestock supporting families">
-            <img src="assets/C9D81B3E-7505-4BA0-BEDB-1432E6519CDC.png" alt="" loading="lazy">
-            <span class="vision-copy"><strong>Animals</strong><span>Livestock supporting families</span></span>
-          </button>
-          <button class="vision-card vision-card-training reveal" type="button" data-vision-image="assets/10CC8352-F97E-43A7-9D6D-3664CC128C87.png" data-vision-alt="Practical farming, business, and leadership training">
-            <img src="assets/10CC8352-F97E-43A7-9D6D-3664CC128C87.png" alt="" loading="lazy">
-            <span class="vision-copy"><strong>Training</strong><span>Practical skills and leadership</span></span>
-          </button>
-          <button class="vision-card vision-card-opportunity reveal" type="button" data-vision-image="assets/F15E5BC8-6FE2-4B40-95C9-B97202FC1A52.png" data-vision-alt="Opportunity, hope, jobs, and a brighter future for Liberia">
-            <img src="assets/F15E5BC8-6FE2-4B40-95C9-B97202FC1A52.png" alt="" loading="lazy">
-            <span class="vision-copy"><strong>Opportunity</strong><span>Jobs, dignity, and a stronger future</span></span>
-          </button>
+          <button class="vision-card vision-card-cacao reveal" type="button" data-vision-image="assets/AE5052C6-85EB-4073-B88F-AE28B0D0D1A5.png" data-vision-alt="Cacao cultivation and sustainable income"><img src="assets/AE5052C6-85EB-4073-B88F-AE28B0D0D1A5.png" alt="" loading="lazy"><span class="vision-copy"><strong>Cacao</strong><span>Sustainable cultivation and income</span></span></button>
+          <button class="vision-card vision-card-animals reveal" type="button" data-vision-image="assets/C9D81B3E-7505-4BA0-BEDB-1432E6519CDC.png" data-vision-alt="Goats, chickens, and livestock supporting families"><img src="assets/C9D81B3E-7505-4BA0-BEDB-1432E6519CDC.png" alt="" loading="lazy"><span class="vision-copy"><strong>Animals</strong><span>Livestock supporting families</span></span></button>
+          <button class="vision-card vision-card-training reveal" type="button" data-vision-image="assets/10CC8352-F97E-43A7-9D6D-3664CC128C87.png" data-vision-alt="Practical farming, business, and leadership training"><img src="assets/10CC8352-F97E-43A7-9D6D-3664CC128C87.png" alt="" loading="lazy"><span class="vision-copy"><strong>Training</strong><span>Practical skills and leadership</span></span></button>
+          <button class="vision-card vision-card-opportunity reveal" type="button" data-vision-image="assets/F15E5BC8-6FE2-4B40-95C9-B97202FC1A52.png" data-vision-alt="Opportunity, hope, jobs, and a brighter future for Liberia"><img src="assets/F15E5BC8-6FE2-4B40-95C9-B97202FC1A52.png" alt="" loading="lazy"><span class="vision-copy"><strong>Opportunity</strong><span>Jobs, dignity, and a stronger future</span></span></button>
         </div>
       </div>
     </section>
 
-    <dialog class="media-modal" id="vision-modal" aria-label="100 Acres of Hope project detail image">
-      <button class="modal-close" type="button" data-vision-close aria-label="Close image">×</button>
-      <img id="vision-modal-image" src="" alt="">
-    </dialog>
+    <dialog class="media-modal" id="vision-modal" aria-label="100 Acres of Hope project detail image"><button class="modal-close" type="button" data-vision-close aria-label="Close image">×</button><img id="vision-modal-image" src="" alt=""></dialog>
 
-    <section class="allocation">
-      <div class="page-shell allocation-grid">
-        <div class="allocation-heading reveal">
-          <span class="eyebrow eyebrow-dark">Where your support goes</span>
-          <h2>Help carry the story.</h2>
-          <p>Every gift removes a practical barrier.</p>
-        </div>
-        <div class="allocation-list">
-          <article class="allocation-row reveal"><span class="allocation-icon">✈</span><div><h3>Travel to Liberia</h3><p>International travel for the documentary mission.</p></div></article>
-          <article class="allocation-row reveal"><span class="allocation-icon">⌂</span><div><h3>Transportation and lodging</h3><p>Safe movement and a place to stay.</p></div></article>
-          <article class="allocation-row reveal"><span class="allocation-icon">◉</span><div><h3>Documentary production</h3><p>Filming, protecting, and editing the story.</p></div></article>
-          <article class="allocation-row reveal"><span class="allocation-icon">•</span><div><h3>Sharing the story</h3><p>Helping the finished film reach farther.</p></div></article>
-        </div>
-      </div>
-    </section>
+    <section class="allocation"><div class="page-shell allocation-grid"><div class="allocation-heading reveal"><span class="eyebrow eyebrow-dark">Where your support goes</span><h2>Help carry the story.</h2><p>Every gift removes a practical barrier.</p></div><div class="allocation-list"><article class="allocation-row reveal"><span class="allocation-icon">✈</span><div><h3>Travel to Liberia</h3><p>International travel for the documentary mission.</p></div></article><article class="allocation-row reveal"><span class="allocation-icon">⌂</span><div><h3>Transportation and lodging</h3><p>Safe movement and a place to stay.</p></div></article><article class="allocation-row reveal"><span class="allocation-icon">◉</span><div><h3>Documentary production</h3><p>Filming, protecting, and editing the story.</p></div></article><article class="allocation-row reveal"><span class="allocation-icon">•</span><div><h3>Sharing the story</h3><p>Helping the finished film reach farther.</p></div></article></div></div></section>
 
-    <section class="trailer">
-      <div class="page-shell">
-        <span class="eyebrow">Watch the trailer</span>
-        <h2 class="reveal">See why this matters.</h2>
-        <div class="video-frame reveal"><iframe src="https://www.youtube-nocookie.com/embed/1P6kR2Qn2kA?rel=0" title="100 Acres of Hope trailer" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-      </div>
-    </section>
+    <section class="trailer"><div class="page-shell"><span class="eyebrow">Watch the trailer</span><h2 class="reveal">See why this matters.</h2><div class="video-frame reveal"><iframe src="https://www.youtube-nocookie.com/embed/1P6kR2Qn2kA?rel=0" title="100 Acres of Hope trailer" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div></section>
 
-    <section class="team" id="team">
-      <div class="page-shell">
-        <div class="section-heading reveal">
-          <div><span class="eyebrow eyebrow-dark">The team</span><h2>Going to listen and tell the story.</h2></div>
-          <p>Tap a portrait to learn more.</p>
-        </div>
-        <div class="team-grid">
-          <button class="profile reveal" type="button" data-bio-open="bobby-bio" aria-haspopup="dialog">
-            <img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall" loading="lazy">
-            <span class="profile-copy"><small>Lead Pastor · Listener · Storyteller</small><strong>Pastor Bobby Westfall</strong><span>Building relationships and leading interviews.</span><b>Read Bobby's story</b></span>
-          </button>
-          <button class="profile reveal" type="button" data-bio-open="sidney-bio" aria-haspopup="dialog">
-            <img src="assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png" alt="Sidney Mozingo" loading="lazy">
-            <span class="profile-copy"><small>Army Veteran · Creative Storyteller · Media Director</small><strong>Sidney Mozingo</strong><span>Leading the visual storytelling and production.</span><b>Read Sidney's story</b></span>
-          </button>
-        </div>
-      </div>
-    </section>
+    <section class="team" id="team"><div class="page-shell"><div class="section-heading reveal"><div><span class="eyebrow eyebrow-dark">The team</span><h2>Going to listen and tell the story.</h2></div><p>Tap a portrait to learn more.</p></div><div class="team-grid"><button class="profile reveal" type="button" data-bio-open="bobby-bio" aria-haspopup="dialog"><img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall" loading="lazy"><span class="profile-copy"><small>Lead Pastor · Listener · Storyteller</small><strong>Pastor Bobby Westfall</strong><span>Building relationships and leading interviews.</span><b>Read Bobby's story</b></span></button><button class="profile reveal" type="button" data-bio-open="sidney-bio" aria-haspopup="dialog"><img src="assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png" alt="Sidney Mozingo" loading="lazy"><span class="profile-copy"><small>Army Veteran · Creative Storyteller · Media Director</small><strong>Sidney Mozingo</strong><span>Leading the visual storytelling and production.</span><b>Read Sidney's story</b></span></button></div></div></section>
 
-    <dialog class="bio-modal" id="bobby-bio" aria-labelledby="bobby-bio-title">
-      <div class="bio-shell">
-        <div class="bio-photo"><img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall"></div>
-        <div class="bio-copy">
-          <button class="modal-close modal-close-light" type="button" data-bio-close aria-label="Close Bobby's bio">×</button>
-          <span class="eyebrow eyebrow-dark">Meet the team</span>
-          <h2 id="bobby-bio-title">Bobby Alan Westfall</h2>
-          <div class="bio-tags"><span>Lead Pastor</span><span>Missionary</span><span>Storyteller</span></div>
-          <p>Bobby Alan Westfall is the Lead Pastor of The Foundery Church in Wellsburg, West Virginia. Known for his passionate teaching and pastoral heart, Bobby, along with his wife Stacy and their five children, leads the church in cultivating authentic worship, intentional community, and missional living.</p>
-          <p>Bobby spent 12 years sharing his testimony as a hip-hop artist with Kalledout, then traveled with Stacy as missionaries on The Extreme Tour. Together, they co-founded The Bay Six Project, a ministry devoted to making sure everyone is seen, loved, and valued.</p>
-          <p>Today, Bobby and his family are committed to bringing hope, restoration, and the gospel to the Ohio Valley.</p>
-        </div>
-      </div>
-    </dialog>
+    <dialog class="bio-modal" id="bobby-bio" aria-labelledby="bobby-bio-title"><div class="bio-shell"><div class="bio-photo"><img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall"></div><div class="bio-copy"><button class="modal-close modal-close-light" type="button" data-bio-close aria-label="Close Bobby's bio">×</button><span class="eyebrow eyebrow-dark">Meet the team</span><h2 id="bobby-bio-title">Bobby Alan Westfall</h2><div class="bio-tags"><span>Lead Pastor</span><span>Missionary</span><span>Storyteller</span></div><p>Bobby Alan Westfall is the Lead Pastor of The Foundery Church in Wellsburg, West Virginia. Known for his passionate teaching and pastoral heart, Bobby, along with his wife Stacy and their five children, leads the church in cultivating authentic worship, intentional community, and missional living.</p><p>Bobby spent 12 years sharing his testimony as a hip-hop artist with Kalledout, then traveled with Stacy as missionaries on The Extreme Tour. Together, they co-founded The Bay Six Project, a ministry devoted to making sure everyone is seen, loved, and valued.</p><p>Today, Bobby and his family are committed to bringing hope, restoration, and the gospel to the Ohio Valley.</p></div></div></dialog>
 
-    <dialog class="bio-modal" id="sidney-bio" aria-labelledby="sidney-bio-title">
-      <div class="bio-shell">
-        <div class="bio-photo"><img src="assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png" alt="Sidney Mozingo"></div>
-        <div class="bio-copy">
-          <button class="modal-close modal-close-light" type="button" data-bio-close aria-label="Close Sidney's bio">×</button>
-          <span class="eyebrow eyebrow-dark">Meet the team</span>
-          <h2 id="sidney-bio-title">Sidney Lee Mozingo</h2>
-          <div class="bio-tags"><span>Army Veteran</span><span>Creative Storyteller</span><span>Ministry Leader</span></div>
-          <p>Sidney Lee Mozingo is a U.S. Army veteran, creative storyteller, and ministry leader serving at The Foundery Church in Wellsburg, West Virginia. Alongside his wife, Jacy, and their family, Sidney uses media, design, film, and technology to help people feel seen, valued, and connected.</p>
-          <p>After serving in Iraq and Afghanistan, Sidney's journey led him through seasons of struggle, growth, and renewed purpose. Today, he uses creativity to strengthen the local church and bring attention to work making a real difference.</p>
-          <p>Whether behind a camera or building a new idea, Sidney is passionate about using creativity for something greater than himself.</p>
-        </div>
-      </div>
-    </dialog>
+    <dialog class="bio-modal" id="sidney-bio" aria-labelledby="sidney-bio-title"><div class="bio-shell"><div class="bio-photo"><img src="assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png" alt="Sidney Mozingo"></div><div class="bio-copy"><button class="modal-close modal-close-light" type="button" data-bio-close aria-label="Close Sidney's bio">×</button><span class="eyebrow eyebrow-dark">Meet the team</span><h2 id="sidney-bio-title">Sidney Lee Mozingo</h2><div class="bio-tags"><span>Army Veteran</span><span>Creative Storyteller</span><span>Ministry Leader</span></div><p>Sidney Lee Mozingo is a U.S. Army veteran, creative storyteller, and ministry leader serving at The Foundery Church in Wellsburg, West Virginia. Alongside his wife, Jacy, and their family, Sidney uses media, design, film, and technology to help people feel seen, valued, and connected.</p><p>After serving in Iraq and Afghanistan, Sidney's journey led him through seasons of struggle, growth, and renewed purpose. Today, he uses creativity to strengthen the local church and bring attention to work making a real difference.</p><p>Whether behind a camera or building a new idea, Sidney is passionate about using creativity for something greater than himself.</p></div></div></dialog>
 
-    <section class="campaign">
-      <div class="page-shell campaign-grid">
-        <div class="campaign-copy reveal">
-          <span class="eyebrow">Campaign update</span>
-          <h2>The journey has begun.</h2>
-          <p>Thank you to everyone who has donated, shared, prayed, or encouraged us.</p>
-          <div class="milestone">
-            <div class="milestone-top"><strong>$225.00</strong><span>First milestone: $500</span></div>
-            <div class="progress-track"><i></i></div>
-          </div>
-        </div>
-        <article class="supporter-card reveal" aria-labelledby="supporter-wall-heading">
-          <span class="eyebrow">Founding supporters</span>
-          <h3 id="supporter-wall-heading">The Supporter Wall</h3>
-          <p>Thank you for helping this mission begin.</p>
-          <div class="supporter-list" aria-label="Founding supporters">
-            <div class="supporter-name"><small>Founding Supporter</small><strong>The McDonough Family</strong></div>
-            <div class="supporter-name"><small>Founding Supporter</small><strong>The Michael Family</strong></div>
-            <div class="supporter-name"><small>Founding Supporter</small><strong>Foundery Church Member</strong></div>
-          </div>
-          <div class="supporter-foot"><span>Your name can become part of the beginning.</span><a href="#give">Join the wall</a></div>
-        </article>
-      </div>
-    </section>
+    <section class="campaign"><div class="page-shell campaign-grid"><div class="campaign-copy reveal"><span class="eyebrow">Campaign update</span><h2>The journey has begun.</h2><p>Thank you to everyone who has donated, shared, prayed, or encouraged us.</p><div class="milestone"><div class="milestone-top"><strong>$225.00</strong><span>First milestone: $500</span></div><div class="progress-track"><i></i></div></div></div><article class="supporter-card reveal" aria-labelledby="supporter-wall-heading"><span class="eyebrow">Founding supporters</span><h3 id="supporter-wall-heading">The Supporter Wall</h3><p>Thank you for helping this mission begin.</p><div class="supporter-list" aria-label="Founding supporters"><div class="supporter-name"><small>Founding Supporter</small><strong>The McDonough Family</strong></div><div class="supporter-name"><small>Founding Supporter</small><strong>The Michael Family</strong></div><div class="supporter-name"><small>Founding Supporter</small><strong>Foundery Church Member</strong></div></div><div class="supporter-foot"><span>Your name can become part of the beginning.</span><a href="#give">Join the wall</a></div></article></div></section>
 
-    <section class="give" id="give">
-      <div class="page-shell">
-        <div class="give-heading reveal">
-          <span class="eyebrow eyebrow-dark">Join the mission</span>
-          <h2>Help us tell the story.</h2>
-          <p>Choose a level or give any amount.</p>
-        </div>
-        <div class="giving-grid">
-          <article class="giving-card reveal">
-            <div class="giving-amount">$25</div>
-            <h3>Fuel the Journey</h3>
-            <p>Help with basic travel needs.</p>
-            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$25 Fuel the Journey gift" data-gift-note="Includes the limited-edition 100 Acres of Hope vinyl sticker." data-gift-images="assets/615DC4B5-6B1F-44FF-97C4-362CFBC483A9.png" data-gift-alts="100 Acres of Hope vinyl supporter sticker" data-gift-captions="Limited-edition vinyl sticker">See supporter gift</button>
-            <a class="button button-outline-dark" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $25</a>
-          </article>
-          <article class="giving-card reveal">
-            <div class="giving-amount">$60</div>
-            <h3>Sponsor an Acre</h3>
-            <p>Support the 100-acre vision.</p>
-            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$60 Sponsor an Acre gifts" data-gift-note="Includes the numbered acre sponsorship certificate and wristband, plus the $25 vinyl sticker. The certificate will be signed by Pastor Bobby Westfall and Sidney Mozingo." data-gift-images="assets/36FC8731-AEC8-484F-845B-99BF907F5D36.png|assets/E543597A-5A8F-4635-9E51-BE9CF6A62FB9.png" data-gift-alts="100 Acres of Hope supporter wristband|Numbered acre sponsorship certificate signed by Pastor Bobby Westfall and Sidney Mozingo" data-gift-captions="100 Acres of Hope supporter wristband|Numbered acre sponsorship certificate">See supporter gifts</button>
-            <a class="button button-outline-dark" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $60</a>
-          </article>
-          <article class="giving-card giving-card-featured reveal">
-            <span class="featured-label">Most popular</span>
-            <div class="giving-amount">$100</div>
-            <h3>Sponsor a Day</h3>
-            <p>Support a day of filming and travel.</p>
-            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$100 Sponsor a Day gift" data-gift-note="Includes the limited-edition mission shirt plus all previous supporter gifts." data-gift-images="assets/752684E8-793E-4A97-AAD0-57CF629B53B5.png" data-gift-alts="Limited-edition green 100 Acres of Hope mission shirt" data-gift-captions="Limited-edition 100 Acres of Hope mission shirt">See supporter gift</button>
-            <a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $100</a>
-          </article>
-          <article class="giving-card reveal">
-            <div class="giving-amount">$300</div>
-            <h3>Bridge the Distance</h3>
-            <p>Help with international airfare.</p>
-            <button class="gift-hint" type="button" data-gift-preview data-gift-title="$300 Bridge the Distance gifts" data-gift-note="Includes a framed Liberia mission photograph, Hope Partner recognition in the documentary's ending credits, and all previous supporter gifts." data-gift-images="assets/7F3C3F27-40ED-4CB3-84AC-84E93776CD04.png" data-gift-alts="Framed Liberia mission photograph and Hope Partner end-credit recognition" data-gift-captions="Framed mission photograph and Hope Partner ending-credit recognition">See supporter gifts</button>
-            <a class="button button-outline-dark" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $300</a>
-          </article>
-        </div>
-        <div class="give-foot reveal"><button class="details-link" type="button" data-gift-open>View all supporter gift details</button><p>Acre sponsorship is symbolic and does not provide land ownership. Gifts are processed through The Foundery Church.</p></div>
-      </div>
-    </section>
+    <section class="give" id="give"><div class="page-shell"><div class="give-heading reveal"><span class="eyebrow eyebrow-dark">Join the mission</span><h2>Help us tell the story.</h2><p>Choose a level or give any amount.</p></div><div class="giving-grid"><article class="giving-card reveal"><div class="giving-amount">$25</div><h3>Fuel the Journey</h3><p>Help with basic travel needs.</p><button class="gift-hint" type="button" data-gift-preview data-gift-title="$25 Fuel the Journey gift" data-gift-note="Includes the limited-edition 100 Acres of Hope vinyl sticker." data-gift-images="assets/615DC4B5-6B1F-44FF-97C4-362CFBC483A9.png" data-gift-alts="100 Acres of Hope vinyl supporter sticker" data-gift-captions="Limited-edition vinyl sticker">See supporter gift</button><a class="button button-outline-dark" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $25</a></article><article class="giving-card reveal"><div class="giving-amount">$60</div><h3>Sponsor an Acre</h3><p>Support the 100-acre vision.</p><button class="gift-hint" type="button" data-gift-preview data-gift-title="$60 Sponsor an Acre gifts" data-gift-note="Includes the numbered acre sponsorship certificate and wristband, plus the $25 vinyl sticker. The certificate will be signed by Pastor Bobby Westfall and Sidney Mozingo." data-gift-images="assets/36FC8731-AEC8-484F-845B-99BF907F5D36.png|assets/E543597A-5A8F-4635-9E51-BE9CF6A62FB9.png" data-gift-alts="100 Acres of Hope supporter wristband|Numbered acre sponsorship certificate signed by Pastor Bobby Westfall and Sidney Mozingo" data-gift-captions="100 Acres of Hope supporter wristband|Numbered acre sponsorship certificate">See supporter gifts</button><a class="button button-outline-dark" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $60</a></article><article class="giving-card giving-card-featured reveal"><span class="featured-label">Most popular</span><div class="giving-amount">$100</div><h3>Sponsor a Day</h3><p>Support a day of filming and travel.</p><button class="gift-hint" type="button" data-gift-preview data-gift-title="$100 Sponsor a Day gift" data-gift-note="Includes the limited-edition mission shirt plus all previous supporter gifts." data-gift-images="assets/752684E8-793E-4A97-AAD0-57CF629B53B5.png" data-gift-alts="Limited-edition green 100 Acres of Hope mission shirt" data-gift-captions="Limited-edition 100 Acres of Hope mission shirt">See supporter gift</button><a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $100</a></article><article class="giving-card reveal"><div class="giving-amount">$300</div><h3>Bridge the Distance</h3><p>Help with international airfare.</p><button class="gift-hint" type="button" data-gift-preview data-gift-title="$300 Bridge the Distance gifts" data-gift-note="Includes a framed Liberia mission photograph, Hope Partner recognition in the documentary's ending credits, and all previous supporter gifts." data-gift-images="assets/7F3C3F27-40ED-4CB3-84AC-84E93776CD04.png" data-gift-alts="Framed Liberia mission photograph and Hope Partner end-credit recognition" data-gift-captions="Framed mission photograph and Hope Partner ending-credit recognition">See supporter gifts</button><a class="button button-outline-dark" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give $300</a></article></div><div class="give-foot reveal"><button class="details-link" type="button" data-gift-open>View all supporter gift details</button><p>Acre sponsorship is symbolic and does not provide land ownership. Gifts are processed through The Foundery Church.</p></div></div></section>
 
     <dialog class="gift-modal" id="gift-modal" aria-labelledby="gift-modal-title"><div class="gift-modal-inner"><button class="modal-close modal-close-light" type="button" data-gift-close aria-label="Close supporter gift details">×</button><span class="eyebrow eyebrow-dark">Optional thank-you gifts</span><h2 id="gift-modal-title">A small thank-you for your support.</h2><p>Every donation carries the mission forward. These gifts are simply our way of showing our appreciation.</p><div class="gift-list"><div><strong>$25</strong><span><b>Fuel the Journey</b>Limited-edition 100 Acres of Hope vinyl sticker.</span></div><div><strong>$60</strong><span><b>Sponsor an Acre</b>Sticker, wristband, and numbered acre sponsorship certificate signed by Pastor Bobby Westfall and Sidney Mozingo.</span></div><div><strong>$100</strong><span><b>Sponsor a Day</b>All previous gifts plus a limited-edition mission shirt.</span></div><div><strong>$300</strong><span><b>Bridge the Distance</b>All previous gifts plus a framed Liberia photograph and Hope Partner recognition in the documentary's ending credits.</span></div></div><small>Thank-you gifts are optional, cumulative, and available while supplies last. Donors may decline their gift so more of their donation supports the mission. Pickup, delivery, shirt sizing, and photograph details will be provided after donating.</small></div></dialog>
     <dialog class="gift-preview-modal" id="gift-preview-modal" aria-labelledby="gift-preview-title"><div class="gift-preview-inner"><button class="modal-close modal-close-light" type="button" data-gift-preview-close aria-label="Close supporter gift pictures">×</button><span class="eyebrow eyebrow-dark">Supporter thank-you gift</span><h2 id="gift-preview-title">Supporter gift</h2><p id="gift-preview-note"></p><div class="gift-preview-grid" id="gift-preview-grid"></div></div></dialog>
