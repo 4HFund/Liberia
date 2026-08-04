@@ -39,8 +39,9 @@
 
 @media(max-width:720px){
   .hero{min-height:100svh;padding:0}
-  .hero-layout{width:100%;min-height:100svh;padding:18px 14px 24px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:18px}
-  .campaign-header-card{width:min(88%,420px);align-self:center;padding:14px 14px 13px;border-width:3px;border-radius:22px;box-shadow:0 15px 34px rgba(0,0,0,.25)}
+  .hero-layout{width:100%;min-height:100svh;padding:18px 14px 24px;display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;gap:18px}
+  .campaign-header-card,.hero-progress{box-sizing:border-box;width:100%;max-width:420px;margin-inline:auto;align-self:auto}
+  .campaign-header-card{padding:14px 14px 13px;border-width:3px;border-radius:22px;box-shadow:0 15px 34px rgba(0,0,0,.25)}
   .campaign-header-card::before,.campaign-header-card::after{height:7px;background-size:14px 7px}
   .campaign-corner{width:20px;height:20px}
   .campaign-corner-top{top:11px;left:11px}.campaign-corner-bottom{right:11px;bottom:11px}
@@ -52,8 +53,7 @@
   .campaign-card-deadline{padding:0 3px 3px;gap:8px;font-size:.48rem;letter-spacing:.09em}
   .campaign-card-deadline strong{padding:3px 5px;font-size:.56rem;white-space:nowrap}
 
-  .hero-progress{width:min(88%,420px);align-self:center;padding:14px 15px;border-radius:18px;background:rgba(6,20,15,.7);backdrop-filter:blur(10px)}
-  .hero-progress{gap:6px}
+  .hero-progress{padding:14px 15px;border-radius:18px;background:rgba(6,20,15,.7);backdrop-filter:blur(10px);gap:6px}
   .hero-progress span{font-size:.58rem}
   .hero-progress h2{font-size:1.45rem;margin:0}
   .hero-progress p{font-size:.76rem;margin:0}
@@ -64,7 +64,7 @@
 }
 
 @media(max-width:390px){
-  .campaign-header-card,.hero-progress{width:92%}
+  .campaign-header-card,.hero-progress{max-width:none}
   .campaign-header-card h1{font-size:2.15rem}
   .campaign-card-title{grid-template-columns:minmax(0,1fr) 48px}
   .campaign-card-logo{width:46px;height:46px}
