@@ -1,24 +1,38 @@
 .progress-track i{width:45%}
 
+/* Keep the artwork above a clean caption panel so words baked into the
+   source images can never show behind the website labels. */
+.vision-card{background:#06140f}
 .vision-card img{
   width:100%;
-  height:100%;
+  height:72%;
+  inset:0 0 auto;
   object-fit:cover;
-  transform:scale(1.24);
-  transform-origin:center 28%;
+  transform:none;
+  transition:transform .45s ease;
 }
-.vision-card:hover img,.vision-card:focus-visible img{transform:scale(1.28)}
-.vision-card-cacao img{object-position:center 22%;transform-origin:center 22%}
-.vision-card-animals img{object-position:center 24%;transform-origin:center 24%}
-.vision-card-training img{object-position:center 18%;transform-origin:center 18%}
-.vision-card-opportunity img{object-position:center 20%;transform-origin:center 20%}
+.vision-card:hover img,.vision-card:focus-visible img{transform:scale(1.025)}
+.vision-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(180deg,rgba(4,15,11,.02) 0%,rgba(4,15,11,.12) 48%,#06140f 72%,#06140f 100%);
+}
+.vision-copy{z-index:2;bottom:24px}
+.vision-card-cacao img{object-position:center 18%}
+.vision-card-animals img{object-position:center 24%}
+.vision-card-training img{object-position:center 18%}
+.vision-card-opportunity img{object-position:center 20%}
 
 @media(max-width:720px){
-  .vision-card{min-height:68svh}
-  .vision-card img{transform:scale(1.42);transform-origin:center 20%}
-  .vision-card:hover img,.vision-card:focus-visible img{transform:scale(1.46)}
-  .vision-card-cacao img{object-position:center 18%;transform-origin:center 18%}
-  .vision-card-animals img{object-position:center 20%;transform-origin:center 20%}
-  .vision-card-training img{object-position:center 14%;transform-origin:center 14%}
-  .vision-card-opportunity img{object-position:center 16%;transform-origin:center 16%}
+  .vision-card{min-height:560px}
+  .vision-card img{height:70%;transform:none}
+  .vision-card:hover img,.vision-card:focus-visible img{transform:scale(1.02)}
+  .vision-card::after{background:linear-gradient(180deg,rgba(4,15,11,.02) 0%,rgba(4,15,11,.16) 44%,#06140f 69%,#06140f 100%)}
+  .vision-copy{left:24px;right:24px;bottom:24px}
+  .vision-card-cacao img{object-position:center 16%}
+  .vision-card-animals img{object-position:center 20%}
+  .vision-card-training img{object-position:center 14%}
+  .vision-card-opportunity img{object-position:center 16%}
 }
