@@ -1,22 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
   <title id="title">100 Acres of Hope</title>
-  <desc id="desc">Circular black and gold logo with a cross, leaves, and the words 100 Acres of Hope.</desc>
-  <circle cx="300" cy="300" r="286" fill="#111311" stroke="#d7a437" stroke-width="18"/>
-  <circle cx="300" cy="300" r="264" fill="none" stroke="#f0c45a" stroke-width="3" opacity=".75"/>
-  <g transform="translate(0,-10)">
-    <rect x="282" y="80" width="36" height="190" rx="4" fill="#e0ad3d"/>
-    <rect x="225" y="130" width="150" height="36" rx="4" fill="#e0ad3d"/>
-    <circle cx="300" cy="148" r="9" fill="#fff4d0"/>
-    <path d="M285 250C245 190 190 185 155 200c18 53 61 83 130 88z" fill="#6f9846"/>
-    <path d="M315 250c40-60 95-65 130-50-18 53-61 83-130 88z" fill="#7ca44d"/>
-    <path d="M190 214c34 18 61 40 91 72M410 214c-34 18-61 40-91 72" fill="none" stroke="#b8cf8d" stroke-width="5" stroke-linecap="round"/>
-    <path d="M150 295c92-32 208-32 300 0" fill="none" stroke="#5d7e3d" stroke-width="10" stroke-linecap="round"/>
+  <desc id="desc">Circular forest green and gold logo with a cross, leaves, and the words 100 Acres of Hope.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="68%">
+      <stop offset="0" stop-color="#123126"/>
+      <stop offset="1" stop-color="#061a14"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2c967"/>
+      <stop offset="1" stop-color="#d89b2b"/>
+    </linearGradient>
+    <linearGradient id="leafL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#799d55"/>
+      <stop offset="1" stop-color="#426b3f"/>
+    </linearGradient>
+    <linearGradient id="leafR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8eaa63"/>
+      <stop offset="1" stop-color="#4b7044"/>
+    </linearGradient>
+  </defs>
+  <circle cx="300" cy="300" r="286" fill="url(#bg)" stroke="url(#gold)" stroke-width="18"/>
+  <circle cx="300" cy="300" r="256" fill="none" stroke="#65794b" stroke-width="3" opacity=".85"/>
+  <g>
+    <rect x="284" y="80" width="32" height="210" rx="2" fill="url(#gold)"/>
+    <rect x="225" y="137" width="150" height="32" rx="2" fill="url(#gold)"/>
+    <circle cx="300" cy="153" r="9" fill="#fff5dd" stroke="#b87d1f" stroke-width="2"/>
+    <path d="M286 292C241 227 190 202 148 212c18 60 64 96 138 106z" fill="url(#leafL)"/>
+    <path d="M314 292c45-65 96-90 138-80-18 60-64 96-138 106z" fill="url(#leafR)"/>
+    <path d="M182 229c41 28 72 57 101 86M418 229c-41 28-72 57-101 86" fill="none" stroke="#b7c994" stroke-width="4" stroke-linecap="round"/>
+    <path d="M145 330c100-35 210-35 310 0" fill="none" stroke="#58763f" stroke-width="8" stroke-linecap="round"/>
   </g>
-  <text x="300" y="385" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" letter-spacing="2">100 ACRES</text>
-  <line x1="90" y1="432" x2="175" y2="432" stroke="#d7a437" stroke-width="5"/>
-  <line x1="425" y1="432" x2="510" y2="432" stroke="#d7a437" stroke-width="5"/>
-  <text x="300" y="455" text-anchor="middle" fill="#d7a437" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700" letter-spacing="8">OF HOPE</text>
-  <line x1="150" y1="486" x2="450" y2="486" stroke="#d7a437" stroke-width="3" opacity=".85"/>
-  <text x="300" y="522" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">TELLING THE STORY.</text>
-  <text x="300" y="548" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">SPREADING HOPE. CHANGING LIVES.</text>
+  <text x="300" y="410" text-anchor="middle" fill="#fffaf0" font-family="Georgia, 'Times New Roman', serif" font-size="73" font-weight="700" letter-spacing="1">100 ACRES</text>
+  <line x1="105" y1="458" x2="184" y2="458" stroke="#dca63a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="416" y1="458" x2="495" y2="458" stroke="#dca63a" stroke-width="4" stroke-linecap="round"/>
+  <text x="300" y="478" text-anchor="middle" fill="#718052" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-style="italic">of Hope</text>
 </svg>
