@@ -16,8 +16,8 @@
 .campaign-header-card h1 span,.campaign-header-card h1 em{display:block}
 .campaign-header-card h1 span{white-space:nowrap}
 .campaign-header-card h1 em{color:#547064;font-weight:500}
-.campaign-card-logo{width:112px;height:112px;padding:16px;border:6px solid #dcae42;border-radius:50%;background:#082219;box-shadow:0 12px 28px rgba(0,0,0,.2)}
-.campaign-card-logo img{width:100%;height:100%;object-fit:contain}
+.campaign-card-logo{width:112px;height:112px;padding:0;overflow:hidden;border:6px solid #dcae42;border-radius:50%;background:#082219;box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.campaign-card-logo img{width:100%;height:100%;object-fit:cover;border-radius:50%;content:url('100-acres-logo.jpg')}
 .campaign-card-rule{display:grid;grid-template-columns:1fr 8px 1fr;gap:14px;align-items:center;margin:8px 12px 22px}
 .campaign-card-rule span{height:1px;background:rgba(20,32,24,.22)}
 .campaign-card-rule i{width:8px;height:8px;border-radius:50%;background:#d9aa3e}
@@ -47,7 +47,7 @@
   .campaign-corner-top{top:9px;left:10px}.campaign-corner-bottom{right:10px;bottom:9px}
   .campaign-card-title{grid-template-columns:minmax(0,1fr) 48px;gap:8px;padding:8px 3px 5px}
   .campaign-header-card h1{font-size:clamp(2rem,9.4vw,3rem);line-height:.8}
-  .campaign-card-logo{width:46px;height:46px;padding:6px;border-width:3px}
+  .campaign-card-logo{width:46px;height:46px;border-width:3px}
   .campaign-card-rule{margin:1px 3px 6px;gap:6px;grid-template-columns:1fr 5px 1fr}
   .campaign-card-rule i{width:5px;height:5px}
   .campaign-card-deadline{padding:0 3px 2px;gap:8px;font-size:.45rem;letter-spacing:.08em}
