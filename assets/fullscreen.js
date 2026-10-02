@@ -154,3 +154,19 @@ document.querySelectorAll('.mobile-journey-bar a').forEach(link=>link.addEventLi
   navLinks?.classList.remove('open');
   navToggle?.setAttribute('aria-expanded','false');
 }));
+
+
+// Ambient pointer light for fine-pointer devices.
+if(window.matchMedia('(pointer:fine)').matches&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.documentElement.style.setProperty('--pointer-glow','1');
+  let raf=0,x=innerWidth/2,y=innerHeight/2;
+  window.addEventListener('pointermove',e=>{
+    x=e.clientX;y=e.clientY;
+    if(raf)return;
+    raf=requestAnimationFrame(()=>{
+      document.documentElement.style.setProperty('--mx',x+'px');
+      document.documentElement.style.setProperty('--my',y+'px');
+      raf=0;
+    });
+  },{passive:true});
+}
