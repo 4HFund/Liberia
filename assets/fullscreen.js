@@ -45,8 +45,20 @@ const updateHeroPlay=()=>heroPlay?.classList.toggle('visible',Boolean(heroVideo?
 const tryHeroPlay=()=>{
   if(!heroVideo)return;
   heroVideo.muted=true;
+  heroVideo.defaultMuted=true;
+  heroVideo.playsInline=true;
   const attempt=heroVideo.play();
-  if(attempt&&typeof attempt.then==='function')attempt.then(()=>{showHeroVideo();heroPlay?.classList.remove('visible')}).catch(updateHeroPlay);
+  if(attempt&&typeof attempt.then==='function'){
+    attempt.then(()=>{
+      showHeroVideo();
+      heroPlay?.classList.remove('visible');
+    }).catch(()=>{
+      showHeroVideo();
+      updateHeroPlay();
+    });
+  }else{
+    showHeroVideo();
+  }
 };
 heroVideo?.addEventListener('loadeddata',showHeroVideo,{once:true});
 heroVideo?.addEventListener('canplay',()=>{showHeroVideo();tryHeroPlay()},{once:true});
@@ -56,6 +68,8 @@ heroPlay?.addEventListener('click',async()=>{
   try{await heroVideo?.play();showHeroVideo();heroPlay.classList.remove('visible')}catch(e){heroPlay.classList.add('visible')}
 });
 tryHeroPlay();
+window.addEventListener('pageshow',()=>tryHeroPlay());
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)tryHeroPlay()});
 
 const reveals=document.querySelectorAll('.reveal');
 if('IntersectionObserver'in window){
