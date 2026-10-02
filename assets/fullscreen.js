@@ -195,3 +195,37 @@ if(missionDock&&endFrame&&'IntersectionObserver' in window){
   },{threshold:.2});
   dockObserver.observe(endFrame);
 }
+
+
+// Mobile navigation: hide while scrolling down, reveal when scrolling up.
+const siteNav=document.querySelector('.site-nav');
+if(siteNav){
+  let lastScrollY=window.scrollY;
+  let navTicking=false;
+  const updateNavVisibility=()=>{
+    const y=window.scrollY;
+    const delta=y-lastScrollY;
+    if(window.innerWidth<=720){
+      if(y<90){
+        siteNav.classList.remove('nav-hidden');
+      }else if(delta>6){
+        siteNav.classList.add('nav-hidden');
+        navLinks?.classList.remove('open');
+        navToggle?.setAttribute('aria-expanded','false');
+      }else if(delta<-6){
+        siteNav.classList.remove('nav-hidden');
+      }
+    }else{
+      siteNav.classList.remove('nav-hidden');
+    }
+    lastScrollY=y;
+    navTicking=false;
+  };
+  window.addEventListener('scroll',()=>{
+    if(!navTicking){
+      requestAnimationFrame(updateNavVisibility);
+      navTicking=true;
+    }
+  },{passive:true});
+  window.addEventListener('resize',()=>siteNav.classList.remove('nav-hidden'),{passive:true});
+}
