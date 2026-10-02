@@ -194,3 +194,83 @@ html{scroll-padding-top:88px}
   .final-grid{width:calc(100% - 28px)}
   .footer-contact{text-align:left}
 }
+
+
+/* Journey-first documentary experience */
+.journey-hub{position:relative;z-index:4;margin-top:-28px;padding:0 0 24px}
+.journey-hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 1.25fr;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:24px;background:#0a2119;color:#fff;box-shadow:0 24px 70px rgba(3,18,13,.2)}
+.journey-stat,.journey-hub-action{min-height:126px;padding:25px 24px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.09)}
+.journey-stat span,.journey-hub-action span{color:rgba(255,255,255,.55);font-size:.63rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.journey-stat strong{margin:5px 0;color:var(--gold);font:700 2.65rem/1 "Cormorant Garamond",Georgia,serif}
+.journey-stat small{color:rgba(255,255,255,.64)}
+.journey-stat-live strong{display:flex;align-items:center;gap:8px;color:#fff}
+.journey-stat-live strong::before{content:"";width:9px;height:9px;border-radius:50%;background:#d95848;box-shadow:0 0 0 5px rgba(217,88,72,.12)}
+.journey-hub-action{border:0;background:linear-gradient(135deg,#d5a83d,#f1bd4f);color:var(--forest);text-decoration:none;transition:filter .2s ease}
+.journey-hub-action:hover{filter:brightness(1.05)}
+.journey-hub-action span{color:rgba(6,20,15,.62)}
+.journey-hub-action strong{margin-top:8px;font-size:1rem}
+
+.mission-intro p{max-width:850px!important}
+.vision-flow{padding:88px 0;background:#f4efe4;color:var(--forest)}
+.vision-flow-heading{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:40px;align-items:end;margin-bottom:36px}
+.vision-flow-heading h2{max-width:760px;margin:8px 0 0;font-size:clamp(3.2rem,6vw,5.5rem)}
+.vision-flow-heading p{margin:0;color:var(--muted);line-height:1.7}
+.vision-flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.flow-step{position:relative;min-height:230px;padding:28px 24px;border:1px solid rgba(7,35,25,.1);border-radius:22px;background:rgba(255,255,255,.54)}
+.flow-step:not(:last-child)::after{content:"→";position:absolute;z-index:2;right:-13px;top:50%;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:var(--forest);font-weight:900;transform:translateY(-50%)}
+.flow-step>span{display:block;color:var(--clay);font-size:.65rem;font-weight:800;letter-spacing:.14em}
+.flow-step strong{display:block;margin:40px 0 9px;font:700 2rem/1 "Cormorant Garamond",Georgia,serif}
+.flow-step p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.6}
+
+.live-center{position:relative;overflow:hidden;padding:105px 0;background:radial-gradient(circle at 80% 15%,rgba(241,189,79,.11),transparent 30%),#06140f;color:#fff}
+.live-center-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(400px,1.1fr);gap:70px;align-items:center}
+.live-copy h2{margin:10px 0 18px;max-width:720px;color:#fff;font-size:clamp(3.3rem,6vw,5.7rem)}
+.live-copy p{max-width:650px;color:rgba(255,255,255,.68);line-height:1.75}
+.live-pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.05);font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.live-pill i{width:8px;height:8px;border-radius:50%;background:#d95848;box-shadow:0 0 0 5px rgba(217,88,72,.12)}
+.live-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.journey-track{position:relative;padding:14px 0}
+.journey-track::before{content:"";position:absolute;top:28px;bottom:28px;left:13px;width:2px;background:linear-gradient(var(--gold),rgba(255,255,255,.1))}
+.journey-stop{position:relative;padding:0 0 30px 54px}
+.journey-stop:last-child{padding-bottom:0}
+.journey-stop::before{content:"";position:absolute;left:6px;top:8px;width:16px;height:16px;border:2px solid rgba(255,255,255,.25);border-radius:50%;background:#06140f}
+.journey-stop.active::before{border-color:var(--gold);background:var(--gold);box-shadow:0 0 0 7px rgba(241,189,79,.1)}
+.journey-stop span{display:block;color:var(--gold);font-size:.62rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.journey-stop strong{display:block;margin:3px 0;color:#fff;font:600 1.7rem/1.05 "Cormorant Garamond",Georgia,serif}
+.journey-stop small{color:rgba(255,255,255,.55)}
+
+.mobile-journey-bar{display:none}
+@media(max-width:980px){
+ .journey-hub-grid{grid-template-columns:repeat(2,1fr)}
+ .journey-stat:nth-child(2){border-right:0}
+ .journey-stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.09)}
+ .vision-flow-heading,.live-center-grid{grid-template-columns:1fr}
+ .vision-flow-grid{grid-template-columns:repeat(2,1fr)}
+ .flow-step:nth-child(2)::after{display:none}
+}
+@media(max-width:720px){
+ body{padding-bottom:58px}
+ .journey-hub{margin-top:-16px;padding-bottom:14px}
+ .journey-hub-grid{width:calc(100% - 24px);grid-template-columns:1fr 1fr;border-radius:18px}
+ .journey-stat,.journey-hub-action{min-height:104px;padding:18px 14px}
+ .journey-stat strong{font-size:2rem}
+ .journey-stat small{font-size:.65rem}
+ .journey-stat-live{border-bottom:0!important}
+ .journey-hub-action{min-height:104px}
+ .vision-flow{padding:64px 0}
+ .vision-flow-heading{gap:16px;margin-bottom:25px}
+ .vision-flow-heading h2{font-size:clamp(2.7rem,12vw,4rem)}
+ .vision-flow-grid{grid-template-columns:1fr}
+ .flow-step{min-height:160px}
+ .flow-step strong{margin-top:24px}
+ .flow-step::after{display:none!important}
+ .live-center{padding:72px 0}
+ .live-center-grid{gap:40px}
+ .live-copy h2{font-size:clamp(2.9rem,12vw,4.2rem)}
+ .mobile-journey-bar{position:fixed;z-index:100;left:10px;right:10px;bottom:max(8px,env(safe-area-inset-bottom));height:52px;display:grid;grid-template-columns:1fr 1fr 1fr;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(5,20,15,.96);box-shadow:0 12px 35px rgba(0,0,0,.32);backdrop-filter:blur(18px)}
+ .mobile-journey-bar a{display:grid;place-items:center;color:rgba(255,255,255,.75);font-size:.62rem;font-weight:900;letter-spacing:.11em;text-decoration:none}
+ .mobile-journey-bar a+a{border-left:1px solid rgba(255,255,255,.1)}
+ .mobile-journey-bar .mobile-journey-give{background:var(--gold);color:var(--forest)}
+ .mobile-give{display:none!important}
+ footer{padding-bottom:78px}
+}
