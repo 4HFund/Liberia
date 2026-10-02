@@ -629,3 +629,23 @@ footer{padding:58px 0 46px;background:#03100c;border-top:1px solid rgba(255,255,
  .final-copy h2{font-size:clamp(4.1rem,18vw,6rem)}
  .footer-grid{gap:28px}
 }
+
+
+/* Condensed experience — less page, stronger moments */
+.mission-intro{padding:90px 0 78px}
+.story-scene{min-height:78svh}
+.vision{padding:92px 0}
+.trailer{padding:94px 0}
+.journey-journal{padding:94px 0}
+.give{padding:94px 0 76px}
+.faq{padding:88px 0 100px}
+footer{margin-top:0}
+.give-heading{display:grid;grid-template-columns:1fr auto;align-items:end;gap:30px}
+.give-heading p{margin:0 0 8px}
+@media(max-width:720px){
+ .mission-intro{padding:64px 0 56px}
+ .story-scene{min-height:66svh}
+ .vision,.trailer,.journey-journal,.give,.faq{padding-top:68px;padding-bottom:68px}
+ .give-heading{display:block}
+ .journal-strip{margin-top:10px}
+}
