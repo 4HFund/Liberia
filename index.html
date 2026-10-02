@@ -17,15 +17,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/fullscreen.css?v=3">
   <link rel="stylesheet" href="assets/vision-crops.css?v=1">
-  <link rel="stylesheet" href="assets/bottom-polish.css?v=4">
-  <script src="assets/fullscreen.js?v=2" defer></script>
+  <link rel="stylesheet" href="assets/bottom-polish.css?v=5">
+  <script src="assets/fullscreen.js?v=3" defer></script>
 </head>
 <body>
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-shell">
       <a class="brand" href="#top"><img src="assets/100-acres-logo-clean.svg" alt=""><span>100 Acres of Hope</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
-      <div class="nav-links"><a href="#story">Story</a><a href="#vision">Vision</a><a href="#team">Team</a><a href="#follow">Follow the Trip</a></div>
+      <div class="nav-links"><a href="#story">Story</a><a href="#vision">Vision</a><a href="#watch">Watch</a><a href="#follow">Follow</a><a href="#team">Team</a></div>
       <a class="nav-give" href="#give">Give Hope</a>
     </div>
   </nav>
@@ -44,10 +44,7 @@
           <div class="campaign-card-logo"><img src="assets/cacao-cross.svg" alt="100 Acres of Hope emblem"></div>
         </div>
         <div class="campaign-card-rule"><span></span><i></i><span></span></div>
-        <div class="campaign-card-deadline">
-          <span>Our journey begins</span>
-          <strong>October 16</strong>
-        </div>
+        <div class="campaign-card-deadline"><span>Liberia · Documentary Mission</span><strong>October 16</strong></div>
       </section>
       <aside class="hero-progress reveal" aria-label="Fundraising progress">
         <span>Trip funding progress</span>
@@ -55,10 +52,7 @@
         <p>73% of our $6,000 goal</p>
         <div class="progress-track" role="progressbar" aria-label="Trip funding progress" aria-valuemin="0" aria-valuemax="6000" aria-valuenow="4400"><i></i></div>
         <small>$1,600 remaining · every gift helps carry the story</small>
-        <div class="hero-actions">
-          <a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a>
-          <a class="button button-outline" href="#story">See the Story</a>
-        </div>
+        <div class="hero-actions"><a class="button button-gold" href="#follow">Follow the Journey</a><a class="button button-outline" href="#give">Help Reach $6,000</a></div>
       </aside>
     </div>
   </header>
@@ -66,11 +60,19 @@
   <main>
     <section class="trip-countdown" id="follow" aria-labelledby="trip-countdown-heading"><div class="page-shell countdown-shell reveal"><div class="countdown-copy"><span class="eyebrow">Liberia · October 16</span><h2 id="trip-countdown-heading">The journey is almost here.</h2><p>Follow 100 Acres of Hope as we travel, listen, film, and share updates from Liberia. We plan to livestream during the trip whenever connection allows. Come back here for trip updates and ways to follow along.</p></div><div class="countdown-grid" id="trip-countdown" aria-live="polite"><div><strong data-countdown="days">--</strong><span>Days</span></div><div><strong data-countdown="hours">--</strong><span>Hours</span></div><div><strong data-countdown="minutes">--</strong><span>Minutes</span></div><div><strong data-countdown="seconds">--</strong><span>Seconds</span></div></div></div></section>
 
+    <section class="journey-hub" aria-label="Journey status">
+      <div class="page-shell journey-hub-grid reveal">
+        <div class="journey-stat"><span>Funded</span><strong>73%</strong><small>$4,400 of $6,000</small></div>
+        <div class="journey-stat"><span>Remaining</span><strong>$1,600</strong><small>to close the travel gap</small></div>
+        <div class="journey-stat journey-stat-live"><span>From Liberia</span><strong>LIVE</strong><small>Livestreams when connection allows</small></div>
+        <a class="journey-hub-action" href="#watch"><span>Follow the journey</span><strong>Updates, video & live →</strong></a>
+      </div>
+    </section>
+
     <section class="mission-intro" id="story">
       <div class="page-shell reveal">
         <span class="eyebrow">The mission</span>
-        <h2>The story is already happening.</h2>
-        <p>We are going to listen, film, and help Liberian leaders share it.</p>
+        <h2>We were invited to come and tell what is growing.</h2><p>Free Methodist World Missions invited us to Liberia to listen, document, and help share the story of local leaders, churches, families, and a long-term vision taking shape across 100 acres.</p>
       </div>
     </section>
 
@@ -101,11 +103,30 @@
       </div>
     </section>
 
+    <section class="vision-flow" aria-labelledby="vision-flow-title">
+      <div class="page-shell">
+        <div class="vision-flow-heading reveal"><span class="eyebrow eyebrow-dark">How the vision grows</span><h2 id="vision-flow-title">100 acres. Four connected outcomes.</h2><p>The goal is not simply to develop land. It is to create something that can keep producing opportunity for the community.</p></div>
+        <div class="vision-flow-grid">
+          <article class="flow-step reveal"><span>01</span><strong>Cacao</strong><p>Grow a sustainable crop.</p></article>
+          <article class="flow-step reveal"><span>02</span><strong>Livestock</strong><p>Support food and family livelihoods.</p></article>
+          <article class="flow-step reveal"><span>03</span><strong>Jobs & Skills</strong><p>Create work and practical training.</p></article>
+          <article class="flow-step reveal"><span>04</span><strong>Ministry</strong><p>Strengthen churches and communities.</p></article>
+        </div>
+      </div>
+    </section>
+
     <dialog class="media-modal" id="vision-modal" aria-label="100 Acres of Hope project detail image"><button class="modal-close" type="button" data-vision-close aria-label="Close image">×</button><img id="vision-modal-image" src="" alt=""></dialog>
 
     <section class="allocation"><div class="page-shell allocation-grid"><div class="allocation-heading reveal"><span class="eyebrow eyebrow-dark">Where your support goes</span><h2>Help carry the story.</h2><p>Every gift removes a practical barrier.</p></div><div class="allocation-list"><article class="allocation-row reveal"><span class="allocation-icon">✈</span><div><h3>Travel to Liberia</h3><p>International travel for the documentary mission.</p></div></article><article class="allocation-row reveal"><span class="allocation-icon">⌂</span><div><h3>Transportation and lodging</h3><p>Safe movement and a place to stay.</p></div></article><article class="allocation-row reveal"><span class="allocation-icon">◉</span><div><h3>Documentary production</h3><p>Filming, protecting, and editing the story.</p></div></article><article class="allocation-row reveal"><span class="allocation-icon">•</span><div><h3>Sharing the story</h3><p>Helping the finished film reach farther.</p></div></article></div></div></section>
 
-    <section class="trailer"><div class="page-shell"><span class="eyebrow">Watch the trailer</span><h2 class="reveal">See why this matters.</h2><div class="video-frame reveal"><iframe src="https://www.youtube-nocookie.com/embed/1P6kR2Qn2kA?rel=0" title="100 Acres of Hope trailer" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div></section>
+    <section class="trailer" id="watch"><div class="page-shell"><span class="eyebrow">Watch the trailer</span><h2 class="reveal">See why this matters.</h2><div class="video-frame reveal"><iframe src="https://www.youtube-nocookie.com/embed/1P6kR2Qn2kA?rel=0" title="100 Acres of Hope trailer" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div></section>
+
+    <section class="live-center" id="live">
+      <div class="page-shell live-center-grid">
+        <div class="live-copy reveal"><span class="live-pill"><i></i> Follow from Liberia</span><span class="eyebrow">Live + trip updates</span><h2>This page becomes our window into the journey.</h2><p>While we are in Liberia, this is where we will point you for livestreams, field updates, new photos, and moments from the 100-acre project whenever internet connection allows.</p><div class="live-actions"><a class="button button-gold" href="#top">Save this page</a><a class="button button-outline" href="#give">Support the trip</a></div></div>
+        <div class="journey-track reveal" aria-label="Journey timeline"><div class="journey-stop active"><span>Now</span><strong>Preparing</strong><small>Fundraising & final preparations</small></div><div class="journey-stop"><span>Oct 16</span><strong>Traveling</strong><small>The journey to Liberia begins</small></div><div class="journey-stop"><span>Liberia</span><strong>On the Ground</strong><small>Listen, film & livestream</small></div><div class="journey-stop"><span>100 Acres</span><strong>The Vision</strong><small>Document the project and people</small></div><div class="journey-stop"><span>Home</span><strong>Share the Story</strong><small>Build the documentary</small></div></div>
+      </div>
+    </section>
 
     <section class="team" id="team"><div class="page-shell"><div class="section-heading reveal"><div><span class="eyebrow eyebrow-dark">The team</span><h2>Going to listen and tell the story.</h2></div><p>Tap a portrait to learn more.</p></div><div class="team-grid"><button class="profile reveal" type="button" data-bio-open="bobby-bio" aria-haspopup="dialog"><img src="assets/IMG_2452.jpeg" alt="Pastor Bobby Westfall" loading="lazy"><span class="profile-copy"><small>Lead Pastor · Listener · Storyteller</small><strong>Pastor Bobby Westfall</strong><span>Building relationships and leading interviews.</span><b>Read Bobby's story</b></span></button><button class="profile reveal" type="button" data-bio-open="sidney-bio" aria-haspopup="dialog"><img src="assets/2DF7D6A7-CD8E-4D84-85CA-7A7200F83BD6.png" alt="Sidney Mozingo" loading="lazy"><span class="profile-copy"><small>Army Veteran · Creative Storyteller · Media Director</small><strong>Sidney Mozingo</strong><span>Leading the visual storytelling and production.</span><b>Read Sidney's story</b></span></button></div></div></section>
 
@@ -129,7 +150,7 @@
     <section class="final-cta"><img src="assets/IMG_20260723_190650.jpeg" alt="" loading="lazy"><div class="page-shell final-grid"><div class="final-copy reveal"><span class="eyebrow">October 16 is almost here</span><h2>Help carry the story to Liberia.</h2><p>Give, pray, share, and follow along for livestreams and updates from the journey.</p><a class="button button-gold" href="https://thefounderychurch.churchcenter.com/giving/to/100-acres-of-hope-mission-trip-documentary" target="_blank" rel="noopener">Give Hope</a></div></div></section>
   </main>
 
-  <footer><div class="page-shell footer-grid"><div class="footer-brand"><img src="assets/cacao-cross.svg" alt=""><div><strong>100 Acres of Hope</strong><span>A documentary mission of The Foundery Church.</span></div></div><div class="footer-links"><a href="#story">Story</a><a href="#vision">Vision</a><a href="#team">Team</a><a href="#follow">Follow</a><a href="#give">Give</a></div><div class="footer-contact">The Foundery Church<br>Wellsburg, West Virginia<br><a href="mailto:office@thefoundery.church">office@thefoundery.church</a></div></div></footer>
-  <div class="mobile-give" id="mobile-give" aria-label="Mobile donation shortcut"><a href="#give">Give Hope</a><button type="button" aria-label="Dismiss donation shortcut">×</button></div>
+  <footer><div class="page-shell footer-grid"><div class="footer-brand"><img src="assets/cacao-cross.svg" alt=""><div><strong>100 Acres of Hope</strong><span>A documentary mission of The Foundery Church.</span></div></div><div class="footer-links"><a href="#story">Story</a><a href="#vision">Vision</a><a href="#watch">Watch</a><a href="#follow">Follow</a><a href="#give">Give</a></div><div class="footer-contact">The Foundery Church<br>Wellsburg, West Virginia<br><a href="mailto:office@thefoundery.church">office@thefoundery.church</a></div></div></footer>
+  <div class="mobile-journey-bar" aria-label="Journey shortcuts"><a href="#follow"><span>FOLLOW</span></a><a href="#watch"><span>WATCH</span></a><a href="#give" class="mobile-journey-give"><span>GIVE</span></a></div>
 </body>
 </html>
