@@ -148,43 +148,9 @@ copyLink?.addEventListener('click',async()=>{
   if(shareStatus)shareStatus.textContent='Link copied.';
 });
 
-const mobileGive=document.getElementById('mobile-give');
-const mobileGiveClose=mobileGive?.querySelector('button');
-const storyScenes=[...document.querySelectorAll('.story-scene')];
-const mobileBlocked=[
-  document.getElementById('give'),
-  document.querySelector('.share'),
-  document.querySelector('.faq'),
-  document.querySelector('.partners'),
-  document.querySelector('.final-cta'),
-  document.querySelector('footer')
-].filter(Boolean);
-let mobileDismissed=false;
-let mobileFrame=0;
-try{mobileDismissed=sessionStorage.getItem('hope-mobile-give-hidden')==='true'}catch(e){}
-function visibleInViewport(element){
-  const rect=element.getBoundingClientRect();
-  return rect.top<window.innerHeight-30&&rect.bottom>80;
-}
-function updateMobileGive(){
-  mobileFrame=0;
-  if(!mobileGive)return;
-  const mobile=window.innerWidth<=720;
-  const lastStory=storyScenes.at(-1);
-  const storyPassed=Boolean(lastStory&&lastStory.getBoundingClientRect().bottom<window.innerHeight*.45);
-  const blocked=mobileBlocked.some(visibleInViewport);
-  mobileGive.classList.toggle('visible',mobile&&!mobileDismissed&&storyPassed&&!blocked&&!body.classList.contains('modal-open'));
-}
-function scheduleMobileGive(){
-  if(mobileFrame)return;
-  mobileFrame=requestAnimationFrame(updateMobileGive);
-}
-mobileGiveClose?.addEventListener('click',()=>{
-  mobileDismissed=true;
-  try{sessionStorage.setItem('hope-mobile-give-hidden','true')}catch(e){}
-  mobileGive?.classList.remove('visible');
-});
-window.addEventListener('scroll',scheduleMobileGive,{passive:true});
-window.addEventListener('resize',scheduleMobileGive);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){tryHeroPlay();scheduleMobileGive()}});
-updateMobileGive();
+
+const journeyBar=document.querySelector('.mobile-journey-bar');
+document.querySelectorAll('.mobile-journey-bar a').forEach(link=>link.addEventListener('click',()=>{
+  navLinks?.classList.remove('open');
+  navToggle?.setAttribute('aria-expanded','false');
+}));
