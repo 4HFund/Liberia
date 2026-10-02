@@ -170,3 +170,14 @@ if(window.matchMedia('(pointer:fine)').matches&&!window.matchMedia('(prefers-red
     });
   },{passive:true});
 }
+
+
+// Hide the mobile mission dock when the end frame is on screen.
+const missionDock=document.querySelector('.mission-dock');
+const endFrame=document.querySelector('.end-frame');
+if(missionDock&&endFrame&&'IntersectionObserver' in window){
+  const dockObserver=new IntersectionObserver(entries=>{
+    missionDock.classList.toggle('is-hidden',entries.some(entry=>entry.isIntersecting));
+  },{threshold:.2});
+  dockObserver.observe(endFrame);
+}
