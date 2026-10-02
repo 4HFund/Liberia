@@ -758,3 +758,76 @@ body::before{opacity:.018!important}
   .hero-actions{grid-template-columns:1fr!important}
   .vision-card{min-height:500px!important}
 }
+
+
+/* =========================================================
+   v3 — clean source artwork + unobstructed mobile navigation
+   ========================================================= */
+
+/* Vision cards now display the original artwork as-is.
+   No duplicate caption, no synthetic dark extension, no plus badge. */
+.vision-card{
+  min-height:0!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  display:block!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:24px!important;
+  background:transparent!important;
+  box-shadow:0 22px 58px rgba(7,26,20,.08)!important;
+}
+.vision-card img{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+  filter:none!important;
+}
+.vision-card:hover img,.vision-card:focus-visible img{
+  transform:none!important;
+}
+.vision-card::before,
+.vision-card::after,
+.vision-copy{
+  display:none!important;
+  content:none!important;
+}
+
+/* Anchor targets land below the fixed navigation instead of under it. */
+#story,#vision,#watch,#team,#give,#faq,#follow{
+  scroll-margin-top:96px;
+}
+html{scroll-padding-top:96px}
+
+/* Mobile nav can get out of the way while reading. */
+.site-nav{
+  transition:transform .34s cubic-bezier(.22,1,.36,1),background .25s ease!important;
+  will-change:transform;
+}
+.site-nav.nav-hidden{
+  transform:translateY(-110%);
+}
+
+@media(max-width:720px){
+  .vision-grid{
+    gap:18px!important;
+  }
+  .vision-card{
+    min-height:0!important;
+    border-radius:22px!important;
+  }
+  .vision-card img{
+    width:100%!important;
+    height:auto!important;
+  }
+  #story,#vision,#watch,#team,#give,#faq,#follow{
+    scroll-margin-top:78px;
+  }
+  html{scroll-padding-top:78px}
+}
