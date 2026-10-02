@@ -91,7 +91,7 @@ function closeDialog(dialog){
 function attachDialog(dialog,closeSelector,onClose){
   dialog?.querySelector(closeSelector)?.addEventListener('click',()=>closeDialog(dialog));
   dialog?.addEventListener('click',event=>{if(event.target===dialog)closeDialog(dialog)});
-  dialog?.addEventListener('close',()=>{body.classList.remove('modal-open');onClose?.();scheduleMobileGive()});
+  dialog?.addEventListener('close',()=>{body.classList.remove('modal-open');onClose?.()});
 }
 
 const visionDialog=document.getElementById('vision-modal');
@@ -101,51 +101,15 @@ document.querySelectorAll('[data-vision-image]').forEach(button=>button.addEvent
   visionImage.src=button.dataset.visionImage||'';
   visionImage.alt=button.dataset.visionAlt||'';
   openDialog(visionDialog);
-  scheduleMobileGive();
 }));
 attachDialog(visionDialog,'[data-vision-close]',()=>{if(visionImage){visionImage.src='';visionImage.alt=''}});
 
 const bioDialogs=document.querySelectorAll('.bio-modal');
 document.querySelectorAll('[data-bio-open]').forEach(button=>button.addEventListener('click',()=>{
   openDialog(document.getElementById(button.dataset.bioOpen));
-  scheduleMobileGive();
 }));
 bioDialogs.forEach(dialog=>attachDialog(dialog,'[data-bio-close]'));
 
-const giftDialog=document.getElementById('gift-modal');
-document.querySelectorAll('[data-gift-open]').forEach(button=>button.addEventListener('click',()=>{
-  openDialog(giftDialog);
-  scheduleMobileGive();
-}));
-attachDialog(giftDialog,'[data-gift-close]');
-
-const giftPreviewDialog=document.getElementById('gift-preview-modal');
-const giftPreviewTitle=document.getElementById('gift-preview-title');
-const giftPreviewNote=document.getElementById('gift-preview-note');
-const giftPreviewGrid=document.getElementById('gift-preview-grid');
-document.querySelectorAll('[data-gift-preview]').forEach(button=>button.addEventListener('click',()=>{
-  if(!giftPreviewTitle||!giftPreviewNote||!giftPreviewGrid)return;
-  const images=(button.dataset.giftImages||'').split('|').filter(Boolean);
-  const alts=(button.dataset.giftAlts||'').split('|');
-  const captions=(button.dataset.giftCaptions||'').split('|');
-  giftPreviewTitle.textContent=button.dataset.giftTitle||'Supporter gift';
-  giftPreviewNote.textContent=button.dataset.giftNote||'';
-  giftPreviewGrid.replaceChildren();
-  images.forEach((src,index)=>{
-    const figure=document.createElement('figure');
-    figure.className='gift-preview-card';
-    const image=document.createElement('img');
-    image.src=src;
-    image.alt=alts[index]||captions[index]||'Supporter gift preview';
-    const caption=document.createElement('figcaption');
-    caption.textContent=captions[index]||image.alt;
-    figure.append(image,caption);
-    giftPreviewGrid.append(figure);
-  });
-  openDialog(giftPreviewDialog);
-  scheduleMobileGive();
-}));
-attachDialog(giftPreviewDialog,'[data-gift-preview-close]',()=>giftPreviewGrid?.replaceChildren());
 
 const copyLink=document.getElementById('copy-link');
 const shareStatus=document.getElementById('share-status');
