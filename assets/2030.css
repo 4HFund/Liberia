@@ -1,0 +1,521 @@
+/* 100 Acres of Hope — 2030 visual system
+   Loaded last on purpose: this layer removes the older editorial numbering
+   and establishes a cleaner geometric/futuristic interface. */
+
+:root{
+  --future-bg:#06110d;
+  --future-bg-2:#0a1b15;
+  --future-cream:#f3eee5;
+  --future-ink:#07150f;
+  --future-gold:#f2be4f;
+  --future-line:rgba(255,255,255,.12);
+  --future-soft:rgba(255,255,255,.62);
+  --future-radius:28px;
+}
+html{background:var(--future-bg)}
+body{
+  font-family:"Manrope",Arial,sans-serif;
+  background:var(--future-cream);
+  color:var(--future-ink);
+}
+h1,h2,h3,.campaign-header-card h1,.campaign-header-card h1 span,.campaign-header-card h1 em,
+.mission-intro h2,.story-caption h2,.section-heading h2,.trailer h2,.give-heading h2,
+.giving-card h3,.giving-amount,.countdown-copy h2,.countdown-days strong,.bio-copy h2,
+.final-copy h2{
+  font-family:"Space Grotesk","Manrope",Arial,sans-serif!important;
+  letter-spacing:-.055em!important;
+}
+
+/* Remove every decorative numbering system and tiny tech label. */
+.hero-index,.hero-coordinates,.team-future-no{display:none!important}
+.future-panel::before,.story-caption::before,.giving-card::before,.giving-amount::after,
+.countdown-display::before,.end-frame::before{content:none!important;display:none!important}
+.giving-grid{counter-reset:none!important}
+.giving-card{counter-increment:none!important}
+.faq-future-title strong,.faq-future-list summary>span,.mission-dock a>span{display:none!important}
+
+/* Keep the modern grid, lose the faux-HUD clutter. */
+.hero-gridlines{opacity:.08!important}
+body::before{opacity:.018!important}
+.site-nav::after{height:2px;opacity:.4}
+
+/* Cleaner global type. */
+.eyebrow{
+  font-family:"Manrope",Arial,sans-serif!important;
+  font-size:.66rem!important;
+  letter-spacing:.14em!important;
+  font-weight:800!important;
+}
+.button,.nav-give,.gift-hint,.details-link,.journal-actions a{
+  font-family:"Manrope",Arial,sans-serif!important;
+}
+
+/* Hero: contemporary, not editorial-retro. */
+.campaign-header-card h1{
+  font-weight:600!important;
+  line-height:.78!important;
+}
+.campaign-header-card h1 em{
+  font-style:normal!important;
+  font-weight:500!important;
+}
+.hero-progress h2{font-weight:600!important}
+.campaign-card-logo{border-radius:22px!important}
+.campaign-card-deadline strong{font-family:"Manrope",Arial,sans-serif!important}
+
+/* Countdown keeps the drama but shifts to clean digital type. */
+.countdown-copy h2{
+  font-weight:600!important;
+  line-height:.82!important;
+}
+.countdown-days strong{
+  font-weight:500!important;
+  line-height:.75!important;
+  background:linear-gradient(180deg,#ffe6a1 0%,#f2be4f 58%,#9c6e22 130%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent!important;
+}
+.countdown-time strong{
+  font-family:"Space Grotesk","Manrope",Arial,sans-serif!important;
+  font-weight:500!important;
+}
+.countdown-kicker,.countdown-date,.countdown-footer{
+  font-family:"Manrope",Arial,sans-serif!important;
+}
+
+/* Story + vision */
+.mission-intro h2,.story-caption h2,.vision .section-heading h2,.trailer h2,.give-heading h2{
+  font-weight:600!important;
+  line-height:.88!important;
+}
+.vision-copy strong{
+  font-family:"Space Grotesk","Manrope",Arial,sans-serif!important;
+  font-weight:600!important;
+}
+.vision-card{border-radius:20px!important}
+.vision-card::before{
+  width:42px;height:42px;display:grid;place-items:center;
+  top:14px;right:14px;
+  border-radius:50%;
+  background:rgba(3,14,10,.48);
+  backdrop-filter:blur(14px);
+  font-size:1.1rem!important;
+}
+
+/* Give section: smoother digital product cards. */
+.give{background:linear-gradient(180deg,#f4efe7,#ede7dc)!important}
+.giving-grid{
+  gap:12px!important;
+  background:transparent!important;
+  border:0!important;
+}
+.giving-card{
+  border:1px solid rgba(7,35,25,.1)!important;
+  border-radius:24px!important;
+  background:rgba(255,255,255,.58)!important;
+  box-shadow:0 24px 70px rgba(7,26,20,.06)!important;
+  backdrop-filter:blur(12px);
+}
+.giving-card-featured{
+  background:linear-gradient(160deg,#0b261d,#06140f)!important;
+  border-color:rgba(242,190,79,.35)!important;
+}
+.giving-amount{
+  font-weight:500!important;
+  color:#b15b3b;
+}
+.giving-card-featured .giving-amount{color:var(--future-gold)!important}
+.giving-card h3{font-weight:600!important}
+.giving-card .button{
+  border-radius:16px!important;
+  min-height:52px!important;
+}
+
+/* New team section */
+.team-2030{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(80px,9vw,130px) 0;
+  background:
+    radial-gradient(circle at 12% 10%,rgba(242,190,79,.11),transparent 24%),
+    linear-gradient(180deg,#f2ece2,#e9e1d4);
+}
+.team-2030::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent calc(50% - .5px),rgba(7,35,25,.06) 50%,transparent calc(50% + .5px));
+}
+.team-2030 .page-shell{position:relative;z-index:1}
+.team-2030-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+  margin-bottom:36px;
+}
+.team-2030-head h2{
+  margin:0;
+  font:600 clamp(4.2rem,8vw,7rem)/.88 "Space Grotesk","Manrope",sans-serif!important;
+  letter-spacing:-.06em!important;
+}
+.team-2030-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.person-2030{
+  position:relative;
+  min-height:690px;
+  overflow:hidden;
+  padding:0;
+  border:0;
+  border-radius:30px;
+  background:#07130f;
+  color:#fff;
+  text-align:left;
+  cursor:pointer;
+  isolation:isolate;
+  box-shadow:0 32px 90px rgba(7,26,20,.12);
+}
+.person-2030 img{
+  position:absolute;
+  z-index:-3;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.9) contrast(1.02);
+  transition:transform .9s cubic-bezier(.22,1,.36,1),filter .6s ease;
+}
+.person-2030:hover img{transform:scale(1.025);filter:saturate(1.03)}
+.person-2030-shade{
+  position:absolute;
+  z-index:-2;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(3,12,9,.02) 20%,rgba(3,12,9,.1) 45%,rgba(3,12,9,.94) 100%),
+    linear-gradient(90deg,rgba(3,12,9,.28),transparent 55%);
+}
+.person-2030::after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  pointer-events:none;
+}
+.person-2030-copy{
+  position:absolute;
+  left:34px;
+  right:34px;
+  bottom:30px;
+  display:grid;
+  gap:8px;
+}
+.person-2030-copy small{
+  color:rgba(255,255,255,.56);
+  font:700 .66rem/1.2 "Manrope",sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.person-2030-copy strong{
+  color:#fff;
+  font:600 clamp(3rem,5.8vw,5.4rem)/.9 "Space Grotesk","Manrope",sans-serif;
+  letter-spacing:-.055em;
+}
+.person-2030-copy em{
+  justify-self:start;
+  margin-top:8px;
+  padding:9px 12px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  color:rgba(255,255,255,.72);
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);
+  font:700 .61rem/1 "Manrope",sans-serif;
+  font-style:normal;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* New FAQ */
+.faq-2030{
+  position:relative;
+  padding:clamp(78px,8vw,110px) 0;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 0%,rgba(242,190,79,.08),transparent 25%),
+    #071711;
+  color:#fff;
+}
+.faq-2030::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-220px;
+  width:620px;
+  height:620px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(72,173,129,.08),transparent 64%);
+  pointer-events:none;
+}
+.faq-2030 .page-shell{position:relative;z-index:1}
+.faq-2030-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:34px;
+}
+.faq-2030-head h2{
+  margin:0;
+  color:#fff;
+  font:600 clamp(3.5rem,7vw,6rem)/.9 "Space Grotesk","Manrope",sans-serif!important;
+  letter-spacing:-.06em!important;
+}
+.faq-2030-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.faq-2030 details{
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:22px;
+  background:rgba(255,255,255,.035);
+  backdrop-filter:blur(18px);
+}
+.faq-2030 summary{
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:0 24px;
+  list-style:none;
+  cursor:pointer;
+  color:#fff;
+  font:700 .9rem/1.3 "Manrope",sans-serif;
+}
+.faq-2030 summary::-webkit-details-marker{display:none}
+.faq-2030 summary span{
+  margin-left:auto;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:50%;
+  color:var(--future-gold);
+  font:400 1.15rem/1 "Manrope",sans-serif;
+  transition:transform .25s ease,background .25s ease;
+}
+.faq-2030 details[open] summary span{
+  transform:rotate(45deg);
+  background:rgba(242,190,79,.12);
+}
+.faq-2030 p{
+  margin:0;
+  padding:0 24px 24px;
+  color:rgba(255,255,255,.58);
+  font-size:.79rem;
+  line-height:1.7;
+}
+
+/* 2030 final portal */
+.hope-portal{
+  position:relative;
+  min-height:88svh;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  background:#020b08;
+  color:#fff;
+  isolation:isolate;
+}
+.hope-portal::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:54px 54px;
+  mask-image:radial-gradient(circle at center,#000,transparent 76%);
+}
+.hope-portal-glow{
+  position:absolute;
+  z-index:-1;
+  left:50%;
+  top:48%;
+  width:min(74vw,920px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at center,rgba(242,190,79,.2) 0,rgba(242,190,79,.07) 32%,rgba(34,120,86,.06) 52%,transparent 70%);
+  filter:blur(4px);
+}
+.hope-portal-glow::before,.hope-portal-glow::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  inset:11%;
+  border:1px solid rgba(242,190,79,.14);
+}
+.hope-portal-glow::after{
+  inset:23%;
+  border-style:dashed;
+  border-color:rgba(255,255,255,.08);
+  animation:orbitSpin 34s linear infinite;
+}
+.hope-portal-inner{
+  position:relative;
+  z-index:2;
+  min-height:78svh;
+  padding:58px 0 42px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.hope-portal-top,.hope-portal-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  color:rgba(255,255,255,.38);
+  font:700 .59rem/1 "Manrope",sans-serif;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.hope-word{
+  margin:auto 0 0;
+  text-align:center;
+  color:#fff;
+  font:600 clamp(8rem,24vw,20rem)/.68 "Space Grotesk","Manrope",sans-serif;
+  letter-spacing:-.09em;
+  text-shadow:0 0 90px rgba(242,190,79,.05);
+}
+.hope-portal-copy{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  margin:22px 0 auto;
+}
+.hope-portal-copy p{
+  margin:0;
+  color:rgba(255,255,255,.58);
+  font-size:.9rem;
+}
+.hope-portal-copy a{
+  min-height:56px;
+  display:inline-flex;
+  align-items:center;
+  gap:30px;
+  padding:0 18px 0 22px;
+  border-radius:999px;
+  background:var(--future-gold);
+  color:var(--future-ink);
+  text-decoration:none;
+  font:800 .76rem/1 "Manrope",sans-serif;
+  letter-spacing:.03em;
+  box-shadow:0 20px 60px rgba(242,190,79,.12);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.hope-portal-copy a span{
+  width:32px;height:32px;display:grid;place-items:center;
+  border-radius:50%;
+  background:rgba(6,20,15,.08);
+}
+.hope-portal-copy a:hover{transform:translateY(-3px);box-shadow:0 28px 70px rgba(242,190,79,.2)}
+.hope-portal-bottom{
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.09);
+}
+.hope-portal-bottom a{color:inherit;text-decoration:none}
+.hope-portal-bottom a:hover{color:var(--future-gold)}
+
+/* Sleek mobile dock */
+.mobile-journey-bar,.mission-dock,.end-footer{display:none!important}
+.dock-2030{display:none}
+@media(max-width:720px){
+  body{padding-bottom:74px!important}
+  .dock-2030{
+    position:fixed;
+    z-index:180;
+    left:50%;
+    bottom:max(10px,env(safe-area-inset-bottom));
+    width:min(292px,calc(100% - 30px));
+    height:52px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    padding:4px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:999px;
+    background:rgba(3,14,10,.72);
+    backdrop-filter:blur(24px) saturate(145%);
+    box-shadow:0 18px 50px rgba(0,0,0,.28);
+    transform:translateX(-50%);
+  }
+  .dock-2030 a{
+    display:grid;
+    place-items:center;
+    border-radius:999px;
+    color:rgba(255,255,255,.7);
+    text-decoration:none;
+    font:800 .61rem/1 "Manrope",sans-serif;
+    letter-spacing:.07em;
+    text-transform:uppercase;
+  }
+  .dock-2030-give{
+    background:var(--future-gold);
+    color:var(--future-ink)!important;
+  }
+
+  .team-2030{padding:72px 0}
+  .team-2030-head{display:block;margin-bottom:24px}
+  .team-2030-head h2{font-size:clamp(3.5rem,15vw,4.8rem)!important}
+  .team-2030-grid{grid-template-columns:1fr;gap:12px}
+  .person-2030{
+    min-height:66svh;
+    border-radius:22px;
+  }
+  .person-2030::after{inset:10px;border-radius:15px}
+  .person-2030-copy{left:22px;right:22px;bottom:22px}
+  .person-2030-copy small{font-size:.57rem}
+  .person-2030-copy strong{font-size:clamp(3rem,14vw,4.5rem)}
+  .person-2030-copy em{font-size:.54rem}
+
+  .faq-2030{padding:70px 0}
+  .faq-2030-head{display:block;margin-bottom:24px}
+  .faq-2030-head h2{font-size:clamp(3.4rem,14vw,4.6rem)!important}
+  .faq-2030-grid{grid-template-columns:1fr}
+  .faq-2030 summary{min-height:76px;padding:0 18px;font-size:.82rem}
+  .faq-2030 p{padding:0 18px 20px;font-size:.73rem}
+
+  .hope-portal{min-height:78svh}
+  .hope-portal-inner{width:calc(100% - 28px);min-height:72svh;padding:42px 0 30px}
+  .hope-portal-top{font-size:.48rem}
+  .hope-word{font-size:clamp(6.7rem,29vw,9.2rem);line-height:.72}
+  .hope-portal-copy{flex-direction:column;gap:16px;margin-top:20px}
+  .hope-portal-copy p{font-size:.8rem}
+  .hope-portal-copy a{min-height:54px}
+  .hope-portal-bottom{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    font-size:.48rem;
+  }
+  .hope-portal-glow{width:125vw}
+}
+@media(prefers-reduced-motion:reduce){
+  .hope-portal-glow::after{animation:none!important}
+}
