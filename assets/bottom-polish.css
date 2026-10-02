@@ -754,3 +754,542 @@ body::after{content:"";position:fixed;z-index:9998;left:var(--mx,50vw);top:var(-
 @media(prefers-reduced-motion:reduce){
  .kinetic-band div,.site-nav::after{animation:none!important}
 }
+
+
+/* =========================================================
+   v11 — storytellers + mission-control ending
+   ========================================================= */
+
+/* Journal is gone: reset sequence around the new team chapter */
+.team-future{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(84px,10vw,150px) 0;
+  background:#eee5d6;
+  color:var(--forest);
+}
+.team-future::before{
+  content:"04";
+  position:absolute;
+  top:28px;
+  right:clamp(20px,4vw,56px);
+  color:rgba(8,32,25,.09);
+  font:700 clamp(6rem,13vw,12rem)/.75 "Cormorant Garamond",serif;
+  letter-spacing:-.07em;
+}
+.team-future::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent calc(50% - .5px),rgba(7,35,25,.07) 50%,transparent calc(50% + .5px)),
+    linear-gradient(180deg,rgba(255,255,255,.18),transparent 28%);
+}
+.team-future .page-shell{position:relative;z-index:1}
+.team-future-heading{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:end;
+  gap:28px;
+  margin-bottom:44px;
+}
+.team-future-heading h2{
+  max-width:900px;
+  margin:0;
+  font-size:clamp(4.6rem,8vw,7.6rem);
+  line-height:.8;
+  letter-spacing:-.065em;
+}
+.team-future-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  min-height:720px;
+}
+.team-future-card{
+  position:relative;
+  min-height:720px;
+  overflow:hidden;
+  padding:0;
+  border:0;
+  background:#06140f;
+  color:#fff;
+  text-align:left;
+  cursor:pointer;
+  isolation:isolate;
+  clip-path:polygon(0 0,100% 0,96% 100%,0 100%);
+}
+.team-future-card + .team-future-card{
+  clip-path:polygon(4% 0,100% 0,100% 100%,0 100%);
+}
+.team-future-card img{
+  position:absolute;
+  z-index:-3;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.78) contrast(1.05);
+  transform:scale(1.012);
+  transition:transform 1s cubic-bezier(.22,1,.36,1),filter .7s ease;
+}
+.team-future-card::after{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(3,14,10,.05) 20%,rgba(3,14,10,.14) 46%,rgba(3,14,10,.92) 100%),
+    linear-gradient(90deg,rgba(3,14,10,.28),transparent 70%);
+}
+.team-future-card::before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:16px;
+  border:1px solid rgba(255,255,255,.13);
+  pointer-events:none;
+}
+.team-future-card:hover img{transform:scale(1.04);filter:saturate(1) contrast(1.02)}
+.team-future-no{
+  position:absolute;
+  top:34px;
+  left:36px;
+  color:var(--gold);
+  font:800 .62rem/1 Manrope,sans-serif;
+  letter-spacing:.2em;
+}
+.team-future-role{
+  position:absolute;
+  top:34px;
+  right:36px;
+  color:rgba(255,255,255,.56);
+  font:700 .56rem/1 Manrope,sans-serif;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.team-future-name{
+  position:absolute;
+  left:36px;
+  bottom:54px;
+}
+.team-future-name strong,
+.team-future-name em{
+  display:block;
+  color:#fff;
+  font:600 clamp(4.5rem,8vw,7.8rem)/.72 "Cormorant Garamond",serif;
+  letter-spacing:-.065em;
+}
+.team-future-name em{color:var(--gold);font-style:normal}
+.team-future-open{
+  position:absolute;
+  right:36px;
+  bottom:37px;
+  color:rgba(255,255,255,.68);
+  font:800 .58rem/1 Manrope,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+/* FAQ becomes a compact data panel instead of a big website section */
+.faq-future{
+  position:relative;
+  padding:0;
+  background:#0a1a15;
+  color:#fff;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.faq-future-shell{
+  display:grid;
+  grid-template-columns:.34fr 1fr;
+  gap:0;
+  border-left:1px solid rgba(255,255,255,.08);
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.faq-future-title{
+  min-height:100%;
+  padding:42px 36px;
+  border-right:1px solid rgba(255,255,255,.08);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.faq-future-title span{
+  color:var(--gold);
+  font:800 .61rem/1 Manrope,sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.faq-future-title strong{
+  color:rgba(255,255,255,.08);
+  font:600 clamp(5rem,9vw,8rem)/.8 "Cormorant Garamond",serif;
+}
+.faq-future-list details{
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:transparent;
+}
+.faq-future-list details:last-child{border-bottom:0}
+.faq-future-list summary{
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  padding:0 32px;
+  list-style:none;
+  cursor:pointer;
+  color:#fff;
+  font-size:.88rem;
+  font-weight:700;
+}
+.faq-future-list summary::-webkit-details-marker{display:none}
+.faq-future-list summary span{
+  color:rgba(241,189,79,.55);
+  font-size:.55rem;
+  letter-spacing:.12em;
+}
+.faq-future-list summary::after{
+  content:"+";
+  margin-left:auto;
+  color:var(--gold);
+  font:300 1.45rem/1 Manrope,sans-serif;
+  transition:transform .25s ease;
+}
+.faq-future-list details[open] summary::after{transform:rotate(45deg)}
+.faq-future-list p{
+  margin:0;
+  max-width:760px;
+  padding:0 32px 26px 72px;
+  color:rgba(255,255,255,.58);
+  font-size:.78rem;
+  line-height:1.7;
+}
+
+/* The ending is a designed final frame, not a conventional footer */
+.end-frame{
+  position:relative;
+  min-height:92svh;
+  overflow:hidden;
+  display:grid;
+  align-items:center;
+  background:
+    radial-gradient(circle at 82% 24%,rgba(241,189,79,.11),transparent 28%),
+    radial-gradient(circle at 15% 75%,rgba(66,130,100,.09),transparent 32%),
+    #020d09;
+  color:#fff;
+  isolation:isolate;
+}
+.end-frame::before{
+  content:"06 / END FRAME";
+  position:absolute;
+  top:32px;
+  left:clamp(20px,4vw,56px);
+  color:rgba(255,255,255,.28);
+  font:800 .52rem/1 Manrope,sans-serif;
+  letter-spacing:.18em;
+}
+.end-frame::after{
+  content:"";
+  position:absolute;
+  width:min(48vw,700px);
+  aspect-ratio:1;
+  right:-18%;
+  top:5%;
+  border:1px solid rgba(241,189,79,.12);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 70px rgba(241,189,79,.025),
+    0 0 0 140px rgba(241,189,79,.012);
+}
+.end-frame-grid{
+  position:absolute;
+  inset:0;
+  opacity:.18;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(180deg,transparent 0,#000 18%,#000 82%,transparent 100%);
+}
+.end-frame-shell{
+  position:relative;
+  z-index:2;
+  min-height:78svh;
+  padding:80px 0 50px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-rows:auto 1fr auto;
+  align-items:center;
+  gap:24px 50px;
+}
+.end-frame-meta{
+  grid-column:1/-1;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:rgba(255,255,255,.42);
+  font:800 .55rem/1 Manrope,sans-serif;
+  letter-spacing:.18em;
+}
+.end-frame-lockup{
+  align-self:center;
+}
+.end-frame-kicker{
+  display:block;
+  margin-bottom:24px;
+  color:var(--gold);
+  font:800 .6rem/1 Manrope,sans-serif;
+  letter-spacing:.2em;
+}
+.end-frame-lockup h2{
+  margin:0;
+  font-size:clamp(6rem,14vw,13rem);
+  line-height:.61;
+  letter-spacing:-.08em;
+}
+.end-frame-lockup h2 span,
+.end-frame-lockup h2 em{display:block}
+.end-frame-lockup h2 span{color:#fff}
+.end-frame-lockup h2 em{margin-top:.18em;color:var(--gold);font-style:normal}
+.end-frame-action{
+  display:grid;
+  place-items:center;
+}
+.end-frame-action a{
+  position:relative;
+  width:clamp(170px,18vw,240px);
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(241,189,79,.55);
+  border-radius:50%;
+  color:#fff;
+  text-decoration:none;
+  background:rgba(241,189,79,.03);
+  transition:transform .45s cubic-bezier(.22,1,.36,1),background .3s ease,color .3s ease;
+}
+.end-frame-action a::before{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:1px dashed rgba(241,189,79,.24);
+  border-radius:50%;
+  animation:orbitSpin 22s linear infinite;
+}
+.end-frame-action a span,
+.end-frame-action a strong{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+.end-frame-action a span{
+  top:38%;
+  color:rgba(255,255,255,.6);
+  font:800 .55rem/1 Manrope,sans-serif;
+  letter-spacing:.22em;
+}
+.end-frame-action a strong{
+  top:48%;
+  font:600 clamp(2.2rem,4vw,3.4rem)/1 "Cormorant Garamond",serif;
+}
+.end-frame-action a i{
+  position:absolute;
+  right:21%;
+  top:23%;
+  color:var(--gold);
+  font-style:normal;
+}
+.end-frame-action a:hover{transform:scale(1.05) rotate(-2deg);background:var(--gold);color:var(--forest)}
+.end-frame-action a:hover span,.end-frame-action a:hover i{color:var(--forest)}
+.end-frame-bottom{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:22px;
+  align-items:center;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.38);
+  font:700 .54rem/1 Manrope,sans-serif;
+  letter-spacing:.1em;
+}
+.end-frame-bottom a{
+  color:var(--gold);
+  text-decoration:none;
+}
+.end-frame-bottom span:last-child{text-align:right}
+
+/* route indicator floats across the final frame */
+.end-frame-route{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:12%;
+  width:min(54vw,680px);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transform:translateX(-50%) rotate(-5deg);
+  color:rgba(255,255,255,.28);
+  font:800 .5rem/1 Manrope,sans-serif;
+  letter-spacing:.12em;
+  pointer-events:none;
+}
+.end-frame-route span{
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,rgba(241,189,79,.12),var(--gold),rgba(241,189,79,.12));
+}
+.end-frame-route i{
+  position:absolute;
+  left:11%;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 20px var(--gold);
+  animation:routeTravel 5s ease-in-out infinite alternate;
+}
+@keyframes routeTravel{to{left:86%}}
+
+/* tiny terminal footer */
+.end-footer{
+  padding:18px 0 calc(18px + env(safe-area-inset-bottom));
+  background:#010805;
+  border-top:1px solid rgba(255,255,255,.07);
+}
+.end-footer .page-shell{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  color:rgba(255,255,255,.33);
+  font:700 .5rem/1 Manrope,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.end-footer a{color:rgba(255,255,255,.5);text-decoration:none}
+
+/* mobile command dock replaces the oversized 3-column bar */
+.mobile-journey-bar{display:none!important}
+.mission-dock{display:none}
+@media(max-width:720px){
+  body{padding-bottom:0!important}
+  .team-future{padding:72px 0}
+  .team-future::before{font-size:5rem;top:18px}
+  .team-future-heading{display:block;margin-bottom:28px}
+  .team-future-heading h2{font-size:clamp(3.6rem,16vw,5rem)}
+  .team-future-grid{
+    display:flex;
+    min-height:0;
+    overflow-x:auto;
+    gap:10px;
+    margin-right:calc((100vw - 100%)/-2);
+    padding-right:14px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+  }
+  .team-future-grid::-webkit-scrollbar{display:none}
+  .team-future-card,
+  .team-future-card + .team-future-card{
+    flex:0 0 86%;
+    min-height:570px;
+    clip-path:none;
+    border-radius:3px;
+    scroll-snap-align:start;
+  }
+  .team-future-card::before{inset:10px}
+  .team-future-role{top:27px;right:24px;font-size:.48rem}
+  .team-future-no{top:27px;left:24px}
+  .team-future-name{left:24px;bottom:48px}
+  .team-future-name strong,.team-future-name em{font-size:clamp(4rem,18vw,5.6rem)}
+  .team-future-open{right:24px;bottom:24px;font-size:.48rem}
+
+  .faq-future-shell{
+    width:100%;
+    grid-template-columns:1fr;
+    border:0;
+  }
+  .faq-future-title{
+    min-height:auto;
+    padding:26px 20px 18px;
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    flex-direction:row;
+    align-items:end;
+  }
+  .faq-future-title strong{font-size:4rem}
+  .faq-future-list summary{min-height:72px;padding:0 20px;font-size:.82rem}
+  .faq-future-list p{padding:0 20px 22px 51px;font-size:.72rem}
+
+  .end-frame{min-height:82svh}
+  .end-frame::after{width:120vw;right:-72%;top:8%}
+  .end-frame-shell{
+    width:calc(100% - 28px);
+    min-height:74svh;
+    padding:72px 0 38px;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:space-between;
+    gap:34px;
+  }
+  .end-frame-meta{font-size:.45rem}
+  .end-frame-meta span:last-child{text-align:right}
+  .end-frame-kicker{font-size:.5rem}
+  .end-frame-lockup h2{font-size:clamp(5rem,25vw,7.3rem)}
+  .end-frame-action{align-self:flex-end;margin-top:-30px}
+  .end-frame-action a{width:145px}
+  .end-frame-bottom{
+    grid-template-columns:1fr;
+    gap:8px;
+    font-size:.47rem;
+  }
+  .end-frame-bottom span:last-child{text-align:left}
+  .end-frame-route{width:75vw;bottom:18%}
+  .end-footer{padding-bottom:78px}
+  .end-footer .page-shell{font-size:.42rem}
+
+  .mission-dock{
+    position:fixed;
+    z-index:150;
+    left:50%;
+    bottom:max(10px,env(safe-area-inset-bottom));
+    width:min(310px,calc(100% - 36px));
+    height:48px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:999px;
+    background:rgba(3,14,10,.76);
+    box-shadow:0 16px 45px rgba(0,0,0,.28);
+    backdrop-filter:blur(22px) saturate(130%);
+    transform:translateX(-50%);
+    transition:opacity .25s ease,transform .25s ease;
+  }
+  .mission-dock a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    color:rgba(255,255,255,.72);
+    text-decoration:none;
+    font:800 .55rem/1 Manrope,sans-serif;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .mission-dock a+a{border-left:1px solid rgba(255,255,255,.08)}
+  .mission-dock a span{color:rgba(241,189,79,.55);font-size:.42rem}
+  .mission-dock-give{
+    background:linear-gradient(135deg,rgba(241,189,79,.98),rgba(255,211,107,.96));
+    color:var(--forest)!important;
+  }
+  .mission-dock-give span{color:rgba(6,20,15,.45)!important}
+  .mission-dock.is-hidden{opacity:0;transform:translate(-50%,18px);pointer-events:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .end-frame-action a::before,.end-frame-route i{animation:none!important}
+}
