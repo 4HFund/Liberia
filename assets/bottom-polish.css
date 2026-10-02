@@ -87,3 +87,36 @@
   .campaign-card-title{grid-template-columns:minmax(0,1fr) 44px}
   .campaign-card-logo{width:42px;height:42px}
 }
+
+/* October 2026 trip countdown + updated campaign progress */
+.hero-progress .progress-track i,
+.campaign .progress-track i{width:73.333%;}
+
+.trip-countdown{padding:64px 0;background:linear-gradient(135deg,#0b261d,#06140f);color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.countdown-shell{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:44px}
+.countdown-copy h2{margin:0 0 12px;font-size:clamp(3rem,6vw,5.4rem)}
+.countdown-copy p{max-width:680px;margin:0;color:rgba(255,255,255,.72)}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(72px,1fr));gap:10px}
+.countdown-grid>div{min-width:88px;padding:18px 12px;border:1px solid rgba(241,189,79,.3);border-radius:18px;background:rgba(255,255,255,.05);text-align:center}
+.countdown-grid strong{display:block;color:var(--gold);font:700 2.5rem/1 "Cormorant Garamond",Georgia,serif}
+.countdown-grid span{display:block;margin-top:7px;color:rgba(255,255,255,.62);font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
+.supporter-thanks{display:flex;flex-direction:column;justify-content:center;min-height:100%}
+.supporter-thanks h3{max-width:650px}
+.supporter-thanks>p{font-size:1rem;line-height:1.7}
+.thanks-signoff{display:block;margin-top:8px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:var(--gold);font:600 1.45rem/1.25 "Cormorant Garamond",Georgia,serif}
+
+@media(max-width:980px){
+  .countdown-shell{grid-template-columns:1fr;gap:28px}
+  .countdown-grid{max-width:560px}
+}
+@media(max-width:720px){
+  .trip-countdown{padding:48px 0}
+  .countdown-shell{gap:22px}
+  .countdown-copy h2{font-size:clamp(2.7rem,12vw,3.8rem)}
+  .countdown-copy p{font-size:.9rem}
+  .countdown-grid{grid-template-columns:repeat(2,1fr);width:100%;gap:9px}
+  .countdown-grid>div{min-width:0;padding:14px 8px}
+  .countdown-grid strong{font-size:2.1rem}
+  .thanks-signoff{font-size:1.25rem}
+}
