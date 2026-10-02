@@ -831,3 +831,49 @@ html{scroll-padding-top:96px}
   }
   html{scroll-padding-top:78px}
 }
+
+
+/* =========================================================
+   v4 — hero subtitle cleanup
+   ========================================================= */
+.campaign-header-card h1::after,
+.campaign-card-rule{
+  display:none!important;
+  content:none!important;
+}
+.hero-edition{
+  position:relative!important;
+  margin:18px 0 0!important;
+  padding:0!important;
+  border:0!important;
+  background:none!important;
+  color:rgba(255,255,255,.58)!important;
+  font:600 .72rem/1.45 "Manrope",Arial,sans-serif!important;
+  letter-spacing:.01em!important;
+  text-decoration:none!important;
+  box-shadow:none!important;
+}
+.campaign-card-deadline{
+  margin-top:22px!important;
+  padding:0!important;
+  border:0!important;
+  align-items:center!important;
+}
+.campaign-card-deadline::before,
+.campaign-card-deadline::after{
+  display:none!important;
+  content:none!important;
+}
+
+@media(max-width:720px){
+  .hero-edition{
+    margin-top:14px!important;
+    max-width:320px!important;
+    font-size:.66rem!important;
+    line-height:1.4!important;
+  }
+  .campaign-card-deadline{
+    margin-top:17px!important;
+    gap:10px!important;
+  }
+}
