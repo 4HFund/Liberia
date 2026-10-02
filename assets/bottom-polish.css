@@ -649,3 +649,108 @@ footer{margin-top:0}
  .give-heading{display:block}
  .journal-strip{margin-top:10px}
 }
+
+
+/* =========================================================
+   Future documentary system — experimental but usable
+   ========================================================= */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+.hero{isolation:isolate}
+.hero-video{filter:saturate(.86) contrast(1.08)}
+.hero-gridlines{position:absolute;z-index:1;inset:0;pointer-events:none;opacity:.18;background:linear-gradient(90deg,transparent calc(25% - .5px),rgba(255,255,255,.18) 25%,transparent calc(25% + .5px),transparent calc(50% - .5px),rgba(255,255,255,.13) 50%,transparent calc(50% + .5px),transparent calc(75% - .5px),rgba(255,255,255,.18) 75%,transparent calc(75% + .5px)),linear-gradient(180deg,transparent calc(70% - .5px),rgba(255,255,255,.12) 70%,transparent calc(70% + .5px))}
+.hero-coordinates{position:absolute;z-index:3;top:105px;right:clamp(20px,4vw,56px);display:flex;gap:16px;color:rgba(255,255,255,.42);font:700 .55rem/1 Manrope,sans-serif;letter-spacing:.15em;writing-mode:vertical-rl}
+.hero-index{position:absolute;z-index:3;left:clamp(20px,4vw,56px);top:105px;color:rgba(255,255,255,.42);font:700 .55rem/1 Manrope,sans-serif;letter-spacing:.17em}
+.campaign-header-card h1{position:relative}
+.campaign-header-card h1::after{content:"";position:absolute;left:-2px;bottom:-25px;width:72px;height:3px;background:var(--gold);box-shadow:90px 0 0 rgba(241,189,79,.35),180px 0 0 rgba(241,189,79,.14)}
+.hero-progress{position:relative;overflow:hidden}
+.hero-progress::after{content:"73";position:absolute;right:-9px;bottom:-36px;color:rgba(255,255,255,.035);font:700 9rem/.7 "Cormorant Garamond",serif;pointer-events:none}
+.progress-track{height:3px!important;background:rgba(255,255,255,.12)!important;overflow:visible!important}
+.progress-track i{position:relative;box-shadow:0 0 18px rgba(241,189,79,.55)}
+.progress-track i::after{content:"";position:absolute;right:-4px;top:50%;width:8px;height:8px;border-radius:50%;background:var(--gold);transform:translateY(-50%);box-shadow:0 0 0 5px rgba(241,189,79,.12),0 0 20px rgba(241,189,79,.8)}
+
+/* moving editorial signal */
+.kinetic-band{position:relative;z-index:5;overflow:hidden;padding:14px 0;background:var(--gold);color:#071711;white-space:nowrap;transform:rotate(-1.15deg) scale(1.02);transform-origin:center}
+.kinetic-band div{display:inline-block;min-width:max-content;font:800 clamp(.72rem,1.15vw,.95rem)/1 Manrope,sans-serif;letter-spacing:.19em;animation:signalMove 32s linear infinite}
+@keyframes signalMove{to{transform:translateX(-50%)}}
+
+/* countdown gets holographic depth */
+.countdown-stage{overflow:hidden}
+.countdown-stage::before{box-shadow:16px 16px 0 -15px rgba(241,189,79,.22)}
+.countdown-stage::after{box-shadow:-16px -16px 0 -15px rgba(241,189,79,.22)}
+.countdown-display::before{content:"T−";position:absolute;left:-25px;top:-20px;color:rgba(241,189,79,.35);font:800 .65rem/1 Manrope,sans-serif;letter-spacing:.15em}
+.countdown-days strong{background:linear-gradient(180deg,#ffe7a3 0%,#e9b94f 55%,#8b6323 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.countdown-orbit::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 22px var(--gold);transform:translate(-50%,-50%)}
+
+/* shared numbered exhibition language */
+.future-panel{position:relative;isolation:isolate}
+.future-panel::before{position:absolute;z-index:0;top:34px;right:clamp(20px,4vw,56px);color:rgba(8,32,25,.13);font:700 clamp(5rem,11vw,10rem)/.75 "Cormorant Garamond",serif;letter-spacing:-.06em;pointer-events:none}
+.vision.future-panel::before{content:"02"}
+.trailer.future-panel::before{content:"03";color:rgba(255,255,255,.07)}
+.journey-journal.future-panel::before{content:"04"}
+.give.future-panel::before{content:"05"}
+.future-panel>.page-shell{position:relative;z-index:1}
+
+/* story image behaves like a cinematic portal */
+.story-scene{margin:clamp(12px,2vw,28px);width:calc(100% - clamp(24px,4vw,56px));min-height:calc(78svh - 28px);overflow:hidden;border-radius:3px}
+.story-scene img{transition:transform 2s cubic-bezier(.22,1,.36,1),filter 1s ease;filter:saturate(.82) contrast(1.06)}
+.story-scene:hover img{transform:scale(1.018);filter:saturate(1) contrast(1.03)}
+.story-caption::before{content:"01";display:block;margin-bottom:12px;color:var(--gold);font:800 .62rem/1 Manrope,sans-serif;letter-spacing:.18em}
+
+/* vision: deliberately irregular editorial grid */
+@media(min-width:981px){
+ .vision-grid{grid-template-columns:1.25fr .75fr .72fr 1.28fr;align-items:stretch}
+ .vision-card:nth-child(2),.vision-card:nth-child(3){transform:translateY(52px)}
+ .vision-card:nth-child(2):hover,.vision-card:nth-child(3):hover{transform:translateY(48px)}
+}
+.vision-card{position:relative}
+.vision-card::before{content:"+";position:absolute;z-index:3;top:16px;right:17px;color:rgba(255,255,255,.78);font:300 1.3rem/1 Manrope,sans-serif}
+.vision-copy strong{font-family:"Cormorant Garamond",serif}
+
+/* cinema framing */
+.video-frame{position:relative;overflow:visible}
+.video-frame::before{content:"PLAY / 100 ACRES OF HOPE";position:absolute;z-index:2;left:0;top:-29px;color:rgba(255,255,255,.4);font:700 .55rem/1 Manrope,sans-serif;letter-spacing:.16em}
+.video-frame::after{inset:-12px;border-color:rgba(241,189,79,.13)}
+.trailer::after{content:"DOCUMENTARY / FIELD NOTES / LIBERIA";position:absolute;right:clamp(20px,4vw,56px);bottom:24px;color:rgba(255,255,255,.18);font:700 .5rem/1 Manrope,sans-serif;letter-spacing:.2em}
+
+/* journal: layered physical/digital card */
+.journal-feature{overflow:visible;margin-right:clamp(0px,4vw,50px)}
+.journal-feature>img,.journal-overlay{border-radius:6px}
+.journal-feature::before{content:"FIELD NOTE 00";position:absolute;z-index:-1;right:-42px;top:42px;width:120px;height:230px;padding:20px 14px;border:1px solid rgba(7,35,25,.16);background:#e5dac7;color:rgba(7,35,25,.5);font:800 .55rem/1.4 Manrope,sans-serif;letter-spacing:.15em;writing-mode:vertical-rl;transform:rotate(2deg)}
+.journal-feature::after{content:"100 / ACRES / HOPE";position:absolute;z-index:3;right:18px;bottom:18px;color:rgba(255,255,255,.25);font:800 .5rem/1.5 Manrope,sans-serif;letter-spacing:.15em;text-align:right}
+.journal-mini{position:relative;overflow:hidden}
+.journal-mini::after{content:"↗";position:absolute;right:13px;top:12px;color:rgba(7,35,25,.28);font-size:.8rem}
+
+/* giving: digital ledger aesthetic */
+.giving-card{position:relative;overflow:hidden}
+.giving-card::before{content:"0" counter(give);position:absolute;right:15px;top:12px;color:rgba(7,35,25,.16);font:800 .58rem/1 Manrope,sans-serif;letter-spacing:.12em}
+.giving-grid{counter-reset:give}
+.giving-card{counter-increment:give}
+.giving-card-featured::before{color:rgba(255,255,255,.2)}
+.giving-amount{position:relative;display:inline-block}
+.giving-amount::after{content:"USD";position:absolute;right:-27px;top:8px;font:800 .48rem/1 Manrope,sans-serif;letter-spacing:.1em;opacity:.35}
+
+/* nav signal */
+.site-nav::after{content:"";position:absolute;left:0;bottom:-1px;width:18%;height:1px;background:linear-gradient(90deg,transparent,var(--gold));opacity:.65;animation:navScan 7s ease-in-out infinite alternate}
+@keyframes navScan{to{left:82%}}
+
+/* subtle pointer-follow light, enhanced by JS */
+body::after{content:"";position:fixed;z-index:9998;left:var(--mx,50vw);top:var(--my,50vh);width:420px;height:420px;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(241,189,79,.045),transparent 65%);opacity:var(--pointer-glow,0);transition:opacity .4s ease}
+
+/* mobile keeps the weirdness, loses the clutter */
+@media(max-width:720px){
+ .hero-gridlines{opacity:.1}
+ .hero-coordinates{display:none}
+ .hero-index{top:80px;font-size:.48rem}
+ .kinetic-band{padding:11px 0;transform:rotate(-1.6deg) scale(1.04)}
+ .future-panel::before{top:24px;right:14px;font-size:5.2rem}
+ .story-scene{margin:10px;width:calc(100% - 20px);min-height:64svh}
+ .vision-card:nth-child(n){transform:none}
+ .journal-feature{margin-right:0;overflow:hidden}
+ .journal-feature::before{display:none}
+ .countdown-display::before{left:0}
+ body::after{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .kinetic-band div,.site-nav::after{animation:none!important}
+}
