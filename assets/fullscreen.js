@@ -2,10 +2,29 @@ const body=document.body;
 const navToggle=document.querySelector('.nav-toggle');
 const navLinks=document.querySelector('.nav-links');
 
-const heroProgressText=document.querySelector('.hero-progress p');
-if(heroProgressText)heroProgressText.textContent='toward our first $500 milestone';
-const milestoneText=document.querySelector('.milestone-top span');
-if(milestoneText)milestoneText.textContent='First milestone: $500';
+const countdown=document.getElementById('trip-countdown');
+const countdownTarget=new Date('2026-10-16T00:00:00-04:00');
+function updateCountdown(){
+  if(!countdown)return;
+  const diff=countdownTarget-Date.now();
+  const parts={days:0,hours:0,minutes:0,seconds:0};
+  if(diff>0){
+    let remaining=Math.floor(diff/1000);
+    parts.days=Math.floor(remaining/86400);remaining%=86400;
+    parts.hours=Math.floor(remaining/3600);remaining%=3600;
+    parts.minutes=Math.floor(remaining/60);
+    parts.seconds=remaining%60;
+  }
+  Object.entries(parts).forEach(([key,value])=>{
+    const node=countdown.querySelector(`[data-countdown="${key}"]`);
+    if(node)node.textContent=String(value).padStart(2,'0');
+  });
+  if(diff<=0){
+    countdown.setAttribute('aria-label','The Liberia journey has begun');
+  }
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
 
 navToggle?.addEventListener('click',()=>{
   const open=navToggle.getAttribute('aria-expanded')==='true';
