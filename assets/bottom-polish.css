@@ -90,7 +90,7 @@
 
 /* October 2026 trip countdown + updated campaign progress */
 .hero-progress .progress-track i,
-.campaign .progress-track i{width:73.333%;}
+.campaign .progress-track i{width:85.833%;}
 
 .trip-countdown{padding:64px 0;background:linear-gradient(135deg,#0b261d,#06140f);color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .countdown-shell{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:44px}
