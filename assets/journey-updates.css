@@ -41,3 +41,7 @@
 @media(max-width:900px){.live-journal-intro{display:block}.live-journal-lead{margin-top:25px;max-width:540px}.live-journal-grid{grid-template-columns:1fr}.live-journal-story{min-height:340px}.live-journal-story h3{max-width:500px}.live-journal-feed{min-height:470px}}
 @media(max-width:600px){.live-journal{padding:80px 0;scroll-margin-top:65px}.live-journal h2{font-size:clamp(3.25rem,13.4vw,5.8rem)}.live-journal-eyebrow{font-size:.61rem;letter-spacing:.11em}.live-journal-grid{gap:12px}.live-journal-story{min-height:350px}.live-journal-story h3{font-size:3.4rem}.live-journal-feed{min-height:470px}.live-journal-feedbar{padding:18px 22px}.live-journal-empty{padding:38px 25px}.live-journal-empty h3{font-size:2.65rem}.live-journal-iframe{height:650px;min-height:600px}.live-journal-bottom{line-height:1.6}}
 @media(prefers-reduced-motion:reduce){.live-journal *{scroll-behavior:auto!important}}
+
+/* Direct encouragement link in the trip journal footer */
+.live-journal-bottom a{color:#e4c17a;text-decoration:none;border-bottom:1px solid rgba(228,193,122,.48);padding-bottom:3px;transition:color .2s ease,border-color .2s ease}
+.live-journal-bottom a:hover,.live-journal-bottom a:focus-visible{color:#fff7e3;border-color:#fff7e3}
