@@ -1,0 +1,43 @@
+/* The Foundery | Liberia journey journal — isolated component */
+.live-journal{position:relative;isolation:isolate;overflow:hidden;background:#071a14;color:#f5f1e7;padding:clamp(78px,11vw,150px) 0;scroll-margin-top:96px}
+.live-journal::before{content:"";pointer-events:none;position:absolute;inset:0;background:radial-gradient(ellipse at 90% 0%,rgba(230,173,76,.14),transparent 40%),linear-gradient(150deg,transparent 65%,rgba(111,160,120,.06));z-index:-1}
+.live-journal .page-shell{position:relative}
+.live-journal-intro{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:clamp(28px,5vw,55px)}
+.live-journal-eyebrow{display:flex;align-items:center;gap:11px;font-size:.69rem;letter-spacing:.17em;font-weight:800;color:#e4c17a;text-transform:uppercase}
+.live-journal-signal{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#e4c17a;box-shadow:0 0 0 5px rgba(228,193,122,.12)}
+.live-journal h2{font-family:"Space Grotesk","Manrope",sans-serif!important;font-size:clamp(3.2rem,8vw,7.9rem);line-height:.91;letter-spacing:-.07em!important;font-weight:600;margin:22px 0 0;color:#f9f5e9}
+.live-journal h2 em{display:block;font-weight:400;color:#e4c17a;font-style:normal}
+.live-journal-lead{margin:0;max-width:335px;color:#acbcb1;font-size:clamp(.94rem,1.5vw,1.05rem);line-height:1.8}
+.live-journal-grid{display:grid;grid-template-columns:minmax(250px,.85fr) minmax(0,1.45fr);gap:16px;align-items:stretch}
+.live-journal-story,.live-journal-feed{border:1px solid rgba(241,232,205,.16);border-radius:clamp(17px,2.2vw,28px);overflow:hidden}
+.live-journal-story{position:relative;min-height:550px;padding:clamp(26px,3vw,43px);display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,#13392b 0%,#092017 100%);isolation:isolate}
+.live-journal-story::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,30,20,.22),rgba(5,18,13,.86)),url("IMG_20260723_190709.jpeg") center/cover;z-index:-1;opacity:.75}
+.live-journal-story-top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.live-journal-story-top img{max-width:125px;max-height:48px;object-fit:contain;filter:brightness(0) invert(1)}
+.live-journal-story-number{font-family:"Space Grotesk",sans-serif;letter-spacing:.12em;font-size:.72rem;color:#e4c17a}
+.live-journal-story-bottom{max-width:340px}
+.live-journal-story h3{font-family:"Space Grotesk","Manrope",sans-serif!important;font-size:clamp(2.5rem,4.9vw,5rem);line-height:.93;letter-spacing:-.065em!important;font-weight:500;color:#fff;margin:0 0 24px}
+.live-journal-story p{color:#e0e8dc;line-height:1.65;font-size:.95rem;max-width:290px;margin:0 0 26px}
+.live-journal-tags{display:flex;gap:8px;flex-wrap:wrap}
+.live-journal-tags span{border:1px solid rgba(255,255,255,.35);border-radius:100px;padding:9px 12px;font-size:.67rem;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:#f1eadb;background:rgba(0,0,0,.12)}
+.live-journal-feed{background:#f5f1e9;color:#0b2118;min-height:550px;display:flex;flex-direction:column}
+.live-journal-feedbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:22px clamp(24px,3vw,39px);border-bottom:1px solid #d8d5ca}
+.live-journal-feedstatus{display:flex;align-items:center;gap:9px;color:#39614d;text-transform:uppercase;letter-spacing:.10em;font-size:.68rem;font-weight:800}
+.live-journal-feedstatus::before{content:"";width:7px;height:7px;border-radius:50%;background:#a87d3b}
+.live-journal-feed[data-ready="true"] .live-journal-feedstatus::before{background:#398365}
+.live-journal-open{color:#114331;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;font-weight:800;text-decoration:none;border-bottom:1px solid currentColor;padding:5px 0}
+.live-journal-open:hover,.live-journal-open:focus-visible{color:#b17623}
+.live-journal-open[hidden],.live-journal-iframewrap[hidden],.live-journal-empty[hidden]{display:none!important}
+.live-journal-empty{position:relative;flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(30px,5vw,70px);background:radial-gradient(circle at 100% 100%,rgba(225,196,126,.19),transparent 45%)}
+.live-journal-entryno{display:inline-block;font-family:"Space Grotesk",sans-serif;color:#a77b38;letter-spacing:.15em;font-size:.72rem;font-weight:700;margin-bottom:30px}
+.live-journal-empty h3{font-family:"Space Grotesk",sans-serif!important;font-size:clamp(2.1rem,4vw,4.4rem);letter-spacing:-.065em!important;line-height:1.04;color:#122d21;font-weight:500;max-width:520px;margin:0 0 18px}
+.live-journal-empty p{color:#526b5b;line-height:1.75;font-size:.98rem;max-width:490px;margin:0 0 35px}
+.live-journal-date{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#6f7e6b;display:flex;align-items:center;gap:14px}
+.live-journal-date::before{content:"";display:block;width:34px;height:1px;background:#b4ae98}
+.live-journal-iframewrap{flex:1;min-height:640px;background:#fff}
+.live-journal-iframe{display:block;width:100%;height:760px;min-height:640px;border:0;background:#fff}
+.live-journal-bottom{border-top:1px solid rgba(241,232,205,.13);margin-top:28px;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:.71rem;letter-spacing:.06em;text-transform:uppercase;color:#9db3a4;font-weight:700}
+.live-journal-bottom b{color:#e4c17a;font-weight:700}
+@media(max-width:900px){.live-journal-intro{display:block}.live-journal-lead{margin-top:25px;max-width:540px}.live-journal-grid{grid-template-columns:1fr}.live-journal-story{min-height:340px}.live-journal-story h3{max-width:500px}.live-journal-feed{min-height:470px}}
+@media(max-width:600px){.live-journal{padding:80px 0;scroll-margin-top:65px}.live-journal h2{font-size:clamp(3.25rem,13.4vw,5.8rem)}.live-journal-eyebrow{font-size:.61rem;letter-spacing:.11em}.live-journal-grid{gap:12px}.live-journal-story{min-height:350px}.live-journal-story h3{font-size:3.4rem}.live-journal-feed{min-height:470px}.live-journal-feedbar{padding:18px 22px}.live-journal-empty{padding:38px 25px}.live-journal-empty h3{font-size:2.65rem}.live-journal-iframe{height:650px;min-height:600px}.live-journal-bottom{line-height:1.6}}
+@media(prefers-reduced-motion:reduce){.live-journal *{scroll-behavior:auto!important}}
