@@ -1,0 +1,50 @@
+/* 100 Acres of Hope — mission information, gratitude and optional ongoing support */
+.hero-thanks{gap:15px!important;max-width:520px}
+.hero-thanks h2{font:600 clamp(1.85rem,2.8vw,3.1rem)/1.03 "Space Grotesk","Manrope",sans-serif!important;letter-spacing:-.056em!important}
+.hero-thanks p{font-size:clamp(.87rem,1.15vw,1rem)!important;line-height:1.6!important;color:#e2e9df!important}
+.hero-thanks small{font-size:.73rem!important;line-height:1.5;color:#e6c987!important}
+.hero-thanks::after{display:none!important}
+.hero-thanks .hero-actions .button{min-height:43px}
+.trip-overview{position:relative;background:#071a14;color:#f8f3e9;padding:clamp(78px,9vw,125px) 0;overflow:hidden}
+.trip-overview:before{position:absolute;content:"";inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 10%,rgba(223,174,76,.12),transparent 50%)}
+.trip-overview .page-shell{position:relative}
+.trip-overview-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(270px,.75fr);align-items:end;gap:clamp(22px,5vw,70px);margin-bottom:clamp(38px,5vw,65px)}
+.trip-overview-kicker,.gratitude-kicker,.mission-giving-eyebrow{display:block;color:#e7bf78;font-weight:800;font-size:.71rem;letter-spacing:.17em;text-transform:uppercase}
+.trip-overview-head h2{font:600 clamp(3.3rem,6.9vw,7.1rem)/.98 "Space Grotesk",sans-serif!important;letter-spacing:-.07em!important;color:#fbf7eb;margin:20px 0 0}
+.trip-overview-head h2 em{font-style:normal;color:#e0bd77}
+.trip-overview-head p{font-size:clamp(1rem,1.3vw,1.13rem);line-height:1.85;color:#bdd0c2;margin:0;max-width:510px}
+.trip-overview-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.trip-overview-steps article{border:1px solid rgba(231,228,198,.16);padding:clamp(26px,3vw,44px);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));min-height:255px}
+.trip-overview-steps article span,.gratitude-card span{display:block;font-size:.69rem;font-weight:800;letter-spacing:.14em;color:#e2bd76}
+.trip-overview-steps h3{font:600 clamp(1.7rem,2.5vw,2.8rem)/1.1 "Space Grotesk",sans-serif!important;letter-spacing:-.05em!important;color:#fff;margin:36px 0 12px}
+.trip-overview-steps p{margin:0;line-height:1.75;font-size:.94rem;color:#b8c9bd}
+.gratitude{background:#f2efe7;color:#092318;padding:clamp(85px,10vw,140px) 0;overflow:hidden}
+.gratitude-top{max-width:1040px;margin-bottom:clamp(35px,5vw,65px)}
+.gratitude-kicker{display:flex;align-items:center;gap:12px;color:#98702c}
+.gratitude-kicker i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#98702c}
+.gratitude h2{font:600 clamp(3.6rem,8.5vw,8.7rem)/.92 "Space Grotesk",sans-serif!important;letter-spacing:-.077em!important;color:#08271b;margin:28px 0 28px}
+.gratitude h2 em{font-style:normal;color:#92743f}
+.gratitude-lead{font-size:clamp(1.05rem,1.8vw,1.38rem);line-height:1.75;color:#425b4d;max-width:810px;margin:0}
+.gratitude-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gratitude-card{background:#fffdf8;border:1px solid #e3e0d5;border-radius:23px;padding:clamp(24px,3vw,37px);min-height:260px}
+.gratitude-card span{color:#98702c}
+.gratitude-card h3{font:600 clamp(1.6rem,2.3vw,2.4rem)/1.13 "Space Grotesk",sans-serif!important;letter-spacing:-.045em!important;color:#0a271b;margin:30px 0 12px}
+.gratitude-card p{font-size:.95rem;line-height:1.75;color:#52675a;margin:0}
+.gratitude-footer{margin-top:clamp(34px,4vw,55px);padding-top:clamp(26px,3vw,38px);border-top:1px solid rgba(8,39,27,.2);display:flex;justify-content:space-between;align-items:center;gap:25px}
+.gratitude-footer p{max-width:660px;margin:0;color:#466055;line-height:1.7;font-size:1rem}
+.gratitude-footer strong{color:#133628}
+.gratitude-link{color:#153d2b;text-decoration:none;border-bottom:1px solid #153d2b;padding-bottom:8px;white-space:nowrap;font-weight:800}
+.gratitude-link:hover{color:#99702c;border-color:#99702c}
+.mission-giving{background:#e9e2d5;color:#10281c;padding:clamp(70px,8vw,105px) 0;scroll-margin-top:85px}
+.mission-giving-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:clamp(25px,6vw,85px);align-items:center}
+.mission-giving-eyebrow{color:#92702d}
+.mission-giving h2{font:600 clamp(2.9rem,5.4vw,5.6rem)/1 "Space Grotesk",sans-serif!important;letter-spacing:-.065em!important;margin:22px 0;color:#102b1e}
+.mission-giving p{margin:0;color:#4f6053;font-size:clamp(.98rem,1.3vw,1.12rem);line-height:1.8;max-width:740px}
+.mission-giving-actions{background:#faf8f1;border:1px solid #dbd2c0;border-radius:24px;padding:clamp(20px,3vw,36px);display:grid;gap:12px}
+.mission-giving-actions a{display:flex;align-items:center;justify-content:space-between;gap:13px;text-decoration:none;font-weight:800;padding:17px 20px;border:1px solid #123b28;border-radius:11px;background:#123b28;color:#fff;transition:transform .2s,background .2s}
+.mission-giving-actions a.secondary{background:transparent;color:#173c29}
+.mission-giving-actions a:hover{transform:translateY(-2px);background:#2b6046;color:#fff}
+.mission-giving-actions small{color:#697268;font-size:.77rem;line-height:1.65}
+@media(max-width:900px){.trip-overview-head,.mission-giving-inner{grid-template-columns:1fr}.trip-overview-steps{grid-template-columns:1fr}.trip-overview-steps article{min-height:0}.trip-overview-steps h3{margin:20px 0 12px}.gratitude-grid{grid-template-columns:1fr}.gratitude-card{min-height:0}.gratitude-card h3{margin-top:19px}.gratitude-footer{align-items:flex-start;flex-direction:column}}
+@media(max-width:600px){.hero-thanks{gap:8px!important}.hero-thanks h2{font-size:1.65rem!important}.hero-thanks p{font-size:.77rem!important;line-height:1.52!important}.hero-thanks small{display:none}.hero-thanks .hero-actions .button{font-size:.74rem;min-height:42px}.trip-overview h2,.gratitude h2{font-size:clamp(3.2rem,13vw,5.6rem)}.trip-overview-head{gap:25px}.trip-overview-steps article,.gratitude-card{border-radius:18px}.mission-giving h2{font-size:3.25rem}.mission-giving-inner{gap:29px}.mission-giving-actions{border-radius:17px}}
+@media(prefers-reduced-motion:reduce){.mission-giving-actions a{transition:none}}
