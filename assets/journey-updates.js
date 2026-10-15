@@ -1,13 +1,12 @@
-/* Liberia journal connection: fill both links when the Notion page is published.
-   Public URL: Notion Share > Publish > Copy link.
-   Embed URL: Notion Share > Publish > Embed this page > Copy code,
-              then copy the src="" value from Notion's iframe code.
-   Both are intentionally blank until the page is actually public.
+/* 100 Acres of Hope — published Notion trip journal.
+   The embed URL is taken verbatim from the user's Notion-generated iframe.
+   Edit the journal in Notion to update this feed; no GitHub edits are needed
+   for new entries. Keep the public-page link as a fallback for visitors.
 */
 (()=>{
   "use strict";
-  const notionPublicUrl = "";
-  const notionEmbedUrl = "";
+  const notionPublicUrl = "https://aback-pound-fbd.notion.site/3fa1341516cd817aabd4c8c5b9519d1e";
+  const notionEmbedUrl = "https://aback-pound-fbd.notion.site/ebd//3fa1341516cd817aabd4c8c5b9519d1e";
   const section = document.getElementById("updates");
   if (!section) return;
   const feed = section.querySelector(".live-journal-feed");
