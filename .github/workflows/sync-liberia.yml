@@ -1,0 +1,29 @@
+name: Sync Liberia Field Updates
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sync-liberia-field-updates
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch published Notion updates
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATA_SOURCE_ID: 4de11a93-370b-4f35-b530-5242f3a8ded2
+        run: python3 scripts/sync_notion.py
+      - name: Commit updated feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/field-updates.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh Liberia field updates"
+            git push
+          fi
