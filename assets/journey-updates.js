@@ -27,7 +27,8 @@
     } catch { return null; }
   };
   const publicUrl = safeNotionUrl(notionPublicUrl);
-  const embedUrl = safeNotionUrl(notionEmbedUrl);
+  // Keep the journal as a direct link on mobile and desktop. The third-party iframe caused scrolling glitches, especially in iOS Safari.
+  const embedUrl = null;
   if (publicUrl) {
     openLink.href = publicUrl;
     openLink.hidden = false;
