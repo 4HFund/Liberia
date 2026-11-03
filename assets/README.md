@@ -1,19 +1,27 @@
-# 100 Acres of Hope — website graphics pack
+# 100 Acres of Hope — Expanded GitHub Website Graphics Pack
 
-Upload the SVG files to your GitHub repository's `assets/` folder.
+This is a collection of **individual SVG assets**, plus the unchanged user-supplied Foundery Liberia logo.
 
-Files:
-- `hero-background.svg` — 1920×1080 cinematic hero background
-- `donation-background.svg` — 1920×720 donation section background
-- `textile-divider.svg` — 1920×90 repeating ornamental divider
-- `title-lockup.svg` — transparent 100 Acres of Hope wordmark
-- `giving-banner.svg` — 1200×420 giving graphic
-- `journey-placeholder.svg`, `people-placeholder.svg`, `vision-placeholder.svg`, `education-placeholder.svg`, `agriculture-placeholder.svg`, `community-placeholder.svg` — 1200×675 temporary section cards
-- `foundery-liberia-logo-original.jpg` — supplied church logo, preserved unchanged
+## Install
+Upload the contents of this folder into `assets/` in `4HFund/Liberia` (or preserve your existing assets and add these files). Do not delete existing photos or videos.
 
-These are original vector graphics, not photos from your trip. Replace placeholders with your real photos as you upload them.
+## Use
+```html
+<img src="assets/icon-cacao.svg" alt="" aria-hidden="true">
+<img src="assets/vision-heading.svg" alt="The Vision">
+```
+```css
+.hero { background: url("assets/hero-background.svg") center/cover no-repeat; }
+.hero::before { content:""; position:absolute; inset:0; background:url("assets/hero-text-scrim.svg") center/cover; pointer-events:none; }
+```
 
-Example HTML: `<img src="assets/journey-placeholder.svg" alt="Our journey — photos coming soon">`
-Example CSS: `.hero { background: url('assets/hero-background.svg') center/cover no-repeat; }`
+## Asset categories
+- **Backgrounds**: hero, mobile hero, story, vision, impact, quote, gallery, timeline, map, footer, donation, mobile donation.
+- **Textures**: woven, earth, cream paper, dark paper, textile divider.
+- **Decorative overlays**: botanical edges, ornaments, flourishes, gold underline.
+- **Icons**: cacao, school, community, church, hands, growth, journey, camera, water, heart, play, arrow.
+- **Photo treatments**: gradient scrims (left/right/bottom) for real photo overlays.
+- **Titles and cards**: heading lockups, giving banner, four portrait cards and original six landscape placeholders.
 
-The provided church logo has a white background, so it is included unchanged rather than falsely labeled transparent.
+## Important
+These are vector **graphics**, not documentary photographs. Use your real Liberia trip photos/videos to replace placeholder art. The Foundery logo is preserved as supplied and is not falsely presented as transparent.

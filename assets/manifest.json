@@ -1,0 +1,246 @@
+{
+  "name": "100 Acres of Hope \u2014 expanded website asset pack",
+  "palette": {
+    "deepForest": "#081910",
+    "forest": "#153C2A",
+    "gold": "#E3B45D",
+    "cream": "#F7F0DF",
+    "terracotta": "#A64A21"
+  },
+  "notes": [
+    "Decorative artwork and placeholders only; no AI-generated people are represented as real trip participants.",
+    "Supplied church logo is included unchanged, with its existing background.",
+    "SVGs work in GitHub Pages without a build system.",
+    "Use real Liberia photography in photo cards and hero when available."
+  ],
+  "assets": [
+    {
+      "file": "agriculture-placeholder.svg",
+      "type": "svg"
+    },
+    {
+      "file": "botanical-left-overlay.svg",
+      "type": "svg"
+    },
+    {
+      "file": "botanical-right-overlay.svg",
+      "type": "svg"
+    },
+    {
+      "file": "card-children.svg",
+      "type": "svg"
+    },
+    {
+      "file": "card-faith.svg",
+      "type": "svg"
+    },
+    {
+      "file": "card-future.svg",
+      "type": "svg"
+    },
+    {
+      "file": "card-partnership.svg",
+      "type": "svg"
+    },
+    {
+      "file": "community-placeholder.svg",
+      "type": "svg"
+    },
+    {
+      "file": "cream-paper-texture.svg",
+      "type": "svg"
+    },
+    {
+      "file": "dark-paper-texture.svg",
+      "type": "svg"
+    },
+    {
+      "file": "donation-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "earth-texture.svg",
+      "type": "svg"
+    },
+    {
+      "file": "education-placeholder.svg",
+      "type": "svg"
+    },
+    {
+      "file": "footer-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "foundery-liberia-logo-original.jpg",
+      "type": "jpg"
+    },
+    {
+      "file": "gallery-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "gallery-heading.svg",
+      "type": "svg"
+    },
+    {
+      "file": "giving-banner.svg",
+      "type": "svg"
+    },
+    {
+      "file": "gold-underline.svg",
+      "type": "svg"
+    },
+    {
+      "file": "hero-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "hero-mobile.svg",
+      "type": "svg"
+    },
+    {
+      "file": "hero-text-scrim.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-arrow.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-cacao.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-camera.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-church.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-community.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-growth.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-hands.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-heart.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-journey.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-play.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-school.svg",
+      "type": "svg"
+    },
+    {
+      "file": "icon-water.svg",
+      "type": "svg"
+    },
+    {
+      "file": "impact-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "journey-heading.svg",
+      "type": "svg"
+    },
+    {
+      "file": "journey-placeholder.svg",
+      "type": "svg"
+    },
+    {
+      "file": "map-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "mobile-donation-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "ornament-corner.svg",
+      "type": "svg"
+    },
+    {
+      "file": "ornament-divider.svg",
+      "type": "svg"
+    },
+    {
+      "file": "ornament-medallion.svg",
+      "type": "svg"
+    },
+    {
+      "file": "people-placeholder.svg",
+      "type": "svg"
+    },
+    {
+      "file": "photo-gradient-bottom.svg",
+      "type": "svg"
+    },
+    {
+      "file": "photo-gradient-left.svg",
+      "type": "svg"
+    },
+    {
+      "file": "photo-gradient-right.svg",
+      "type": "svg"
+    },
+    {
+      "file": "quote-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "section-flourish.svg",
+      "type": "svg"
+    },
+    {
+      "file": "stories-heading.svg",
+      "type": "svg"
+    },
+    {
+      "file": "story-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "textile-divider.svg",
+      "type": "svg"
+    },
+    {
+      "file": "timeline-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "title-lockup.svg",
+      "type": "svg"
+    },
+    {
+      "file": "vision-background.svg",
+      "type": "svg"
+    },
+    {
+      "file": "vision-heading.svg",
+      "type": "svg"
+    },
+    {
+      "file": "vision-placeholder.svg",
+      "type": "svg"
+    },
+    {
+      "file": "woven-texture.svg",
+      "type": "svg"
+    }
+  ]
+}
