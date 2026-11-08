@@ -278,6 +278,24 @@ html{scroll-padding-top:76px}.hero,.story-stage,.study-card{min-width:0}.story-c
  .series-nav .week{min-height:110px!important;padding:16px 18px!important}
 }
 @media print{.closing-journey{display:none!important}}
+</style><style>
+/* Hero reset: eliminate all poster artwork behind readable page content */
+.hero,.hero[style]{background-color:#0b251b!important;background-image:radial-gradient(ellipse at 92% 14%,rgba(204,150,65,.17),transparent 43%),linear-gradient(155deg,#0c2c20 0%,#091e18 57%,#071811 100%)!important;background-size:cover!important;background-position:center!important}
+.hero::before,.hero::after{display:none!important;content:none!important}
+.hero-inner{position:relative;z-index:1}
+.hero .sermon-brand-mark{display:none!important}
+.hero .hero-brand{display:inline-flex!important;visibility:visible!important;margin-bottom:20px!important}
+.hero .eyebrow{max-width:100%;line-height:1.5}
+.hero h1,.hero .hero-lead,.hero .hero-actions{position:relative;z-index:1;text-shadow:none!important}
+.hero .hero-lead{max-width:570px}
+@media(max-width:760px){
+ .hero,.hero[style]{background-image:radial-gradient(ellipse at 100% 0%,rgba(204,150,65,.13),transparent 55%),linear-gradient(165deg,#0d2b20,#081b15)!important}
+ .hero-inner{padding-top:40px!important;padding-bottom:34px!important}
+ .hero .hero-brand{margin-bottom:17px!important}
+ .hero h1{font-size:clamp(2.8rem,11.7vw,4.3rem)!important;line-height:1.04!important}
+ .hero .hero-lead{line-height:1.65!important}
+}
+@media print{.hero{display:none!important}}
 </style></head><body>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="/">100 Acres of Hope</a><nav class="header-links" aria-label="Site links"><a class="back" href="/">← Explore the mission</a><a class="back church-link" href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">The Foundery Church ↗</a></nav></div></header>
 <section class="hero"><div class="wrap hero-inner"><div class="hero-brand" aria-label="The Foundery Church">THE FOUNDERY <span>CHURCH</span></div><div class="eyebrow">The Foundery Church · Liberia 2026</div><h1>Hear. See.<br><span>Go &amp; Serve.</span></h1><p class="hero-lead">A journey to Liberia. Three invitations to faith. Experience Pastor Bobby’s messages through the people, places, and moments that shaped the journey.</p><div class="hero-actions"><a class="hero-cta" href="#experience"><span class="hero-cta-icon" aria-hidden="true">↘</span> Begin the experience</a><a class="hero-secondary" href="/#documentary">Discover the mission ↗</a></div><nav class="series-nav" id="weeks" aria-label="Choose a sermon"></nav></div></section>
