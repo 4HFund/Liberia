@@ -296,6 +296,24 @@ html{scroll-padding-top:76px}.hero,.story-stage,.study-card{min-width:0}.story-c
  .hero .hero-lead{line-height:1.65!important}
 }
 @media print{.hero{display:none!important}}
+</style><style>
+/* Restore cinematic Liberia photography without embedded poster lettering */
+.hero,.hero[style]{
+ background-color:#0b251b!important;
+ background-image:linear-gradient(90deg,rgba(5,22,16,.93) 0%,rgba(5,22,16,.82) 48%,rgba(5,22,16,.48) 100%),url('../assets/mission-team-and-leaders-1600.webp')!important;
+ background-position:center,center 42%!important;
+ background-size:cover,cover!important;
+ background-repeat:no-repeat!important;
+}
+.hero::before,.hero::after{display:none!important;content:none!important}
+@media(max-width:760px){
+ .hero,.hero[style]{
+ background-image:linear-gradient(180deg,rgba(5,22,16,.80),rgba(5,22,16,.86) 56%,rgba(5,22,16,.95)),url('../assets/mission-team-and-leaders-1600.webp')!important;
+ background-position:center,56% center!important;
+ background-size:cover,cover!important;
+ }
+}
+@media print{.hero{display:none!important}}
 </style></head><body>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="/">100 Acres of Hope</a><nav class="header-links" aria-label="Site links"><a class="back" href="/">← Explore the mission</a><a class="back church-link" href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">The Foundery Church ↗</a></nav></div></header>
 <section class="hero"><div class="wrap hero-inner"><div class="hero-brand" aria-label="The Foundery Church">THE FOUNDERY <span>CHURCH</span></div><div class="eyebrow">The Foundery Church · Liberia 2026</div><h1>Hear. See.<br><span>Go &amp; Serve.</span></h1><p class="hero-lead">A journey to Liberia. Three invitations to faith. Experience Pastor Bobby’s messages through the people, places, and moments that shaped the journey.</p><div class="hero-actions"><a class="hero-cta" href="#experience"><span class="hero-cta-icon" aria-hidden="true">↘</span> Begin the experience</a><a class="hero-secondary" href="/#documentary">Discover the mission ↗</a></div><nav class="series-nav" id="weeks" aria-label="Choose a sermon"></nav></div></section>
