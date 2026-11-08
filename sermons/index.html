@@ -192,9 +192,40 @@ html{scroll-padding-top:76px}.hero,.story-stage,.study-card{min-width:0}.story-c
  .prompt{break-inside:avoid;background:#fff!important}
  .note{min-height:65px}
 }
+</style><style>
+/* Mobile hero repair: actual photography, no duplicated branding or button art */
+.hero{background:#071a13 linear-gradient(90deg,rgba(5,19,14,.94),rgba(5,19,14,.72) 60%,rgba(5,19,14,.38)),url('../assets/mission-team-and-leaders-1600.webp') center 45%/cover no-repeat!important;min-height:0!important;display:block!important}
+.hero::before,.hero::after{display:none!important}
+.hero-inner{position:relative;z-index:1;padding-top:clamp(56px,8vw,105px);padding-bottom:clamp(50px,7vw,80px)}
+.hero-brand{display:inline-flex;flex-direction:column;gap:0;font:800 clamp(1rem,2vw,1.25rem)/1.05 'DM Sans',sans-serif;letter-spacing:.09em;color:#f8e8c6;border-left:3px solid #e4b973;padding:4px 0 4px 14px;margin-bottom:26px;text-shadow:0 2px 12px #0008}
+.hero-brand span{font-size:.69em;letter-spacing:.26em;color:#e5b973;margin-top:6px}
+.hero .eyebrow{font-size:.72rem;letter-spacing:.13em;line-height:1.5}
+.hero h1{font-size:clamp(3.25rem,9vw,7.5rem);line-height:1.02;margin:20px 0 24px;max-width:850px;text-shadow:0 3px 20px #0009}
+.hero .hero-lead{max-width:570px;font-size:clamp(1rem,1.6vw,1.15rem);line-height:1.65;color:#f1efe6;text-shadow:0 2px 12px #000b}
+.hero-actions{gap:14px 24px;margin-top:27px}
+.hero-cta{background:#e6bb73!important;background-image:none!important;color:#13251b!important;border:1px solid #e6bb73!important;text-shadow:none!important;box-shadow:0 8px 25px #0005!important;font-size:.95rem;min-height:54px;padding:9px 22px 9px 10px;white-space:normal}
+.hero-cta:hover{background:#f4d49c!important;filter:none!important}
+.hero-cta-icon{background:#183a29;color:#fff;flex-shrink:0}
+.hero-secondary{color:#f7e7c9;text-shadow:0 2px 10px #0008}
+.hero .series-nav{margin-top:clamp(35px,5vw,62px)}
+@media(max-width:760px){
+ .hero{background:#071a13 linear-gradient(90deg,rgba(5,19,14,.93),rgba(5,19,14,.72)),url('../assets/mission-team-and-leaders-1600.webp') 56% center/cover no-repeat!important}
+ .hero-inner{padding:35px 0 42px!important}
+ .hero-brand{margin-bottom:24px}
+ .hero h1{font-size:clamp(3rem,12.5vw,4.5rem);line-height:1.02;letter-spacing:-.055em;margin:18px 0 20px}
+ .hero .hero-lead{font-size:1rem;line-height:1.65}
+ .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:24px}
+ .hero-cta{min-height:54px}
+ .hero-secondary{padding:8px 0}
+ .hero .series-nav{margin-top:34px}
+ .top-inner{align-items:flex-start;gap:10px}
+ .brand{font-size:clamp(.99rem,4.2vw,1.2rem)}
+ .header-links{font-size:.82rem}
+}
+@media print{.hero{display:none!important}}
 </style></head><body>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="/">100 Acres of Hope</a><nav class="header-links" aria-label="Site links"><a class="back" href="/">← Explore the mission</a><a class="back church-link" href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">The Foundery Church ↗</a></nav></div></header>
-<section class="hero"><div class="wrap hero-inner"><img class="sermon-brand-mark" src="../assets/foundery-liberia-logo-original.jpg" alt="The Foundery Church Liberia series"><div class="eyebrow">The Foundery Church · Liberia 2026</div><h1>Hear. See.<br><span>Go &amp; Serve.</span></h1><p class="hero-lead">A journey to Liberia. Three invitations to faith. Experience Pastor Bobby’s messages through the people, places, and moments that shaped the journey.</p><div class="hero-actions"><a class="hero-cta" href="#experience"><span class="hero-cta-icon" aria-hidden="true">↘</span> Begin the experience</a><a class="hero-secondary" href="/#documentary">Discover the mission ↗</a></div><nav class="series-nav" id="weeks" aria-label="Choose a sermon"></nav></div></section>
+<section class="hero"><div class="wrap hero-inner"><div class="hero-brand" aria-label="The Foundery Church">THE FOUNDERY <span>CHURCH</span></div><div class="eyebrow">The Foundery Church · Liberia 2026</div><h1>Hear. See.<br><span>Go &amp; Serve.</span></h1><p class="hero-lead">A journey to Liberia. Three invitations to faith. Experience Pastor Bobby’s messages through the people, places, and moments that shaped the journey.</p><div class="hero-actions"><a class="hero-cta" href="#experience"><span class="hero-cta-icon" aria-hidden="true">↘</span> Begin the experience</a><a class="hero-secondary" href="/#documentary">Discover the mission ↗</a></div><nav class="series-nav" id="weeks" aria-label="Choose a sermon"></nav></div></section>
 <dialog id="storyDialog" class="story-dialog" aria-label="Sermon visual reader"><div class="story-stage" id="storyStage"><div class="story-top"><span class="story-kicker" id="storyKicker"></span><button type="button" class="story-close" id="storyClose" aria-label="Close visual reader">×</button></div><div class="story-content"><h2 id="storyHeading"></h2><div class="story-copy" id="storyCopy"></div><p class="story-photo-credit">Photographs from the Liberia mission trip are visual context, not necessarily the scene described.</p><div class="story-tools"><select id="storyPicker" aria-label="Jump to chapter"></select><button id="storyNotesToggle" type="button" aria-expanded="false">Write a reflection ✎</button></div><div class="story-note-panel" id="storyNotePanel" hidden><label for="storyNote">My private notes for this chapter</label><textarea id="storyNote" placeholder="Write your thoughts here…"></textarea><div class="story-note-status" id="storyNoteStatus" role="status"></div></div><div class="story-progress" aria-hidden="true"><span id="storyProgress"></span></div></div><div class="story-controls"><button id="storyPrev" type="button">← Previous</button><span id="storyCounter"></span><button id="storyNext" type="button">Next chapter →</button></div></div></dialog><div class="reading-ribbon"><div class="wrap reading-ribbon-inner"><span class="reading-ribbon-label">● THE LIBERIA SERIES</span><nav aria-label="Page sections"><a href="#experience">Explore</a><a href="#sectionList">Read</a><a href="#mission">The mission</a></nav></div></div><main class="content-area" id="experience"><div class="wrap"><article class="study-card"><div class="study-head"><div class="study-overline"><span>THE MESSAGE</span><span class="study-overline-rule"></span><span id="date"></span></div><h2 id="title">Give Me Ears to Hear</h2><p id="verse">John 8:1–11</p><div class="tabs" role="group" aria-label="Study mode"><button class="tab active" data-mode="sunday" aria-pressed="true">Sunday Mode</button><button class="tab" data-mode="study" aria-pressed="false">Study Mode</button></div></div><div class="study-body"><p class="mode-intro" id="modeIntro"></p><div id="content" aria-live="polite"><p>Loading original sermon study…</p></div></div></article></div></main>
 <section class="closing-journey" aria-label="The journey continues"><img src="../assets/closing-journey-banner.webp" loading="lazy" alt="The journey continues: The Foundery Church and Liberia"><a href="/">Explore 100 Acres of Hope →</a></section><section class="mission" id="mission"><div class="wrap mission-inner"><div><div class="eyebrow">Beyond Sunday · The mission continues</div><h2>The stories are real.<br>The mission continues.</h2><p>Our visit to Liberia was one chapter. Discover the people, churches and partnerships behind 100 Acres of Hope, follow the documentary project and learn how you can help support future mission work.</p><a class="btn" href="/">Explore the mission →</a><div><a class="support" href="/#give">Support future missions through The Foundery →</a></div><div><a class="support" href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">Visit The Foundery Church website ↗</a></div></div><img src="../assets/mission-team-and-leaders-1600.webp" loading="lazy" alt="The Foundery mission team with church leaders in Liberia"></div></section>
 <footer class="foot"><div class="wrap">100 Acres of Hope · A storytelling initiative of <a href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">The Foundery Church ↗</a></div></footer>
