@@ -136,6 +136,62 @@ html{scroll-padding-top:76px}.hero,.story-stage,.study-card{min-width:0}.story-c
 .closing-journey img{max-height:430px}
 @media(max-width:760px){.hero{background-position:62% center!important}.visual-library .visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chapter-art img{aspect-ratio:16/9}.closing-journey img{min-height:190px}.sermon-cover{margin:6px 0 18px}.prompt-visual{aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){.story-tile,.hero-cta{transition:none!important}}
+</style><style>
+/* Final polish: predictable image layering, legibility, touch and print */
+.hero{background-image:none!important;background-color:#091b14!important}
+.hero::after{background: url('../assets/give-me-series-overview.webp') center 42%/cover no-repeat!important;opacity:.56!important}
+.hero::before{background:linear-gradient(90deg,rgba(6,18,13,.96),rgba(6,18,13,.83) 47%,rgba(6,18,13,.42)),linear-gradient(0deg,#081910d9,transparent 70%)!important}
+.hero-inner{position:relative;z-index:1}
+.story-tile::before{z-index:0!important}
+.story-tile>*{position:relative;z-index:1}
+.story-tile{background-color:#0d261a}
+.study-card{box-shadow:0 22px 65px #081b1320}
+.sermon-section summary{min-height:64px}
+.sermon-section[open] summary{color:#24513a}
+.sermon-section summary:hover{color:#8b6328}
+.sermon-section .section-content{animation:none}
+.prompt{border:1px solid #dfd7c7;background:#f5f1e8}
+.prompt-visual,.takeaway-visual{background:#10251b}
+.note{font-size:16px;line-height:1.6;min-height:112px}
+.note:focus{border-color:#a67b3b;box-shadow:0 0 0 3px #cda65b38;outline:none}
+.chapter-art img,.prompt-visual,.takeaway-visual{height:auto}
+.chapter-art img{max-height:520px;object-fit:contain;background:#10251b}
+.prompt-visual{max-height:430px;object-fit:contain}
+.takeaway-visual{max-height:390px;object-fit:contain}
+.visual-library>details>summary{padding:4px 0;list-style-position:inside}
+.visual-card img{height:auto;aspect-ratio:16/9;object-fit:contain;background:#10251b}
+.story-dialog{max-height:95dvh}
+.story-dialog button,.chapter-nav button,.tabs button{touch-action:manipulation}
+@media(max-width:760px){
+ .hero-inner{padding-top:38px}
+ .hero::after{background-position:57% center!important;opacity:.36!important}
+ .hero::before{background:linear-gradient(90deg,#081a14f5,#081a14ba)!important}
+ .hero h1{font-size:clamp(2.5rem,12vw,4.4rem)}
+ .study-card{border-radius:14px}
+ .study-body{padding-left:18px;padding-right:18px}
+ .study-head{padding-left:18px;padding-right:18px}
+ .video-card-grid{padding:10px}
+ .tabs{display:flex;width:100%}
+ .tabs .tab{flex:1;padding:12px 8px}
+ .chapter-nav .btn{padding:10px 12px}
+ .chapter-count{font-size:.75rem}
+ .visual-library .visual-grid{grid-template-columns:1fr 1fr;gap:10px}
+ .sermon-section summary{padding:17px 0}
+ .prompt{padding:14px}
+ .guide-actions .btn{flex:1}
+}
+@media(max-width:390px){.visual-library .visual-grid{grid-template-columns:1fr}.chapter-nav{flex-wrap:wrap}.chapter-count{order:-1;width:100%}}
+@media print{
+ .hero,.top,.reading-ribbon,.closing-journey,.mission,.foot,.story-deck,.story-intro,.story-deck-toggle,.study-jump,.chapter-nav,.guide-panel,.visual-library,.chapter-art,.prompt-visual,.takeaway-visual,.journal-card,.lib-divider,.video-card-grid,.sermon-cover,.story-dialog,.tabs,.actions{display:none!important}
+ .study-card,.content-area{background:#fff!important;color:#000!important;border:0!important;box-shadow:none!important}
+ .study-body,.study-head{padding:0!important}
+ .sermon-section .section-content{display:block!important}
+ .sermon-section{break-inside:auto}
+ .sermon-section summary{font-size:12pt}
+ .section-content p{font-size:10pt}
+ .prompt{break-inside:avoid;background:#fff!important}
+ .note{min-height:65px}
+}
 </style></head><body>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="/">100 Acres of Hope</a><nav class="header-links" aria-label="Site links"><a class="back" href="/">← Explore the mission</a><a class="back church-link" href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">The Foundery Church ↗</a></nav></div></header>
 <section class="hero"><div class="wrap hero-inner"><img class="sermon-brand-mark" src="../assets/foundery-liberia-logo-original.jpg" alt="The Foundery Church Liberia series"><div class="eyebrow">The Foundery Church · Liberia 2026</div><h1>Hear. See.<br><span>Go &amp; Serve.</span></h1><p class="hero-lead">A journey to Liberia. Three invitations to faith. Experience Pastor Bobby’s messages through the people, places, and moments that shaped the journey.</p><div class="hero-actions"><a class="hero-cta" href="#experience"><span class="hero-cta-icon" aria-hidden="true">↘</span> Begin the experience</a><a class="hero-secondary" href="/#documentary">Discover the mission ↗</a></div><nav class="series-nav" id="weeks" aria-label="Choose a sermon"></nav></div></section>
