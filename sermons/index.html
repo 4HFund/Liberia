@@ -329,6 +329,12 @@ html{scroll-padding-top:76px}.hero,.story-stage,.study-card{min-width:0}.story-c
 /* Reader clarity: chapter artwork includes baked-in lettering; never layer it behind live text. */
 .story-stage::before,.story-stage:before{background:radial-gradient(ellipse at 88% 8%,rgba(204,151,73,.16),transparent 49%),linear-gradient(155deg,#153a2b 0%,#0b261c 52%,#071a14 100%)!important;background-image:radial-gradient(ellipse at 88% 8%,rgba(204,151,73,.16),transparent 49%),linear-gradient(155deg,#153a2b 0%,#0b261c 52%,#071a14 100%)!important}
 .story-stage{background:#0b261c}
+</style><style>
+/* Mobile hero: show the full group photograph above the headline, rather than cropping faces behind copy. */
+@media(max-width:760px){
+.hero,.hero[style]{background-color:#0b251b!important;background-image:linear-gradient(180deg,transparent 0%,rgba(8,30,22,.10) 70%,#0b251b 100%),url('../assets/mission-team-and-leaders-1600.webp')!important;background-size:100% min(69vw,470px),100% auto!important;background-position:center top,center top!important;background-repeat:no-repeat!important;padding-top:min(59vw,400px)!important}
+.hero-inner{padding-top:24px!important}
+}
 </style></head><body>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="/">100 Acres of Hope</a><nav class="header-links" aria-label="Site links"><a class="back" href="/">← Explore the mission</a><a class="back church-link" href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">The Foundery Church ↗</a></nav></div></header>
 <section class="hero"><div class="wrap hero-inner"><div class="hero-identity" aria-label="100 Acres of Hope"><a class="hero-logo hero-logo-hope" href="/" aria-label="Explore 100 Acres of Hope"><img src="../assets/100-acres-logo-clean.svg" alt="100 Acres of Hope logo"></a></div><div class="eyebrow">The Foundery Church · Liberia 2026</div><h1>Hear. See.<br><span>Go &amp; Serve.</span></h1><p class="hero-lead">A journey to Liberia. Three invitations to faith. Experience Pastor Bobby’s messages through the people, places, and moments that shaped the journey.</p><div class="hero-actions"><a class="hero-cta" href="#experience"><span class="hero-cta-icon" aria-hidden="true">↘</span> Begin the experience</a><a class="hero-secondary" href="/#documentary">Discover the mission ↗</a></div><nav class="series-nav" id="weeks" aria-label="Choose a sermon"></nav></div></section>
