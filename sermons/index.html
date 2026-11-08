@@ -254,6 +254,30 @@ html{scroll-padding-top:76px}.hero,.story-stage,.study-card{min-width:0}.story-c
  .original,.guide-panel,.journal-card{min-width:0;max-width:100%;box-sizing:border-box}
  .original h3,.journal-card h3{overflow-wrap:break-word}
 }
+</style><style>
+/* Responsive artwork: preserve complete 16:9 banners, never crop embedded text */
+.closing-journey{display:flex!important;flex-direction:column;align-items:center;gap:0;overflow:hidden;background:#0b2118!important}
+.closing-journey img{display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:16/9!important;object-fit:contain!important;object-position:center!important}
+.closing-journey a{position:static!important;display:inline-flex!important;align-items:center;justify-content:center;max-width:calc(100% - 32px);margin:18px auto 24px!important;padding:13px 22px!important;font-size:.95rem!important;line-height:1.35;text-align:center;border-radius:10px!important;box-sizing:border-box}
+.series-nav .week,.series-nav .week:nth-child(1),.series-nav .week:nth-child(2),.series-nav .week:nth-child(3){
+ background:#10281e!important;background-image:none!important;
+ border:1px solid #e5c98d60!important;
+ border-left:4px solid #e5b973!important;
+ border-radius:10px!important;
+ box-shadow:none!important;
+ text-shadow:none!important;
+ padding:17px 20px!important;
+}
+.series-nav .week:hover,.series-nav .week.active{background:#1c3b2c!important;border-color:#e5b973!important}
+.series-nav .week small,.series-nav .week span,.series-nav .week strong{position:relative;z-index:1;text-shadow:none!important}
+.series-nav .week strong{color:#fff8e9!important;line-height:1.25}
+.series-nav .week small,.series-nav .week span:last-child{color:#ead9b8!important}
+@media(max-width:760px){
+ .closing-journey img{width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;object-fit:contain!important}
+ .closing-journey a{margin:14px auto 22px!important}
+ .series-nav .week{min-height:110px!important;padding:16px 18px!important}
+}
+@media print{.closing-journey{display:none!important}}
 </style></head><body>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="/">100 Acres of Hope</a><nav class="header-links" aria-label="Site links"><a class="back" href="/">← Explore the mission</a><a class="back church-link" href="https://thefoundery.church" target="_blank" rel="noopener noreferrer">The Foundery Church ↗</a></nav></div></header>
 <section class="hero"><div class="wrap hero-inner"><div class="hero-brand" aria-label="The Foundery Church">THE FOUNDERY <span>CHURCH</span></div><div class="eyebrow">The Foundery Church · Liberia 2026</div><h1>Hear. See.<br><span>Go &amp; Serve.</span></h1><p class="hero-lead">A journey to Liberia. Three invitations to faith. Experience Pastor Bobby’s messages through the people, places, and moments that shaped the journey.</p><div class="hero-actions"><a class="hero-cta" href="#experience"><span class="hero-cta-icon" aria-hidden="true">↘</span> Begin the experience</a><a class="hero-secondary" href="/#documentary">Discover the mission ↗</a></div><nav class="series-nav" id="weeks" aria-label="Choose a sermon"></nav></div></section>
